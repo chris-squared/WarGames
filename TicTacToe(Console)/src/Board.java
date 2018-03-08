@@ -1,11 +1,11 @@
-import java.util.HashMap;
+//import java.util.HashMap;
 
 public class Board {
 	final static int rows = 3;
 	final static int columns = 3;
 	final static String gridPiece = "[ ]";
 	public String[][] board = new String[rows][columns]; 
-	public HashMap<Integer,Integer> gameState = new HashMap<Integer,Integer>();
+//	public HashMap<Integer,Integer> gameState = new HashMap<Integer,Integer>();
 	
 	public Board(){
 		for (int row = 0; row < board.length; row++)
