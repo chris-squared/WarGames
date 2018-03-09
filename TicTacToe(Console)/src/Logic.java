@@ -95,4 +95,13 @@ public class Logic {
 		}
 		return false;
 	}
+	
+	public static boolean isValidMove(String[][] board, int row, int column) {
+		if (board[row][column] == Board.gridPiece) {
+			return true;
+		} 
+		System.out.println("Invalid Move.");
+		return false;
+	}
+	
 }
