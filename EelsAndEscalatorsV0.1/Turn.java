@@ -24,12 +24,8 @@ public class Turn {
 		int[] location = s.getPlayerLocation(p);
 		System.out.println(s.playerLocationRepo.get(p)[1]);
 		System.out.println("LOCATION IS " + location[0] + ", " + location[1]);
-		if (l.onEel(p)){
-			l.move(-1, p, location);
-		}
-		else if(l.onEscalator(p)) {
-			
-			l.move(1, p, location);}
-	}
+		l.onEel(p);
+		l.onEscalator(p);
 	
+}
 }

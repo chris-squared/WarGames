@@ -1,4 +1,4 @@
-import java.util.HashMap;
+
 
 
 public class Logic {
@@ -6,7 +6,7 @@ public class Logic {
 	Board GameBoard;
 	State s; 
 	ConsoleGUI GUI;
-	//The absolute point value dictating a win condition
+	
 	
 	
 	Logic(Board g, State state, ConsoleGUI c){
@@ -16,34 +16,45 @@ public class Logic {
 	}
 	
 	
-	//Keeps track of start -> End points for eels or escalators 
+
 	
 	
-	//Add an eel to the board
+
 	
-	
-	boolean onEel(Player p) {
-		return s.EelsRepository.containsKey(s.playerLocationRepo.get(p));
-	}
-	
-	//Tells you if you are on an Escalator
-	boolean onEscalator(Player p) {
-		for (int[] i: s.EscalatorsRepository.keySet()) {
+	//Tells if you are on an Eel and where to move you. 
+	void onEel(Player p) {
+		for (int[] i: s.EelsRepository.keySet()) {
 			int currentR = s.playerLocationRepo.get(p)[0];
 			int currentC = s.playerLocationRepo.get(p)[1];
-			System.out.println(currentR + "," + currentC);
 			if (currentR == i[0] && currentC == i[1]) {
-				System.out.println("A");
-				return true;
+				int[] newLocation = s.EelsRepository.get(i);
+				s.setPlayerLocation(p, newLocation[0], newLocation[1]);
+				s.update(GUI);
 			}
 			
 			
 		}
-		return false;
+	}
+	
+	//Tells you if you are on an Escalator and where to move you. 
+	void onEscalator(Player p) {
+		for (int[] i: s.EscalatorsRepository.keySet()) {
+			int currentR = s.playerLocationRepo.get(p)[0];
+			int currentC = s.playerLocationRepo.get(p)[1];
+			if (currentR == i[0] && currentC == i[1]) {
+				int[] newLocation = s.EscalatorsRepository.get(i);
+				s.setPlayerLocation(p, newLocation[0], newLocation[1]);
+				s.update(GUI);
+			}
+			
+			
+		}
+		
 		
 	}
 	
 	//Checks to see if you've won
+	//TODO: Accurately write win-condition
 	boolean wonGame(int pos) {
 		return (pos == 0);
 	}
@@ -89,21 +100,7 @@ public class Logic {
 	}
 	
 	
-	void move(int direction, Player p, int[] location) {
-		
 	
-		if (direction < 0) {
-			//go into Eel repo and figure out where it leads
-			int[] newLocation = s.EelsRepository.get(location);
-			s.setPlayerLocation(p, newLocation[0], newLocation[1]);
-		}
-		else {
-			System.out.println("HERE");
-			int[] newLocation = s.EscalatorsRepository.get(location);
-			System.out.println(newLocation[0] + "," + newLocation[1]);
-			s.setPlayerLocation(p, newLocation[0], newLocation[1]);}
-		s.update(GUI);
-	}
 		
 	}
 	
