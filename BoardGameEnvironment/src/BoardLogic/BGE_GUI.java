@@ -20,7 +20,7 @@ public class BGE_GUI {
 	
 	Coord lastClicked;
 	
-	BGE_GUI(Board b, Stage primaryStage) {
+	public BGE_GUI(Board b, Stage primaryStage) {
 		board 	= b;
 		grid 	= new GridPane();
 		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
