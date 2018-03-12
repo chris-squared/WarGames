@@ -17,7 +17,7 @@ public class Board {
 	ArrayList<ArrayList<Tile>> tiles;
 	
 	
-	Board(String T, int R, int C, int H, int W) {
+	public Board(String T, int R, int C, int H, int W) {
 		
 		title = T;
 		

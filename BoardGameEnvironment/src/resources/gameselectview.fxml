@@ -21,8 +21,8 @@
         <Button text="Tic-Tac-Toe"
                 onAction="#handleChooseTicTacToe"/>
                 
-        <Button text="Connect Four"
-                onAction="#handleChooseConnectFour"/>
+        <Button text="Checkers"
+                onAction="#handleChooseCheckers"/>
                 
         <Button text="Simon Says"
                 onAction="#handleChooseSimonSays"/>
