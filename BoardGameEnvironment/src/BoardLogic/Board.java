@@ -15,7 +15,7 @@ public abstract class Board {
 	double tileWidth;
 	
 	ArrayList<ArrayList<Tile>> tiles;
-	ArrayList<Piece> pieces;
+	ArrayList<Piece> pieces = new ArrayList<Piece>();
 	
 	
 	public Board(String T, int R, int C, int H, int W) {

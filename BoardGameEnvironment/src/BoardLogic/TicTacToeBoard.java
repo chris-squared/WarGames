@@ -3,17 +3,17 @@ package BoardLogic;
 import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
-public class TestCheckerBoard extends Board {
+public class TicTacToeBoard extends Board {
 	
-	static final int ROWS = 8;
-	static final int COLS = 8;
+	static final int ROWS = 3;
+	static final int COLS = 3;
 	
 	static final int windHeight = 500;
 	static final int windWidth  = 500;
 	
 	
-	public TestCheckerBoard() {
-		super("Test Checkers",ROWS,COLS,windHeight,windWidth);
+	public TicTacToeBoard() {
+		super("Test TicTacToe",ROWS,COLS,windHeight,windWidth);
 	}
 	
 	
@@ -29,28 +29,12 @@ public class TestCheckerBoard extends Board {
 					getTile(row, col).setColor(Color.BLACK);
 				colorFlag = !colorFlag;
 			}
-			colorFlag = !colorFlag;
 		}
 	}
 	
 	public void setStartingPieces() {
 		pieces = new ArrayList<Piece>();
 		
-		for (int i = 0; i < 3; ++i) {
-			for (int j = 0; j < COLS; ++j) {
-				if (getTile(i,j).getColor() == Color.BLACK) {
-					pieces.add(new Piece(getTile(i,j),Color.RED));
-				}
-			}
-		}
-		
-		for (int i = 7; i > 4; --i) {
-			for (int j = 0; j < COLS; ++j) {
-				if (getTile(i,j).getColor() == Color.BLACK) {
-					pieces.add(new Piece(getTile(i,j),Color.GOLD));
-				}
-			}
-		}
 	}
 	
 	public int pieceCount() {

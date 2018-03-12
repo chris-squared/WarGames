@@ -25,4 +25,13 @@ public class CheckerBoard extends Board {
 		}
 	}
 
+	@Override
+	void setStartingTileColors() {
+		setTileColors();
+	}
+
+	@Override
+	void setStartingPieces() {
+	}
+
 }
