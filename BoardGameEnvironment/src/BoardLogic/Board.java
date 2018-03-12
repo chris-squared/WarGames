@@ -1,7 +1,7 @@
 package BoardLogic;
 import java.util.ArrayList;
 
-public class Board {
+public abstract class Board {
 
 	String title;
 	
@@ -15,6 +15,7 @@ public class Board {
 	double tileWidth;
 	
 	ArrayList<ArrayList<Tile>> tiles;
+	ArrayList<Piece> pieces;
 	
 	
 	Board(String T, int R, int C, int H, int W) {
@@ -40,7 +41,8 @@ public class Board {
 		}
 	}
 	
-	//abstract void setTileColors()
+	abstract void setStartingTileColors();
+	abstract void setStartingPieces();
 	
 	public BoardCoord coordToBoardCoord(Coord c) {
 		double x = (c.X / windWidth)  * colsNum;
@@ -52,7 +54,13 @@ public class Board {
 		
 	}
 	
+	int pieceCount() {
+		return pieces.size();
+	}
 	
+	public Piece getPiece(int i) {
+		return pieces.get(i);
+	}
 	
 	///// GET/SET
 	
@@ -132,6 +140,14 @@ public class Board {
 
 	public void setTileWidth(double tileWidth) {
 		this.tileWidth = tileWidth;
+	}
+
+	public ArrayList<Piece> getPieces() {
+		return pieces;
+	}
+
+	public void setPieces(ArrayList<Piece> pieces) {
+		this.pieces = pieces;
 	}
 	
 	

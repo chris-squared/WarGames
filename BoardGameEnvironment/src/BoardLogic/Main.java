@@ -18,11 +18,11 @@ public class Main extends Application{
 	public void start (Stage primaryStage) {
 		
 		// TEST
-		newBoard = new Board("Test Checkers",8,8,500,500);
+		newBoard = new TestCheckerBoard();
 		// 
 		bge = new BGE_GUI(newBoard, primaryStage);
 		
-		bge.createDisplay(primaryStage);
+		bge.updateDisplay(primaryStage);
 		bge.display(primaryStage);
 		
 		bge.mouseClickListener();

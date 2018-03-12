@@ -3,9 +3,6 @@ import javafx.scene.paint.Color;
 
 public class Tile {
 	
-	Coord topLeftCoords;
-	Coord bottomRightCoords;
-	
 	Color color;
 	
 	BoardCoord boardCoord;
@@ -16,27 +13,7 @@ public class Tile {
 		boardCoord = new BoardCoord(boardRow, boardCol);
 		
 	}
-
-
-	public Coord getTopLeftCoords() {
-		return topLeftCoords;
-	}
-
-
-	public void setTopLeftCoords(Coord topLeftCoords) {
-		this.topLeftCoords = topLeftCoords;
-	}
-
-
-	public Coord getBottomRightCoords() {
-		return bottomRightCoords;
-	}
-
-
-	public void setBottomRightCoords(Coord bottomRightCoords) {
-		this.bottomRightCoords = bottomRightCoords;
-	}
-
+	
 
 	public Color getColor() {
 		return color;
