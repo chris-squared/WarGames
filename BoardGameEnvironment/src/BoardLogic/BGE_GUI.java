@@ -21,12 +21,15 @@ public class BGE_GUI {
 	BGE_GUI(Board b, Stage primaryStage) {
 		board 	= b;
 		grid 	= new GridPane();
-		scene 	= new Scene(grid, board.getWindLength(), board.getWindWidth());
+		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
 		lastClicked = new Coord(0,0);
 		
 		this.primaryStage = primaryStage;
 		primaryStage.setTitle(board.getTitle());
 		primaryStage.setScene(scene);
+		// FIXED SIZE
+		primaryStage.setResizable(false);
+		primaryStage.sizeToScene();
 	}
 	
 	public void createDisplay(Stage primaryStage) {
@@ -35,8 +38,8 @@ public class BGE_GUI {
 	    for (int row = 0; row < board.getRowsNum(); row++) {
 	        for (int col = 0; col < board.getColsNum(); col++) {
 	            Rectangle rec = new Rectangle();
-	            rec.setWidth(50);
-	            rec.setHeight(50);
+	            rec.setHeight(board.getTileHeight());
+	            rec.setWidth(board.getTileWidth());
 	            
 	            if (colorFlag)
 	            	rec.setFill(Color.BLACK);
@@ -71,6 +74,7 @@ public class BGE_GUI {
     					+ "\nX: " + lastClicked.X
     					+ "\nY: " + lastClicked.Y
     					+"\n-----");
+    			board.coordToBoardCoord(lastClicked);
     		}
 		};
 	}

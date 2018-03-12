@@ -8,20 +8,27 @@ public class Board {
 	int rowsNum;
 	int colsNum;
 	
-	int windLength;
+	int windHeight;
 	int windWidth;
+	
+	double tileHeight;
+	double tileWidth;
 	
 	ArrayList<ArrayList<Tile>> tiles;
 	
 	
-	Board(String T, int R, int C, int L, int W) {
+	Board(String T, int R, int C, int H, int W) {
 		
 		title = T;
 		
 		rowsNum 	= R;
 		colsNum 	= C;
-		windLength 	= L;
+		
+		windHeight 	= H;
 		windWidth 	= W;
+		
+		tileHeight	= windHeight/colsNum;
+		tileWidth	= windWidth/rowsNum;
 		
 		tiles = new ArrayList<ArrayList<Tile>>();
 		
@@ -33,11 +40,15 @@ public class Board {
 		}
 	}
 	
-	void calculateCoord(int row, int col) {
-		
-	}
+	//abstract void setTileColors()
 	
-	public void coordToBoardCoord(Coord c) {
+	public BoardCoord coordToBoardCoord(Coord c) {
+		double x = (c.X / windWidth)  * colsNum;
+		double y = (c.Y / windHeight) * rowsNum;
+		
+		System.out.println("row = " + (int)y + " | col = " + (int)x);
+		
+		return new BoardCoord((int)y, (int)x);
 		
 	}
 	
@@ -78,13 +89,13 @@ public class Board {
 	}
 
 
-	public int getWindLength() {
-		return windLength;
+	public int getWindHeight() {
+		return windHeight;
 	}
 
 
-	public void setWindLength(int windLength) {
-		this.windLength = windLength;
+	public void setWindHeight(int windLength) {
+		this.windHeight = windLength;
 	}
 
 
@@ -105,6 +116,22 @@ public class Board {
 
 	public void setTiles(ArrayList<ArrayList<Tile>> tiles) {
 		this.tiles = tiles;
+	}
+
+	public double getTileHeight() {
+		return tileHeight;
+	}
+
+	public void setTileHeight(double tileHeight) {
+		this.tileHeight = tileHeight;
+	}
+
+	public double getTileWidth() {
+		return tileWidth;
+	}
+
+	public void setTileWidth(double tileWidth) {
+		this.tileWidth = tileWidth;
 	}
 	
 	

@@ -18,7 +18,7 @@ public class Main extends Application{
 	public void start (Stage primaryStage) {
 		
 		// TEST
-		newBoard = new Board("Test Checkers",10,10,500,500);
+		newBoard = new Board("Test Checkers",8,8,500,500);
 		// 
 		bge = new BGE_GUI(newBoard, primaryStage);
 		
