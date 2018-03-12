@@ -6,28 +6,16 @@ public class TicTacToe {
 	public static void main(String[] args) {
 		//Initialize game elements
 		Scanner in = new Scanner(System.in);
-		Board gameBoard = new Board();
-		Player player1 = new Player(1, "[X]");
-		Player player2 = new Player(2, "[O]");
+		TicTacToeState state = new TicTacToeState();
+		TicTacToeLogic ticTacToeLogic = new TicTacToeLogic(state);
+		TicTacToeEngine engine = new TicTacToeEngine(state,ticTacToeLogic);
 		Utility.printMenu();
 		int turn = 1;
-		gameBoard.printBoard();
+		state.gameBoard.printBoard();
 		// Turn determination and win conditions
-		while (true){
-				if (turn % player2.turn == 0){
-					Turn.playerTurn(player2, gameBoard, turn, in);
-					if (Logic.playerWinChecker(gameBoard, gameBoard.board, player2.gamePiece, player2.turn))
-						break;
-				}else{
-					Turn.playerTurn(player1, gameBoard, turn, in);
-					if (Logic.playerWinChecker(gameBoard, gameBoard.board, player1.gamePiece, player1.turn))
-						break;
-				}
+		while (engine.nextPlayersTurn(turn, in)) {
 			turn += 1;
-			if (turn > 9){
-				System.out.println("Game has ended with a tie!");
-				break;
 			}
-		}
+		in.close();
 	}
 }

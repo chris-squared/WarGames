@@ -1,14 +1,10 @@
-//Currently doesn't do anything, but I included an arraylist to store the board every turn. 
-import java.util.ArrayList;
-public class State {
-	public static ArrayList<Board> gameBoards = new ArrayList<Board>();
-	
-	public static void addBoard(Board board){
-		gameBoards.add(board);
+/**Instantiate a constructor with a new Board with dimensions of your game.
+ * Can also be used to add functionality to store previous board states.*/
+abstract class State {
+	// Example: TicTacToeBoard gameBoard;
+	public State() {
+		// Example: gameBoard = new TicTacToeBoard(3,3,"[ ]");
 	}
-	
-	public static void printBoard(){
-		for (int i = 0; i < gameBoards.size(); i++)
-			System.out.println(gameBoards.get(i).board);
-	}
+
+	public abstract Board getGameBoard();
 }

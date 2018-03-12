@@ -1,19 +1,14 @@
-public class Player {
-	
+abstract class Player {
 	public String gamePiece;
-	public final int turn;
+	public int turn;
+	
 	public Player(int turn, String gamePiece){
 		this.turn = turn;
 		this.gamePiece = gamePiece;
 	}
 	
-	public void executeMove(String[][] board, int startRow, int startColumn, int endRow, int endColumn) {
-		board[startRow][startColumn] = Board.gridPiece;
-		board[endRow][endColumn] = gamePiece;
-		if (Logic.isValidJump(board, gamePiece, startRow, startColumn, endRow, endColumn)) {
-			board[(startRow + endRow)/2][(startColumn+endColumn)/2] = Board.gridPiece;
-		}
-		
-	}
-	
+//	public abstract void addGamePiece(Board gameBoard,int column, int row);
+
+//	public abstract void addGamePiece(String[][] board, int startRow, int startColumn, int endRow, int endColumn);
+	public abstract void addGamePiece(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) ;
 }

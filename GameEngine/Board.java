@@ -34,7 +34,7 @@ abstract class Board {
 	
 	/**print Column Numbers is an auxiliary function for printBoard and 
 	 * should only be necessary for the console version of games.*/
-	public void printColumnNumbers(){
+	public static void printColumnNumbers(){
 		System.out.print("  ");
 		for (int row = 0; row < board.length; row++)
 			System.out.print(" " + row + " ");
