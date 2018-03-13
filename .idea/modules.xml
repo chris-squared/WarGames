@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BoardGameEnvironment/BoardGameEnvironment.iml" filepath="$PROJECT_DIR$/BoardGameEnvironment/BoardGameEnvironment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Checkers(Console)/Checkers(Console).iml" filepath="$PROJECT_DIR$/Checkers(Console)/Checkers(Console).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Profile/Profile.iml" filepath="$PROJECT_DIR$/Profile/Profile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TicTacToe(Console)/TicTacToe(Console).iml" filepath="$PROJECT_DIR$/TicTacToe(Console)/TicTacToe(Console).iml" />
+      <module fileurl="file://$PROJECT_DIR$/WarGames.iml" filepath="$PROJECT_DIR$/WarGames.iml" />
+    </modules>
+  </component>
+</project>

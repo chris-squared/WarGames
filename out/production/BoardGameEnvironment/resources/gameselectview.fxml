@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="fxml.views.FXMLGameSelectController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+    <Text text="Select Your Game"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <HBox spacing="10" alignment="bottom_right"
+          GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Tic-Tac-Toe"
+                onAction="#handleChooseTicTacToe"/>
+                
+        <Button text="Checkers"
+                onAction="#handleChooseCheckers"/>
+                
+        <Button text="Simon Says"
+                onAction="#handleChooseSimonSays"/>
+                
+        <Button text="Eels And Escalators"
+                onAction="#handleChooseEelsAndEscalators"/>
+    </HBox>
+
+    <Text fx:id="actiontarget"
+          GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+</GridPane>
