@@ -13,7 +13,7 @@ public class GUIController extends Application{
     public void start(Stage stage) throws Exception{
 //        LoginGUI loginGUI = new LoginGUI(stage);
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/resources/loginview.fxml"));
+        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
         Parent root = loader.load();
         stage.setTitle("My New Stage Title");
         stage.setScene(new Scene(root, 450, 450));
