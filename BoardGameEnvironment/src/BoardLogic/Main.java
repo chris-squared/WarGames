@@ -1,4 +1,5 @@
-package BoardLogic;
+package board_gui;
+import boardgamerepo.TicTacToeBoard;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
@@ -18,7 +19,7 @@ public class Main extends Application{
 	public void start (Stage primaryStage) {
 		
 		// TEST
-		newBoard = new TestCheckerBoard();
+		newBoard = new TicTacToeBoard();
 		// 
 		bge = new BGE_GUI(newBoard, primaryStage);
 		
@@ -26,7 +27,6 @@ public class Main extends Application{
 		bge.display(primaryStage);
 		
 		bge.mouseClickListener();
-		
 	}
 	
 }

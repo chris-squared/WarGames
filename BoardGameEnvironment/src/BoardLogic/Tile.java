@@ -1,4 +1,4 @@
-package BoardLogic;
+package board_gui;
 import javafx.scene.paint.Color;
 
 public class Tile {
@@ -13,7 +13,6 @@ public class Tile {
 		boardCoord = new BoardCoord(boardRow, boardCol);
 		
 	}
-	
 
 	public Color getColor() {
 		return color;

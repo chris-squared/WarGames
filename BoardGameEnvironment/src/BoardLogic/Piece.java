@@ -1,4 +1,4 @@
-package BoardLogic;
+package board_gui;
 
 import javafx.scene.paint.Color;
 
@@ -10,7 +10,7 @@ public class Piece {
 	Piece() {
 	}
 	
-	Piece(int row, int col, Color C) {
+	public Piece(int row, int col, Color C) {
 		boardCoord = new BoardCoord(row,col);
 		color = C;
 	}

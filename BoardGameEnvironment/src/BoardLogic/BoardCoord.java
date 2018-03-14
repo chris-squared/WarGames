@@ -1,4 +1,4 @@
-package BoardLogic;
+package board_gui;
 
 public class BoardCoord {
 

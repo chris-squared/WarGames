@@ -17,29 +17,18 @@ public class TicTacToeBoard extends Board {
 	}
 	
 	
-	public void setStartingTileColors() {
-		
-		boolean colorFlag = true;
+	public void setStartingTiles() {
 		
 		for (int row = 0; row < rowsNum; ++row) {
 			for (int col = 0; col < colsNum; ++col) {
-				if (colorFlag)
-					getTile(row, col).setColor(Color.WHITE);
-				else
-					getTile(row, col).setColor(Color.BLACK);
-				colorFlag = !colorFlag;
+				getTile(row,col).setOutlineColor(Color.BLACK);
 			}
 		}
 	}
 	
-	public void setStartingPieces() {
-		pieces = new ArrayList<Piece>();
-		
-	}
+	public void setStartingPieces() {/* None */}
 	
-	public int pieceCount() {
-		return pieces.size();
-	}
+	void setStartingImages() {/* None */}
 	
 
 }

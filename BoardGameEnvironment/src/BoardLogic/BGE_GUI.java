@@ -1,4 +1,4 @@
-package BoardLogic;
+package board_gui;
 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -47,7 +47,8 @@ public class BGE_GUI {
 	}
 	
 	public void updateDisplay(Stage primaryStage) {
-
+		// inefficient but w.e
+		startDisplay(primaryStage);
 	}
 	
 	public void display(Stage primaryStage) {
@@ -137,10 +138,10 @@ public class BGE_GUI {
 	// Mouse
 	
 	public void mouseClickListener() {
-		scene.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseClick());
+		scene.addEventFilter(MouseEvent.MOUSE_PRESSED, click());
 	}
 	
-	public EventHandler<MouseEvent> mouseClick() {
+	private EventHandler<MouseEvent> click() {
 		
 		return new EventHandler<MouseEvent>() {
     		public void handle(MouseEvent mouseEvent) {
@@ -151,8 +152,14 @@ public class BGE_GUI {
     					+ "\nY: " + lastClicked.Y
     					+"\n-----");
     			board.coordToBoardCoord(lastClicked);
+    			mouseClicked();
     		}
 		};
+	}
+	
+	private void mouseClicked() {
+		board.forwardMouseClick(board.coordToBoardCoord(lastClicked));
+		updateDisplay(primaryStage);
 	}
 	
 }

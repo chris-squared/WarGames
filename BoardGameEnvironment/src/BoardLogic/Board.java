@@ -1,4 +1,4 @@
-package BoardLogic;
+package board_gui;
 import java.util.ArrayList;
 
 import javafx.scene.image.Image;
@@ -8,8 +8,8 @@ public abstract class Board {
 
 	String title;
 	
-	int rowsNum;
-	int colsNum;
+	protected int rowsNum;
+	protected int colsNum;
 	
 	int windHeight;
 	int windWidth;
@@ -22,7 +22,7 @@ public abstract class Board {
 	ArrayList<ArrayList<Image>> images;
 	
 	
-	Board(String T, int R, int C, int H, int W) {
+	protected Board(String T, int R, int C, int H, int W) {
 		
 		title = T;
 		
@@ -62,9 +62,10 @@ public abstract class Board {
 	
 	// Abstract Methods
 	
-	abstract void setStartingTiles();
-	abstract void setStartingPieces();
-	abstract void setStartingImages();
+	public abstract void setStartingTiles();
+	public abstract void setStartingPieces();
+	public abstract void setStartingImages();
+	public abstract void forwardMouseClick(BoardCoord clickCoords);
 	
 	
 	// Tile Operations ----------
@@ -85,7 +86,8 @@ public abstract class Board {
 	}
 	
 	public void addPiece(int row, int col, Piece p) {
-		pieces.get(row).add(col,p);
+		//pieces.get(row).add(col,p);
+		pieces.get(row).set(col,p);
 	}
 	
 	public void removePiece(int row, int col) {
@@ -93,7 +95,7 @@ public abstract class Board {
 			System.out.println("No piece to remove :(s");
 			return;
 		}
-		pieces.get(row).add(col, null);
+		addPiece(row,col,null);
 	}
 	
 	public void movePiece(int currRow, int currCol, int newRow, int newCol) {
@@ -120,7 +122,7 @@ public abstract class Board {
 	}
 	
 	public void addImage(int row, int col, Image i) {
-		images.get(row).add(col,i);
+		images.get(row).set(col, i);
 	}
 	
 	public void removeImage(int row, int col) {
@@ -128,7 +130,7 @@ public abstract class Board {
 			System.out.println("No image to remove :(");
 			return;
 		}
-		images.get(row).add(col, null);
+		addImage(row,col,null);
 	}
 	
 	public void moveImage(int currRow, int currCol, int newRow, int newCol) {
