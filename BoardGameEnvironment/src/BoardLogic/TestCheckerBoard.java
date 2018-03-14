@@ -17,7 +17,7 @@ public class TestCheckerBoard extends Board {
 	}
 	
 	
-	public void setStartingTileColors() {
+	public void setStartingTiles() {
 		
 		boolean colorFlag = true;
 		
@@ -34,28 +34,21 @@ public class TestCheckerBoard extends Board {
 	}
 	
 	public void setStartingPieces() {
-		pieces = new ArrayList<Piece>();
 		
-		for (int i = 0; i < 3; ++i) {
-			for (int j = 0; j < COLS; ++j) {
-				if (getTile(i,j).getColor() == Color.BLACK) {
-					pieces.add(new Piece(getTile(i,j),Color.RED));
-				}
-			}
-		}
+		for (int i = 0; i < 3; ++i) 
+			for (int j = 0; j < COLS; ++j) 
+				if (getTile(i,j).getColor() == Color.BLACK) 
+					addPiece(i, j, new Piece(i,j,Color.BLUE));
 		
-		for (int i = 7; i > 4; --i) {
-			for (int j = 0; j < COLS; ++j) {
-				if (getTile(i,j).getColor() == Color.BLACK) {
-					pieces.add(new Piece(getTile(i,j),Color.GOLD));
-				}
-			}
-		}
+		for (int i = 7; i > 4; --i) 
+			for (int j = 0; j < COLS; ++j) 
+				if (getTile(i,j).getColor() == Color.BLACK) 
+					addPiece(i, j, new Piece(i,j,Color.GOLD));
+
 	}
 	
-	public int pieceCount() {
-		return pieces.size();
+	public void setStartingImages() {
+		// Not applicable
 	}
-	
 
 }

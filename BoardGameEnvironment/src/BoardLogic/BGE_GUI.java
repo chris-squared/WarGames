@@ -2,6 +2,8 @@ package BoardLogic;
 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -20,12 +22,12 @@ public class BGE_GUI {
 	
 	Coord lastClicked;
 	
-	public BGE_GUI(Board b, Stage primaryStage) {
+	BGE_GUI(Board b, Stage primaryStage) {
 		board 	= b;
 		grid 	= new GridPane();
 		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
 		
-		board.setStartingTileColors();
+		board.setStartingTiles();
 		board.setStartingPieces();
 		
 		lastClicked = new Coord(0,0);
@@ -38,9 +40,25 @@ public class BGE_GUI {
 		primaryStage.sizeToScene();
 	}
 	
+	public void startDisplay(Stage primaryStage) {
+	    createTiles();
+	    createPieces();
+	    createImages();
+	}
+	
 	public void updateDisplay(Stage primaryStage) {
-		
-	    for (int row = 0; row < board.getRowsNum(); row++) {
+
+	}
+	
+	public void display(Stage primaryStage) {
+		primaryStage.show();
+	}
+	
+	
+	// Private
+	
+	private void createTiles() {
+		for (int row = 0; row < board.getRowsNum(); row++) {
 	        for (int col = 0; col < board.getColsNum(); col++) {
 	        	
 	            Rectangle rec = new Rectangle();
@@ -48,35 +66,75 @@ public class BGE_GUI {
 	            rec.setHeight(board.getTileHeight());
 	            rec.setWidth(board.getTileWidth());
 
-	            rec.setFill(board.getTile(row, col).getColor());
+	            try {
+	            	rec.setFill(board.getTile(row, col).getColor());
+	            } catch (Exception e) {System.out.println(("No fill color :("));}
+	            try {
+	            	rec.setStroke(board.getTile(row, col).getOutlineColor());
+	            } catch (Exception e) {System.out.println(("No outline color :("));}
+	            
 	            
 	            GridPane.setRowIndex(rec, row);
 	            GridPane.setColumnIndex(rec, col);
 	            
+//	            // Click Action
+//	            rec.setOnMouseClicked(
+//	            	new EventHandler<MouseEvent>() {
+//	            		
+//	            		@Override
+//	            		public void handle(MouseEvent mouseEvent) {
+//		        			lastClicked.row = GridPane.getRowIndex(rec);
+//		        			lastClicked.col = GridPane.getColumnIndex(rec);
+//		        			System.out.println("MOUSE CLICKED AT"
+//		        					+ "\nRow: " + GridPane.getRowIndex(rec)
+//		        					+ "\nCol: " + GridPane.getColumnIndex(rec)
+//		        			);
+//	            		}
+//	            	}
+//	            );
+//	            // Click Action End
+	            
 	            grid.getChildren().addAll(rec);
 	        }
 	    }
-	    
-	    for(int i = 0; i < board.pieceCount(); ++i) {
-	    	
-	    	Circle cir = new Circle();
-	    	
-	    	cir.setRadius(board.getTileHeight()/3);
-	    	
-	    	cir.setFill(board.getPieces().get(i).getColor());
-	    	
-	    	GridPane.setRowIndex(cir, board.getPiece(i).getCurrentTile().getBoardCoord().row);
-            GridPane.setColumnIndex(cir, board.getPiece(i).getCurrentTile().getBoardCoord().col);
-            
-            grid.getChildren().addAll(cir);
-
-	    }
-	    
 	}
 	
-	public void display(Stage primaryStage) {
-		primaryStage.show();
+	private void createPieces() {
+		for (int row = 0; row < board.getRowsNum(); row++) {
+	        for (int col = 0; col < board.getColsNum(); col++) {
+	        	
+	        	if (board.getPiece(row,col) == null)
+	        		continue;
+	        	
+	        	Circle cir = new Circle();
+		    	
+	    		cir.setRadius(board.getTileHeight()/3);
+	    		cir.setFill(board.getPiece(row,col).getColor());
+	    		
+	    		GridPane.setRowIndex(cir, row);
+	    		GridPane.setColumnIndex(cir, col);
+	    		
+	    		grid.getChildren().addAll(cir);
+	        }
+	    }   
 	}
+	
+	private void createImages() {
+		for (int row = 0; row < board.getRowsNum(); row++) {
+	        for (int col = 0; col < board.getColsNum(); col++) {
+	        	
+	        	if (board.getImage(row,col) == null)
+	        		continue;
+
+	        	ImageView imgView = new ImageView(board.getImage(row,col));
+	    		
+	    		grid.add(imgView,row,col);
+	        }
+	    }   
+	}
+	
+	
+	// Mouse
 	
 	public void mouseClickListener() {
 		scene.addEventFilter(MouseEvent.MOUSE_PRESSED, mouseClick());

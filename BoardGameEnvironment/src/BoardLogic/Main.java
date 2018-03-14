@@ -22,7 +22,7 @@ public class Main extends Application{
 		// 
 		bge = new BGE_GUI(newBoard, primaryStage);
 		
-		bge.updateDisplay(primaryStage);
+		bge.startDisplay(primaryStage);
 		bge.display(primaryStage);
 		
 		bge.mouseClickListener();

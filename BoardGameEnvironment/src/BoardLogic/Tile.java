@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 public class Tile {
 	
 	Color color;
-	
+	Color outlineColor;
 	BoardCoord boardCoord;
 	
 	
@@ -32,6 +32,16 @@ public class Tile {
 
 	public void setBoardCoord(BoardCoord boardCoord) {
 		this.boardCoord = boardCoord;
+	}
+
+
+	public Color getOutlineColor() {
+		return outlineColor;
+	}
+
+
+	public void setOutlineColor(Color outlineColor) {
+		this.outlineColor = outlineColor;
 	}
 	
 }

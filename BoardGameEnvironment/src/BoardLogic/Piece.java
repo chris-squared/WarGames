@@ -4,20 +4,28 @@ import javafx.scene.paint.Color;
 
 public class Piece {
 
-	Tile currentTile;
+	BoardCoord boardCoord;
 	Color color;
 	
-	Piece(Tile T, Color C) {
-		currentTile = T;
+	Piece() {
+	}
+	
+	Piece(int row, int col, Color C) {
+		boardCoord = new BoardCoord(row,col);
+		color = C;
+	}
+	
+	Piece(BoardCoord B, Color C) {
+		boardCoord = B;
 		color = C;;
 	}
 
-	public Tile getCurrentTile() {
-		return currentTile;
+	public BoardCoord getBoardCoord() {
+		return boardCoord;
 	}
 
-	public void setCurrentTile(Tile currentTile) {
-		this.currentTile = currentTile;
+	public void setgetBoardCoord(BoardCoord boardCoord) {
+		this.boardCoord = boardCoord;
 	}
 
 	public Color getColor() {
