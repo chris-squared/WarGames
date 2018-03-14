@@ -42,7 +42,7 @@ public class EelsState {
 		}
 		
 		//Check if a piece is an Eel
-		boolean isEelPosition(Tile bp) {
+		boolean isEelPosition(int bp) {
 			return EelsRepository.containsKey(bp);
 		}
 		
