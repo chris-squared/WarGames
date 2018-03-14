@@ -40,6 +40,10 @@ public class TicTacToeTurn extends Turn{
 				return false;
 			}
 		}
+		if (currentTurn >= 9) {
+			System.out.println("Game ended with a draw.");
+			return false;
+		}
 		return true;
 	}
 	
