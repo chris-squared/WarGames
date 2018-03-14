@@ -1,12 +1,12 @@
 import java.util.Scanner;
-public class TicTacToeEngine extends Engine{
+public class TicTacToeTurn extends Turn{
 	
 	public TicTacToeState state;
 	public TicTacToeLogic logic;
 	TicTacToePlayer player1 = new TicTacToePlayer(1, "[X]");
 	TicTacToePlayer player2 = new TicTacToePlayer(2, "[O]");
 	
-	public TicTacToeEngine(TicTacToeState state, TicTacToeLogic logic) {
+	public TicTacToeTurn(TicTacToeState state, TicTacToeLogic logic) {
 		super(state, logic);
 		this.state = state;
 		this.logic = logic;

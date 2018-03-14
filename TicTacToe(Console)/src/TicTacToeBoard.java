@@ -1,5 +1,3 @@
-
-
 public class TicTacToeBoard extends Board{
 	
 	public TicTacToeBoard(int row, int column, String gridPiece){

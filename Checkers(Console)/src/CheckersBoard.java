@@ -1,5 +1,5 @@
 public class CheckersBoard extends Board { 
-	
+
 	public CheckersBoard(int rows, int columns, String gridPiece){
 		super(8,8, "[ ]");
 		for (int row = 0; row < board.length/2 -1; row++) {

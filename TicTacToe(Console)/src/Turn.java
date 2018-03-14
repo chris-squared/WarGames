@@ -1,11 +1,11 @@
 import java.util.Scanner;
-abstract class Engine {
+abstract class Turn {
 	public State state;
 	public Logic logic;
 	Player player1;
 	Player player2;
 	
-	public Engine(State state, Logic logic) {
+	public Turn(State state, Logic logic) {
 		this.state = state;
 		this.logic = logic;
 	}

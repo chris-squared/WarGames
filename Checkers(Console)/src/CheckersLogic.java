@@ -8,15 +8,17 @@ public class CheckersLogic extends Logic{
 
 	@Override
 	public boolean checkWinCondition(String gamePiece){
-		System.out.println("No Winner Yet!");
+		if (CheckersPlayer.black == 0 || CheckersPlayer.red == 0)
+			return true;
+		System.out.println("No Winner Yet.");
 		return false;
 	}
 	
 	@Override
 	public boolean isValidMove(String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
-		System.out.println("Inside Board: " + isInsideBoard(startRow, startColumn, endRow, endColumn));
-		System.out.println("Blank Space : " + isBlankSpace(state.gameBoard.board, endRow, endColumn));
-		System.out.println("One Space Away: "+isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn)); 
+//		System.out.println("Inside Board: " + isInsideBoard(startRow, startColumn, endRow, endColumn));
+//		System.out.println("Blank Space : " + isBlankSpace(state.gameBoard.board, endRow, endColumn));
+//		System.out.println("One Space Away: "+isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn)); 
 		if(isInsideBoard(startRow, startColumn, endRow, endColumn)
 				&& isBlankSpace(state.gameBoard.board, endRow, endColumn)
 				&& (isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 

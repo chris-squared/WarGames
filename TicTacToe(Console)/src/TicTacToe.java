@@ -8,12 +8,12 @@ public class TicTacToe {
 		Scanner in = new Scanner(System.in);
 		TicTacToeState state = new TicTacToeState();
 		TicTacToeLogic ticTacToeLogic = new TicTacToeLogic(state);
-		TicTacToeEngine engine = new TicTacToeEngine(state,ticTacToeLogic);
+		TicTacToeTurn turnState = new TicTacToeTurn(state,ticTacToeLogic);
 		Utility.printMenu();
 		int turn = 1;
 		state.gameBoard.printBoard();
 		// Turn determination and win conditions
-		while (engine.nextPlayersTurn(turn, in)) {
+		while (turnState.nextPlayersTurn(turn, in)) {
 			turn += 1;
 			}
 		in.close();

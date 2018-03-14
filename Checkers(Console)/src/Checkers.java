@@ -8,14 +8,15 @@ public class Checkers {
 		Scanner in = new Scanner(System.in);
 		CheckersState state = new CheckersState();
 		CheckersLogic logic = new CheckersLogic(state);
-		CheckersEngine engine = new CheckersEngine(state, logic);
+		CheckersTurn turnState = new CheckersTurn(state, logic);
 		Utility.printMenu();
 		int turn = 1;
 		state.gameBoard.printBoard();
 		// Turn determination and win conditions
-		while (engine.nextPlayersTurn(turn, in)) {
+		while (turnState.nextPlayersTurn(turn, in)) {
 			turn += 1;
 			}
 		in.close();
 	}
+	
 }
