@@ -1,5 +1,8 @@
-package BoardLogic;
+package boardgamerepo;
 
+import board_gui.Board;
+import board_gui.BoardCoord;
+import board_gui.Piece;
 import javafx.scene.paint.Color;
 
 public class EelsAndEscalatorsBoard extends Board {
@@ -22,9 +25,9 @@ public class EelsAndEscalatorsBoard extends Board {
 		for (int row = 0; row < rowsNum; ++row) {
 			for (int col = 0; col < colsNum; ++col) {
 				if (colorFlag)
-					getTile(row, col).setColor(Color.BlUE);
+					getTile(row, col).setColor(Color.ALICEBLUE);
 				else
-					getTile(row, col).setColor(Color.GREEN);
+					getTile(row, col).setColor(Color.BLACK);
 				colorFlag = !colorFlag;
 			}
 			colorFlag = !colorFlag;
@@ -32,16 +35,8 @@ public class EelsAndEscalatorsBoard extends Board {
 	}
 	
 	public void setStartingPieces() {
-		
-		for (int i = 0; i < 3; ++i) 
-			for (int j = 0; j < COLS; ++j) 
-				if (getTile(i,j).getColor() == Color.BLACK) 
-					addPiece(i, j, new Piece(i,j,Color.BLUE));
-		
-		for (int i = 7; i > 4; --i) 
-			for (int j = 0; j < COLS; ++j) 
-				if (getTile(i,j).getColor() == Color.BLACK) 
-					addPiece(i, j, new Piece(i,j,Color.GOLD));
+		addPiece(9, 0, new Piece(9,0, Color.CORAL));
+		addPiece(9, 0, new Piece(9, 0, Color.CADETBLUE));
 
 	}
 	
@@ -53,6 +48,7 @@ public class EelsAndEscalatorsBoard extends Board {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 	@Override

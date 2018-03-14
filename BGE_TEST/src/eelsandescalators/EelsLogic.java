@@ -1,4 +1,4 @@
-import BoardLogic.EelsAndEscalatorsBoard;
+import boardgamerepo.EelsAndEscalatorsBoard;
 
 public class EelsLogic {
 	

@@ -4,6 +4,7 @@ import java.io.IOException;
 import board_gui.BGE_GUI;
 import board_gui.Board;
 import boardgamerepo.TicTacToeBoard;
+import boardgamerepo.EelsAndEscalatorsBoard;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +31,11 @@ public class Main extends Application{
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));
         primaryStage.show();
+        newBoard = new EelsAndEscalatorsBoard();
+        bge = new BGE_GUI(newBoard, primaryStage);
+        bge.startDisplay(primaryStage);
+        bge.display(primaryStage);
+    	bge.mouseClickListener();
         /*
 		newBoard = new TicTacToeBoard();
 		

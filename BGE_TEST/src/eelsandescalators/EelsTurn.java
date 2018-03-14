@@ -14,9 +14,9 @@ public class EelsTurn {
 		logic = l;
 	}
 	
-	makeTurn(Player p){
+	/*makeTurn(Player p){
 		//int roll = dice.roll(2);
 		logic.move(p, roll);
-	}
+	}*/
 
 }
