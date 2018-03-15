@@ -5,7 +5,6 @@ import java.io.IOException;
 import bge.Board;
 import games.EelsAndEscalatorsBoard;
 import games.TicTacToeBoard;
-import gui.BGE_GUI;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -15,9 +14,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Main extends Application{
-
-	static Board newBoard; 
-	static BGE_GUI bge;
 	
 	public static void main(String[] args) {
         Application.launch(args);

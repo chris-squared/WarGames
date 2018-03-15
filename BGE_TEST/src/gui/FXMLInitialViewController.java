@@ -3,21 +3,25 @@ package gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import gui.BGE_GUI;
 import bge.Board;
 import games.TicTacToeBoard;
 
-public class FXMLInitialViewController {
+public class FXMLInitialViewController implements Initializable{
 	
 	static Board newBoard; 
 	static BGE_GUI bge;
@@ -66,4 +70,10 @@ public class FXMLInitialViewController {
     
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
     }
+
+    @Override
+	public void initialize(URL url, ResourceBundle resourceBundle){
+    	System.out.println("INITIALIZED INITIAL VIEW");
+
+	}
 }

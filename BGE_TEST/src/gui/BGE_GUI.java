@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -26,44 +27,46 @@ public class BGE_GUI {
 	
 	Coord lastClicked;
 
-	FXMLLoader loader = new FXMLLoader();
+//	FXMLLoader loader = new FXMLLoader();
 
-	public BGE_GUI(Board b, Stage primaryStage, GridPane boardGrid) {
+	public BGE_GUI(Board b) {
 		board 	= b;
-		grid 	= boardGrid;
+		grid 	= new GridPane();
 //		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
-		
+
 		board.setStartingTiles();
 		board.setStartingPieces();
 		
 		lastClicked = new Coord(0,0);
 		
 //		this.primaryStage = primaryStage;
-		primaryStage.setTitle(board.getTitle());
+//		primaryStage.setTitle(board.getTitle());
 //		primaryStage.setScene(scene);
 		// FIXED SIZE
 //		primaryStage.setResizable(false);
 //		primaryStage.sizeToScene();
 
-		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
+//		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
 
 
 	}
 
 	public void setBoardGrid() throws Exception{
-		Parent root = loader.load();
-		scene = new Scene(root);
+//		AnchorPane root = loader.load();
+//		scene = new Scene(root);
+//		scene.lookup("#boardgrid");
+
 	}
 
-	public void startDisplay(Stage primaryStage) {
+	public void startDisplay() {
 	    createTiles();
 	    createPieces();
 	    createImages();
 	}
 	
-	public void updateDisplay(Stage primaryStage) {
+	public void updateDisplay() {
 		// inefficient but w.e
-		startDisplay(primaryStage);
+		startDisplay();
 	}
 	
 	public void display(Stage primaryStage) {
@@ -154,7 +157,7 @@ public class BGE_GUI {
 	// Mouse
 	
 	public void mouseClickListener() {
-		scene.addEventFilter(MouseEvent.MOUSE_PRESSED, click());
+		grid.addEventFilter(MouseEvent.MOUSE_PRESSED, click());
 	}
 	
 	private EventHandler<MouseEvent> click() {
@@ -175,7 +178,7 @@ public class BGE_GUI {
 	
 	private void mouseClicked() {
 		board.forwardMouseClick(board.coordToBoardCoord(lastClicked));
-		updateDisplay(primaryStage);
+		updateDisplay();
 	}
 
 	public GridPane getGrid(){

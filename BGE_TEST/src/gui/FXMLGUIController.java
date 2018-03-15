@@ -17,12 +17,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import javax.print.DocFlavor;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class FXMLGUIController implements Initializable{
+public class FXMLGUIController{
     static Board newBoard;
     static BGE_GUI bge;
 
@@ -52,10 +48,10 @@ public class FXMLGUIController implements Initializable{
 
     @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
         Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-        newBoard = new TicTacToeBoard();
-        bge = new BGE_GUI(newBoard, primaryStage, boardgrid);
-        bge.setBoardGrid();
-        bge.updateDisplay(primaryStage);
+//        newBoard = new TicTacToeBoard();
+//        bge = new BGE_GUI(newBoard, boardgrid);
+//        bge.setBoardGrid();
+//        bge.updateDisplay(primaryStage);
 //        bge.display(primaryStage);
 
 //        bge.mouseClickListener();
@@ -71,9 +67,4 @@ public class FXMLGUIController implements Initializable{
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resourceBundle){
-        System.out.println("GUICONTROLLER INTIIALIZED");
-
-    }
 }
