@@ -25,17 +25,25 @@ public class Main extends Application{
 	
 	@Override 
 	public void start (Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
+		
+		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));
         primaryStage.show();
-        newBoard = new EelsAndEscalatorsBoard();
-        bge = new BGE_GUI(newBoard, primaryStage);
-        bge.startDisplay(primaryStage);
-        bge.display(primaryStage);
-    	bge.mouseClickListener();
+		
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
+//        Parent root = loader.load();
+//        primaryStage.setTitle("War Games");
+//        primaryStage.setScene(new Scene(root, 450, 450));
+//        primaryStage.show();
+//        newBoard = new EelsAndEscalatorsBoard();
+//        bge = new BGE_GUI(newBoard, primaryStage);
+//        bge.startDisplay(primaryStage);
+//        bge.display(primaryStage);
+//    	bge.mouseClickListener();
         /*
 		newBoard = new TicTacToeBoard();
 		
