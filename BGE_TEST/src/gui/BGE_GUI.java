@@ -3,6 +3,8 @@ package gui;
 import bge.Board;
 import bge.Coord;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,7 +16,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
-public class OLD_BGE_GUI {
+public class BGE_GUI {
 
 	
 	Board board;
@@ -23,25 +25,36 @@ public class OLD_BGE_GUI {
 	Stage primaryStage;
 	
 	Coord lastClicked;
-	
-	public OLD_BGE_GUI(Board b, Stage primaryStage) {
+
+	FXMLLoader loader = new FXMLLoader();
+
+	public BGE_GUI(Board b, Stage primaryStage, GridPane boardGrid) {
 		board 	= b;
-		grid 	= new GridPane();
-		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
+		grid 	= boardGrid;
+//		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
 		
 		board.setStartingTiles();
 		board.setStartingPieces();
 		
 		lastClicked = new Coord(0,0);
 		
-		this.primaryStage = primaryStage;
+//		this.primaryStage = primaryStage;
 		primaryStage.setTitle(board.getTitle());
-		primaryStage.setScene(scene);
+//		primaryStage.setScene(scene);
 		// FIXED SIZE
-		primaryStage.setResizable(false);
-		primaryStage.sizeToScene();
+//		primaryStage.setResizable(false);
+//		primaryStage.sizeToScene();
+
+		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
+
+
 	}
-	
+
+	public void setBoardGrid() throws Exception{
+		Parent root = loader.load();
+		scene = new Scene(root);
+	}
+
 	public void startDisplay(Stage primaryStage) {
 	    createTiles();
 	    createPieces();
@@ -54,6 +67,7 @@ public class OLD_BGE_GUI {
 	}
 	
 	public void display(Stage primaryStage) {
+		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 	
@@ -163,5 +177,8 @@ public class OLD_BGE_GUI {
 		board.forwardMouseClick(board.coordToBoardCoord(lastClicked));
 		updateDisplay(primaryStage);
 	}
-	
+
+	public GridPane getGrid(){
+		return grid;
+	}
 }

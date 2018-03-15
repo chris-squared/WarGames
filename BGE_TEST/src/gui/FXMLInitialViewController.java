@@ -13,11 +13,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import gui.BGE_GUI;
 import bge.Board;
-import games.EelsAndEscalatorsBoard;
 import games.TicTacToeBoard;
 
-public class OLD_FXMLInitialViewController {
+public class FXMLInitialViewController {
 	
 	static Board newBoard; 
 	static BGE_GUI bge;
@@ -32,26 +32,29 @@ public class OLD_FXMLInitialViewController {
 	private ToggleGroup gameSelectGroup;
 	
     @FXML
-    protected void handlePlayButtonAction(ActionEvent event) throws IOException {
-    	System.out.println(player1Name.getText() + " vs. " + player2Name.getText());
+    protected void handlePlayButtonAction(ActionEvent event) throws Exception {
+//    	System.out.println(player1Name.getText() + " vs. " + player2Name.getText());
     	RadioButton selectedGame = (RadioButton)gameSelectGroup.getSelectedToggle();
     	if(selectedGame.getText().equals("Tic-Tac-Toe")) {
     		handleChooseTicTacToe(event);
     	}
-    	if(selectedGame.getText().equals("Electic Eels and Super Escalators 2: Super Ultra Force")) {
-    		handleChooseEelsAndEscalators(event);
-    	}
     }
     
-    @FXML protected void handleChooseTicTacToe(ActionEvent event){
+    @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
         Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-        newBoard = new TicTacToeBoard();
-		bge = new BGE_GUI(newBoard, primaryStage);
-		
-		bge.updateDisplay(primaryStage);
-		bge.display(primaryStage);
-		
-		bge.mouseClickListener();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
+		Parent root = loader.load();
+		primaryStage.setTitle("War Games");
+		primaryStage.setScene(new Scene(root, 1000, 800));
+		primaryStage.show();
+//        newBoard = new TicTacToeBoard();
+//		bge = new BGE_GUI(newBoard, primaryStage);
+//
+//		bge.updateDisplay(primaryStage);
+//		bge.display(primaryStage);
+//
+//		bge.mouseClickListener();
 
     }
     
@@ -62,14 +65,5 @@ public class OLD_FXMLInitialViewController {
     }
     
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
-    	Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-        newBoard = new EelsAndEscalatorsBoard();
-		bge = new BGE_GUI(newBoard, primaryStage);
-		
-		bge.updateDisplay(primaryStage);
-		bge.display(primaryStage);
-		
-		bge.mouseClickListener();
-
     }
 }
