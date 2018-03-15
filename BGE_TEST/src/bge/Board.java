@@ -11,8 +11,8 @@ public abstract class Board {
 	protected int rowsNum;
 	protected int colsNum;
 	
-	int windHeight;
-	int windWidth;
+	double windHeight;
+	double windWidth;
 	
 	double tileHeight;
 	double tileWidth;
@@ -22,7 +22,7 @@ public abstract class Board {
 	ArrayList<ArrayList<Image>> images;
 	
 	
-	protected Board(String T, int R, int C, int H, int W) {
+	protected Board(String T, int R, int C, double H, double W) {
 		
 		title = T;
 		
@@ -186,22 +186,22 @@ public abstract class Board {
 	}
 
 
-	public int getWindHeight() {
+	public double getWindHeight() {
 		return windHeight;
 	}
 
 
-	public void setWindHeight(int windLength) {
+	public void setWindHeight(double windLength) {
 		this.windHeight = windLength;
 	}
 
 
-	public int getWindWidth() {
+	public double getWindWidth() {
 		return windWidth;
 	}
 
 
-	public void setWindWidth(int windWidth) {
+	public void setWindWidth(double windWidth) {
 		this.windWidth = windWidth;
 	}
 

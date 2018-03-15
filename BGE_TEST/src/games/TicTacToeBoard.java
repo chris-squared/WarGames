@@ -10,14 +10,18 @@ import games.tictactoe.TicTacToeLogic;
 import games.tictactoe.TicTacToeState;
 import games.tictactoe.Utility;
 import javafx.scene.paint.Color;
+
 public class TicTacToeBoard extends Board {
 	
 	static final int ROWS = 3;
 	static final int COLS = 3;
 	
-	static final int windHeight = 500;
-	static final int windWidth  = 500;
-	
+//	static final int windHeight = 500;
+//	static final int windWidth  = 500;
+
+//	static double windHeight = 500;
+//	static double windWidth = 500;
+
 	TicTacToeState state;
 	TicTacToeLogic ticTacToeLogic;
 	TicTacToeEngine engine;
@@ -26,7 +30,7 @@ public class TicTacToeBoard extends Board {
 	
 	
 	public TicTacToeBoard() {
-		super("Test TicTacToe",ROWS,COLS,windHeight,windWidth);
+		super("Test TicTacToe",ROWS,COLS,500,500);
 		state = new TicTacToeState();
 		ticTacToeLogic = new TicTacToeLogic(state);
 		engine = new TicTacToeEngine(state,ticTacToeLogic);
