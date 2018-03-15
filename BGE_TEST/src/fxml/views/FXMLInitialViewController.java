@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import board_gui.BGE_GUI;
 import board_gui.Board;
+import boardgamerepo.EelsAndEscalatorsBoard;
 import boardgamerepo.TicTacToeBoard;
 
 public class FXMLInitialViewController {
@@ -38,6 +39,9 @@ public class FXMLInitialViewController {
     	if(selectedGame.getText().equals("Tic-Tac-Toe")) {
     		handleChooseTicTacToe(event);
     	}
+    	if(selectedGame.getText().equals("Electic Eels and Super Escalators 2: Super Ultra Force")) {
+    		handleChooseEelsAndEscalators(event);
+    	}
     }
     
     @FXML protected void handleChooseTicTacToe(ActionEvent event){
@@ -59,5 +63,14 @@ public class FXMLInitialViewController {
     }
     
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
+    	Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        newBoard = new EelsAndEscalatorsBoard();
+		bge = new BGE_GUI(newBoard, primaryStage);
+		
+		bge.updateDisplay(primaryStage);
+		bge.display(primaryStage);
+		
+		bge.mouseClickListener();
+
     }
 }
