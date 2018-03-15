@@ -3,6 +3,7 @@ package games.eelsandescalators;
 import utility.State;
 import java.util.HashMap;
 
+import bge.Player;
 import bge.Tile;
 
 import games.EelsAndEscalatorsBoard;
@@ -12,7 +13,7 @@ public class EelsState extends State {
 		HashMap<Integer, Tile> BoardPathRepository = new HashMap<Integer, Tile>();
 		
 		//Keep track of players and their locations
-		//HashMap<Player, Tile>playerLocationRepo = new HashMap<Player, Tile>();
+		HashMap<Player, Tile>playerLocationRepo = new HashMap<Player, Tile>();
 		
 		//Keep track of where Eels are/where they lead
 		public HashMap<Integer, Integer>EelsRepository = new HashMap<Integer, Integer>();
@@ -24,7 +25,7 @@ public class EelsState extends State {
 		
 		//Construct a new state with the board
 		EelsState(EelsAndEscalatorsBoard b) {
-			board = b;
+			super(b);
 			GenerateBoardPath();
 		}
 		
@@ -72,14 +73,14 @@ public class EelsState extends State {
 		}
 		
 		//Return where the players location is on the board
-		/*Integer getPlayerLocation(Player p) {
+		Integer getPlayerLocation(Player p) {
 			return playerLocationRepo.get(p);
-		}*/
+		}
 		
 		//Set players new location
-		/*void setPlayerLocation(Player p, Integer bp) {
+		void setPlayerLocation(Player p, Integer bp) {
 			playerLocationRepo.put(p, bp);
-		}*/
+		}
 		
 		
 }

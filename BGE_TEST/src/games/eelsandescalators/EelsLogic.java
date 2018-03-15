@@ -1,4 +1,5 @@
 //package games.eelsandescalators;
+//import bge.Player;
 //import games.EelsAndEscalatorsBoard;
 //import utility.Logic;
 //
@@ -11,8 +12,7 @@
 //
 //
 //	EelsLogic(EelsAndEscalatorsBoard g, EelsState s){
-//		board = g;
-//		state = s;
+//		super(s, g);
 //
 //	}
 //
@@ -57,6 +57,27 @@
 //			System.out.println("ON ESCALATOR AT PLACE " + player_tile + ": MOVING TO NEW LOCATION AT TILE " + result_tile );
 //		}
 //
+//	}
+//
+//
+//	@Override
+//	public boolean win_condition() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+//
+//
+//	@Override
+//	public boolean isValidMove() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+//
+//
+//	@Override
+//	public void movePlayer(Player p) {
+//		// TODO Auto-generated method stub
+//		
 //	}
 //
 //
