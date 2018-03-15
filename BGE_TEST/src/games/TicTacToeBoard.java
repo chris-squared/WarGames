@@ -27,6 +27,7 @@ public class TicTacToeBoard extends Board {
 	TicTacToeEngine engine;
 	
 	int turn;
+	boolean endCheck;
 	
 	
 	public TicTacToeBoard() {
@@ -43,9 +44,9 @@ public class TicTacToeBoard extends Board {
 	}
 	
 	public void forwardMouseClick(BoardCoord index) {
-		if (turn > 9)
+		if (turn > 9 || endCheck)
 			System.exit(turn);
-		engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
+		endCheck = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
 		turn += 1;
 		updateBoard();
 	}
