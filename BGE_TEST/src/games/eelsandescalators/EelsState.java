@@ -13,7 +13,7 @@ public class EelsState extends State {
 		HashMap<Integer, Tile> BoardPathRepository = new HashMap<Integer, Tile>();
 		
 		//Keep track of players and their locations
-		HashMap<Player, Tile>playerLocationRepo = new HashMap<Player, Tile>();
+		HashMap<Player, Integer>playerLocationRepo = new HashMap<Player, Integer>();
 		
 		//Keep track of where Eels are/where they lead
 		public HashMap<Integer, Integer>EelsRepository = new HashMap<Integer, Integer>();
@@ -73,12 +73,12 @@ public class EelsState extends State {
 		}
 		
 		//Return where the players location is on the board
-		Integer getPlayerLocation(Player p) {
+		int getPlayerLocation(Player p) {
 			return playerLocationRepo.get(p);
 		}
 		
 		//Set players new location
-		void setPlayerLocation(Player p, Integer bp) {
+		void setPlayerLocation(Player p, int bp) {
 			playerLocationRepo.put(p, bp);
 		}
 		

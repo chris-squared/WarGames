@@ -16,7 +16,7 @@ public class SimonSaysState extends State {
 	
 	/*Constructs a new state with the board*/
 	public SimonSaysState(SimonSaysBoard board) {
-		gameBoard = board;
+		super(board);
 	}
 	
 	public SimonSaysBoard getGameBoard() {
