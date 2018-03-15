@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="BoardGameEnvironment/src"/>
+	<classpathentry kind="src" path="BGE_TEST/src"/>
 	<classpathentry kind="src" path="Checkers(Console)/src"/>
 	<classpathentry excluding="EelsAndEscalatorsV0.1/" kind="src" path="EelsAndEscalatorsV0.1"/>
 	<classpathentry kind="src" path="EelsAndEscalatorsV0.1/EelsAndEscalatorsV0.1"/>
