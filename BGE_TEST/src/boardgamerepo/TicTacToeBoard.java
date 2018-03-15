@@ -2,14 +2,14 @@ package boardgamerepo;
 
 import java.util.ArrayList;
 
-import board_gui.Board;
-import board_gui.BoardCoord;
-import board_gui.Piece;
+import bge.Board;
+import bge.BoardCoord;
+import bge.Piece;
+import games.tictactoe.TicTacToeEngine;
+import games.tictactoe.TicTacToeLogic;
+import games.tictactoe.TicTacToeState;
+import games.tictactoe.Utility;
 import javafx.scene.paint.Color;
-import tictactoe.TicTacToeEngine;
-import tictactoe.TicTacToeLogic;
-import tictactoe.TicTacToeState;
-import tictactoe.Utility;
 public class TicTacToeBoard extends Board {
 	
 	static final int ROWS = 3;

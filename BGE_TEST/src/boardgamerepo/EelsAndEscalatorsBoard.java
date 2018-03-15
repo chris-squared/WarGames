@@ -1,8 +1,8 @@
 package boardgamerepo;
 
-import board_gui.Board;
-import board_gui.BoardCoord;
-import board_gui.Piece;
+import bge.Board;
+import bge.BoardCoord;
+import bge.Piece;
 import javafx.scene.paint.Color;
 
 public class EelsAndEscalatorsBoard extends Board {
