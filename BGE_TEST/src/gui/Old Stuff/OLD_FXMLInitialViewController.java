@@ -17,7 +17,7 @@ import bge.Board;
 import games.EelsAndEscalatorsBoard;
 import games.TicTacToeBoard;
 
-public class FXMLInitialViewController {
+public class OLD_FXMLInitialViewController {
 	
 	static Board newBoard; 
 	static BGE_GUI bge;

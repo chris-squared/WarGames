@@ -14,7 +14,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
-public class BGE_GUI {
+public class OLD_BGE_GUI {
 
 	
 	Board board;
@@ -24,7 +24,7 @@ public class BGE_GUI {
 	
 	Coord lastClicked;
 	
-	public BGE_GUI(Board b, Stage primaryStage) {
+	public OLD_BGE_GUI(Board b, Stage primaryStage) {
 		board 	= b;
 		grid 	= new GridPane();
 		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
