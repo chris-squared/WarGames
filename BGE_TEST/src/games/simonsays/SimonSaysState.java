@@ -12,17 +12,13 @@ public class SimonSaysState extends State {
 	public SimonSaysBoard gameBoard;
 	
 	/*Keeps track of color tiles on the board*/
-	public HashMap<Color, Tile> ColorRepository = new HashMap<Color, Tile>();
+	public HashMap<Tile, Color> ColorRepository = new HashMap<Tile, Color>();
 	
 	/*Constructs a new state with the board*/
 	public SimonSaysState(SimonSaysBoard board) {
 		gameBoard = board;
 	}
 	
-	/*Assign each tile to a Color*/
-	public void AssignTiles() {
-		//Should take in an array of Colors?
-	}
 	public SimonSaysBoard getGameBoard() {
 		return gameBoard;
 	}

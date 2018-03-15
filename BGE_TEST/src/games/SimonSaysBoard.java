@@ -1,5 +1,7 @@
 package games;
 
+import java.awt.Color;
+
 import bge.Board;
 import bge.BoardCoord;
 

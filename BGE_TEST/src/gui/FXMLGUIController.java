@@ -44,6 +44,9 @@ public class FXMLGUIController{
         if(selectedGame.getText().equals("Tic-Tac-Toe")) {
             handleChooseTicTacToe(event);
         }
+        else if (selectedGame.getText().equals("Simon Says")) {
+        	handleChooseSimonSays(event);
+        }
     }
 
     @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
@@ -59,6 +62,8 @@ public class FXMLGUIController{
     }
 
     @FXML protected void handleChooseCheckers(ActionEvent event){
+        Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+
     }
 
     @FXML protected void handleChooseSimonSays(ActionEvent event){

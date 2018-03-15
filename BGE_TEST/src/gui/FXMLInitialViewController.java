@@ -42,6 +42,10 @@ public class FXMLInitialViewController implements Initializable{
     	if(selectedGame.getText().equals("Tic-Tac-Toe")) {
     		handleChooseTicTacToe(event);
     	}
+    	
+    	else if (selectedGame.getText().equals("Simon Says")) {
+    		handleChooseSimonSays(event);
+    	}
     }
     
     @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
@@ -65,7 +69,14 @@ public class FXMLInitialViewController implements Initializable{
     @FXML protected void handleChooseCheckers(ActionEvent event){
     }
     
-    @FXML protected void handleChooseSimonSays(ActionEvent event){
+    @FXML protected void handleChooseSimonSays(ActionEvent event) throws Exception{
+        Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
+		Parent root = loader.load();
+		primaryStage.setTitle("War Games");
+		primaryStage.setScene(new Scene(root, 1000, 800));
+		primaryStage.show();
     }
     
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
