@@ -1,7 +1,8 @@
 //package games.eelsandescalators;
 //import games.EelsAndEscalatorsBoard;
+//import utility.Logic;
 //
-//public class EelsLogic {
+//public class EelsLogic extends Logic {
 //
 //	EelsAndEscalatorsBoard board;
 //	EelsState state;

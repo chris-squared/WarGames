@@ -1,11 +1,13 @@
 package games.eelsandescalators;
 
+import utility.State;
 import java.util.HashMap;
 
 import bge.Tile;
+
 import games.EelsAndEscalatorsBoard;
 
-public class EelsState {
+public class EelsState extends State {
 	//Keep track of the order of pieces for the board -- very important for Eels and Escalators, because you don't move linearly through it
 		HashMap<Integer, Tile> BoardPathRepository = new HashMap<Integer, Tile>();
 		
@@ -62,6 +64,11 @@ public class EelsState {
 		//Add an Escalator to the board
 		void addEscalator(int t_start, int t_end) {
 			EscalatorsRepository.put(t_start, t_end);
+		}
+
+		@Override
+		public EelsAndEscalatorsBoard getGameBoard() {
+			return board;
 		}
 		
 		//Return where the players location is on the board
