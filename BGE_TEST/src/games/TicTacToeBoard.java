@@ -1,4 +1,4 @@
-package boardgamerepo;
+package games;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
 package games.eelsandescalators;
 
-import boardgamerepo.EelsAndEscalatorsBoard;
+import games.EelsAndEscalatorsBoard;
 
 public class Main {
 	public static void main(String [] args) {

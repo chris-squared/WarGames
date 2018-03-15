@@ -1,5 +1,5 @@
 package games.eelsandescalators;
-import boardgamerepo.EelsAndEscalatorsBoard;
+import games.EelsAndEscalatorsBoard;
 
 public class EelsLogic {
 	

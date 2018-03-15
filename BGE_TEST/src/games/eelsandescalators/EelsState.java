@@ -3,7 +3,7 @@ package games.eelsandescalators;
 import java.util.HashMap;
 
 import bge.Tile;
-import boardgamerepo.EelsAndEscalatorsBoard;
+import games.EelsAndEscalatorsBoard;
 
 public class EelsState {
 	//Keep track of the order of pieces for the board -- very important for Eels and Escalators, because you don't move linearly through it

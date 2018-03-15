@@ -3,9 +3,9 @@ package main;
 import java.io.IOException;
 
 import bge.Board;
-import boardgamerepo.TicTacToeBoard;
+import games.EelsAndEscalatorsBoard;
+import games.TicTacToeBoard;
 import gui.BGE_GUI;
-import boardgamerepo.EelsAndEscalatorsBoard;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;

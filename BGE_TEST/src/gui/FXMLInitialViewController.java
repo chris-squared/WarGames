@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import bge.Board;
-import boardgamerepo.EelsAndEscalatorsBoard;
-import boardgamerepo.TicTacToeBoard;
+import games.EelsAndEscalatorsBoard;
+import games.TicTacToeBoard;
 
 public class FXMLInitialViewController {
 	

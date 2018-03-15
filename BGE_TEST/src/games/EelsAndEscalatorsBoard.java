@@ -1,4 +1,4 @@
-package boardgamerepo;
+package games;
 
 import bge.Board;
 import bge.BoardCoord;
