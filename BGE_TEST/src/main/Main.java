@@ -23,6 +23,7 @@ public class Main extends Application{
 	@Override 
 	public void start (Stage primaryStage) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// Jerry Board in NewBoard package
         // Launch like so:
 //        Board board = new Board(500,500,3,3);
@@ -41,6 +42,9 @@ public class Main extends Application{
 =======
 	    // Below is to run environment
 >>>>>>> Separated-bge_gui-and-board-more.-X's-and-O's-added-for-tic-tack-toe
+=======
+		
+>>>>>>> parent of fb04ef1... Created new board class that extends GridPane to allow for easy resizing. You can specify listeners in the tile class to handle specific task. Tic tac toe can easily be implemented with listeners. Right click for x left click for o
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/gui/InitialView.fxml"));
         Parent root = loader.load();
@@ -49,8 +53,11 @@ public class Main extends Application{
         primaryStage.show();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of fb04ef1... Created new board class that extends GridPane to allow for easy resizing. You can specify listeners in the tile class to handle specific task. Tic tac toe can easily be implemented with listeners. Right click for x left click for o
 		
 //        FXMLLoader loader = new FXMLLoader();
 //        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
@@ -73,10 +80,13 @@ public class Main extends Application{
 		
 		bge.mouseClickListener();
 		*/
+<<<<<<< HEAD
 >>>>>>> parent of fb04ef1... Created new board class that extends GridPane to allow for easy resizing. You can specify listeners in the tile class to handle specific task. Tic tac toe can easily be implemented with listeners. Right click for x left click for o
 =======
 
 >>>>>>> Separated-bge_gui-and-board-more.-X's-and-O's-added-for-tic-tack-toe
+=======
+>>>>>>> parent of fb04ef1... Created new board class that extends GridPane to allow for easy resizing. You can specify listeners in the tile class to handle specific task. Tic tac toe can easily be implemented with listeners. Right click for x left click for o
 	}
 	
 
