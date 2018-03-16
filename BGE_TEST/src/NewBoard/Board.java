@@ -16,6 +16,10 @@ public class Board extends GridPane {
     private double numRows;
     private double numCols;
 
+    public Board(){
+
+    }
+
     public Board(double prefWidth, double prefHeight, double rows, double cols){
         this.prefHeight = prefHeight;
         this.prefWidth = prefWidth;
@@ -51,11 +55,11 @@ public class Board extends GridPane {
     }
 
     private void layOutTiles(){
-        for (int i = 0; i < numRows; i++){
-            for (int j = 0; j < numCols; j++){
-                Tile tile = new Tile();
-                tile.setTranslateX(j * getXTranslate());
-                tile.setTranslateY(i * getYTranslate());
+        for (int row = 0; row < numRows; row++){
+            for (int col = 0; col < numCols; col++){
+                Tile tile = new Tile(row,col);
+                tile.setTranslateX(col * getXTranslate());
+                tile.setTranslateY(row * getYTranslate());
                 this.getChildren().add(tile);
 
             }
@@ -70,9 +74,13 @@ public class Board extends GridPane {
         return this.getHeight()/numRows;
     }
 
-    private class Tile extends StackPane {
+    public class Tile extends StackPane {
+        private int row;
+        private int col;
         private Text text = new Text();
-        public Tile() {
+        public Tile(int row, int col) {
+            this.row = row;
+            this.col = col;
             Rectangle border = new Rectangle();
             border.setHeight(Board.this.getHeight()/numRows);
             border.setWidth(Board.this.getHeight()/numCols);
@@ -90,12 +98,21 @@ public class Board extends GridPane {
             setOnMouseClicked(event -> {
                 if (event.getButton() == MouseButton.PRIMARY){
                     drawX();
+                    System.out.println("Row: " + row + " Col: " + col);
                 }
                 else if (event.getButton() == MouseButton.SECONDARY){
                     drawO();
+                    System.out.println("Row: " + row + " Col: " + col);
                 }
             });
 
+        }
+
+        public int getRow(){
+            return row;
+        }
+        public int getCol(){
+            return col;
         }
 
         private void drawX(){

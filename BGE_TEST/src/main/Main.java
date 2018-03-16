@@ -25,7 +25,7 @@ public class Main extends Application{
 	public void start (Stage primaryStage) throws IOException {
 		// Jerry Board in NewBoard package
         // Launch like so:
-        Board board = new Board(500,500,10,10);
+        Board board = new Board(500,500,3,3);
         Scene scene = new Scene(board, board.getPrefWidth(), board.getPrefHeight());
         board.drawBoard();
         primaryStage.setScene(scene);
