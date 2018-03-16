@@ -2,7 +2,7 @@
 package main;
 import java.io.IOException;
 
-import bge.Board;
+//import bge.Board;
 import games.EelsAndEscalatorsBoard;
 import games.TicTacToeBoard;
 import javafx.application.Application;
@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import NewBoard.Board;
 
 public class Main extends Application{
 	
@@ -22,35 +23,24 @@ public class Main extends Application{
 	
 	@Override 
 	public void start (Stage primaryStage) throws IOException {
-		
-		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/gui/InitialView.fxml"));
-        Parent root = loader.load();
-        primaryStage.setTitle("War Games");
-        primaryStage.setScene(new Scene(root, 450, 450));
+		// Jerry Board in NewBoard package
+        // Launch like so:
+        Board board = new Board(500,500,10,10);
+        Scene scene = new Scene(board, board.getPrefWidth(), board.getPrefHeight());
+        board.drawBoard();
+        primaryStage.setScene(scene);
         primaryStage.show();
-		
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
+
+
+
+	    // Below is to run environment
+//		FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(getClass().getResource("/gui/InitialView.fxml"));
 //        Parent root = loader.load();
 //        primaryStage.setTitle("War Games");
 //        primaryStage.setScene(new Scene(root, 450, 450));
 //        primaryStage.show();
-//        newBoard = new EelsAndEscalatorsBoard();
-//        bge = new BGE_GUI(newBoard, primaryStage);
-//        bge.startDisplay(primaryStage);
-//        bge.display(primaryStage);
-//    	bge.mouseClickListener();
-        /*
-		newBoard = new TicTacToeBoard();
-		
-		bge = new BGE_GUI(newBoard, primaryStage);
-		
-		bge.startDisplay(primaryStage);
-		bge.display(primaryStage);
-		
-		bge.mouseClickListener();
-		*/
+
 	}
 	
 
