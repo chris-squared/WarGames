@@ -1,11 +1,7 @@
-/board_gui/
-/boardgamerepo/
-/eelsandescalators/
-/fxml/
+/NewBoard/
+/bge/
+/games/
+/gui/
 /main/
 /resources/
-/tictactoe/
 /utility/
-/bge/
-/gui/
-/games/

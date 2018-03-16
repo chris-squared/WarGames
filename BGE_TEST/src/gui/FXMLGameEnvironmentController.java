@@ -56,15 +56,21 @@ public class FXMLGameEnvironmentController implements Initializable{
 
 //        newBoard.setWindHeight(gridPaneParent.getPrefHeight());
 //        newBoard.setWindWidth(gridPaneParent.getPrefWidth());
+<<<<<<< HEAD
         //KEEP
 //        Board newBoard = new TicTacToeBoard();
 //        BGE_GUI bge = new BGE_GUI(newBoard);
 //        bge.updateDisplay();
         //END KEEP
+=======
+		BGE_GUI bge = new BGE_GUI(newBoard, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
+        bge.updateDisplay();
+>>>>>>> Separated-bge_gui-and-board-more.-X's-and-O's-added-for-tic-tack-toe
 //        gridPaneParent.getChildren().addAll(new GridPane());
 //        gridPaneParent.getChildren().clear();
 //        BoardController boardController = new BoardController();
 //        gridPaneParent.getChildren().setAll(boardController.createContent(newBoard));
+<<<<<<< HEAD
 
         //KEEP
 //        gridPaneParent.getChildren().clear();
@@ -72,6 +78,14 @@ public class FXMLGameEnvironmentController implements Initializable{
 //        bge.getGrid().setPrefHeight(gridPaneParent.getPrefHeight());
 //        gridPaneParent.getChildren().addAll(bge.getGrid());
         //END KEEP
+=======
+        gridPaneParent.getChildren().clear();
+       
+        //bge.getGrid().setPrefWidth(gridPaneParent.getPrefWidth());
+       
+        //bge.getGrid().setPrefHeight(gridPaneParent.getPrefHeight());
+        gridPaneParent.getChildren().addAll(bge.getGrid());
+>>>>>>> Separated-bge_gui-and-board-more.-X's-and-O's-added-for-tic-tack-toe
 //        boardgrid.getChildren().clear();
 //        boardgrid.setPrefHeight(gridPaneParent.getPrefHeight());
 //        boardgrid.setPrefWidth(gridPaneParent.getPrefWidth());

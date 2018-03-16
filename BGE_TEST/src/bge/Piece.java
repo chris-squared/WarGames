@@ -1,23 +1,24 @@
 package bge;
 
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class Piece {
 
 	BoardCoord boardCoord;
-	Color color;
+	Image image;
 	
 	Piece() {
 	}
 	
-	public Piece(int row, int col, Color C) {
+	public Piece(int row, int col, Image I) {
 		boardCoord = new BoardCoord(row,col);
-		color = C;
+		image = I;
 	}
 	
-	Piece(BoardCoord B, Color C) {
+	Piece(BoardCoord B, Image I) {
 		boardCoord = B;
-		color = C;;
+		image = I;
 	}
 
 	public BoardCoord getBoardCoord() {
@@ -28,12 +29,12 @@ public class Piece {
 		this.boardCoord = boardCoord;
 	}
 
-	public Color getColor() {
-		return color;
+	public Image getImage() {
+		return image;
 	}
 
-	public void setColor(Color color) {
-		this.color = color;
+	public void setImage(Image i) {
+		this.image = i;
 	}
 	
 }

@@ -33,16 +33,21 @@ public class Main extends Application{
 
 
 
+<<<<<<< HEAD
 //	     Below is to run environment
 =======
 		
 >>>>>>> parent of fb04ef1... Created new board class that extends GridPane to allow for easy resizing. You can specify listeners in the tile class to handle specific task. Tic tac toe can easily be implemented with listeners. Right click for x left click for o
+=======
+	    // Below is to run environment
+>>>>>>> Separated-bge_gui-and-board-more.-X's-and-O's-added-for-tic-tack-toe
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/gui/InitialView.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));
         primaryStage.show();
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -69,6 +74,9 @@ public class Main extends Application{
 		bge.mouseClickListener();
 		*/
 >>>>>>> parent of fb04ef1... Created new board class that extends GridPane to allow for easy resizing. You can specify listeners in the tile class to handle specific task. Tic tac toe can easily be implemented with listeners. Right click for x left click for o
+=======
+
+>>>>>>> Separated-bge_gui-and-board-more.-X's-and-O's-added-for-tic-tack-toe
 	}
 	
 
