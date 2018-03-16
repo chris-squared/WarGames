@@ -35,15 +35,17 @@ public class FXMLGameEnvironmentController implements Initializable{
         Board newBoard = new TicTacToeBoard();
 //        newBoard.setWindHeight(gridPaneParent.getPrefHeight());
 //        newBoard.setWindWidth(gridPaneParent.getPrefWidth());
-		BGE_GUI bge = new BGE_GUI(newBoard);
+		BGE_GUI bge = new BGE_GUI(newBoard, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
         bge.updateDisplay();
 //        gridPaneParent.getChildren().addAll(new GridPane());
 //        gridPaneParent.getChildren().clear();
 //        BoardController boardController = new BoardController();
 //        gridPaneParent.getChildren().setAll(boardController.createContent(newBoard));
         gridPaneParent.getChildren().clear();
-        bge.getGrid().setPrefWidth(gridPaneParent.getPrefWidth());
-        bge.getGrid().setPrefHeight(gridPaneParent.getPrefHeight());
+       
+        //bge.getGrid().setPrefWidth(gridPaneParent.getPrefWidth());
+       
+        //bge.getGrid().setPrefHeight(gridPaneParent.getPrefHeight());
         gridPaneParent.getChildren().addAll(bge.getGrid());
 //        boardgrid.getChildren().clear();
 //        boardgrid.setPrefHeight(gridPaneParent.getPrefHeight());

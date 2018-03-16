@@ -11,11 +11,11 @@ public abstract class Board {
 	protected int rowsNum;
 	protected int colsNum;
 	
-	double windHeight;
-	double windWidth;
-	
-	double tileHeight;
-	double tileWidth;
+//	double windHeight; 	- To gui
+//	double windWidth; 	- To gui
+//	
+//	double tileHeight; 	- To gui
+//	double tileWidth; 	- To gui
 	
 	ArrayList<ArrayList<Tile>> 	tiles;
 	ArrayList<ArrayList<Piece>> pieces;
@@ -33,11 +33,11 @@ public abstract class Board {
 		rowsNum 	= R;
 		colsNum 	= C;
 		
-		windHeight 	= H;
-		windWidth 	= W;
-		
-		tileHeight	= windHeight/colsNum;
-		tileWidth	= windWidth/rowsNum;
+//		windHeight 	= H; - To gui
+//		windWidth 	= W; - To gui
+//		
+//		tileHeight	= windHeight/colsNum; - To gui
+//		tileWidth	= windWidth/rowsNum;  - To gui
 		
 		tiles 	= new ArrayList<ArrayList<Tile>>();
 		pieces 	= new ArrayList<ArrayList<Piece>>();
@@ -104,13 +104,13 @@ public abstract class Board {
 		removePiece(currRow,currCol);
 	}
 	
-	public void changePieceColor(int row, int col, Color color) {
+	public void changePieceImage(int row, int col, Image image) {
 		if (getPiece(row,col) == null) {
 			System.out.println("Piece no exist.");
 			return;
 		}
 		
-		getPiece(row,col).setColor(color);
+		getPiece(row,col).setImage(image);
 		
 	}
 	
@@ -141,14 +141,15 @@ public abstract class Board {
 	
 	// Utilities ----------
 	
-	public BoardCoord coordToBoardCoord(Coord c) {
-		double x = (c.getX() / windWidth)  * colsNum;
-		double y = (c.getY() / windHeight) * rowsNum;
-		
-		System.out.println("row = " + (int)y + " | col = " + (int)x);
-		
-		return new BoardCoord((int)y, (int)x);
-	}
+	// To gui
+//	public BoardCoord coordToBoardCoord(Coord c) {
+//		double x = (c.getX() / windWidth)  * colsNum;
+//		double y = (c.getY() / windHeight) * rowsNum;
+//		
+//		System.out.println("row = " + (int)y + " | col = " + (int)x);
+//		
+//		return new BoardCoord((int)y, (int)x);
+//	}
 
 	
 	///// GET/SET ----------
@@ -186,24 +187,24 @@ public abstract class Board {
 	}
 
 
-	public double getWindHeight() {
-		return windHeight;
-	}
-
-
-	public void setWindHeight(double windLength) {
-		this.windHeight = windLength;
-	}
-
-
-	public double getWindWidth() {
-		return windWidth;
-	}
-
-
-	public void setWindWidth(double windWidth) {
-		this.windWidth = windWidth;
-	}
+//	public double getWindHeight() {
+//		return windHeight;
+//	}
+//
+//
+//	public void setWindHeight(double windLength) {
+//		this.windHeight = windLength;
+//	}
+//
+//
+//	public double getWindWidth() {
+//		return windWidth;
+//	}
+//
+//
+//	public void setWindWidth(double windWidth) {
+//		this.windWidth = windWidth;
+//	}
 
 
 	public ArrayList<ArrayList<Tile>> getTiles() {
@@ -215,21 +216,21 @@ public abstract class Board {
 		this.tiles = tiles;
 	}
 
-	public double getTileHeight() {
-		return tileHeight;
-	}
-
-	public void setTileHeight(double tileHeight) {
-		this.tileHeight = tileHeight;
-	}
-
-	public double getTileWidth() {
-		return tileWidth;
-	}
-
-	public void setTileWidth(double tileWidth) {
-		this.tileWidth = tileWidth;
-	}
+//	public double getTileHeight() {
+//		return tileHeight;
+//	}
+//
+//	public void setTileHeight(double tileHeight) {
+//		this.tileHeight = tileHeight;
+//	}
+//
+//	public double getTileWidth() {
+//		return tileWidth;
+//	}
+//
+//	public void setTileWidth(double tileWidth) {
+//		this.tileWidth = tileWidth;
+//	}
 
 	public ArrayList<ArrayList<Piece>> getPieces() {
 		return pieces;

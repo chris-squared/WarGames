@@ -1,6 +1,7 @@
 package gui;
 
 import bge.Board;
+import bge.BoardCoord;
 import bge.Coord;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -25,15 +26,28 @@ public class BGE_GUI {
 	Scene scene;
 	Stage primaryStage;
 	
+	double windHeight;
+	double windWidth;
+	
+	double tileHeight;
+	double tileWidth;
+	
 	Coord lastClicked;
 
 //	FXMLLoader loader = new FXMLLoader();
 
-	public BGE_GUI(Board b) {
+	public BGE_GUI(Board b, double height, double width) {
+		
 		board 	= b;
 		grid 	= new GridPane();
 //		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
 
+		windHeight 	= height;
+		windWidth 	= width;
+		
+		tileHeight	= windHeight/board.getRowsNum();
+		tileWidth	= windWidth/board.getColsNum();
+		
 		board.setStartingTiles();
 		board.setStartingPieces();
 		
@@ -83,8 +97,8 @@ public class BGE_GUI {
 	        	
 	            Rectangle rec = new Rectangle();
 	            
-	            rec.setHeight(board.getTileHeight());
-	            rec.setWidth(board.getTileWidth());
+	            rec.setHeight(tileHeight);
+	            rec.setWidth(tileWidth);
 
 	            try {
 	            	rec.setFill(board.getTile(row, col).getColor());
@@ -96,23 +110,7 @@ public class BGE_GUI {
 	            
 	            GridPane.setRowIndex(rec, row);
 	            GridPane.setColumnIndex(rec, col);
-	            
-//	            // Click Action
-//	            rec.setOnMouseClicked(
-//	            	new EventHandler<MouseEvent>() {
-//	            		
-//	            		@Override
-//	            		public void handle(MouseEvent mouseEvent) {
-//		        			lastClicked.row = GridPane.getRowIndex(rec);
-//		        			lastClicked.col = GridPane.getColumnIndex(rec);
-//		        			System.out.println("MOUSE CLICKED AT"
-//		        					+ "\nRow: " + GridPane.getRowIndex(rec)
-//		        					+ "\nCol: " + GridPane.getColumnIndex(rec)
-//		        			);
-//	            		}
-//	            	}
-//	            );
-//	            // Click Action End
+	        
 	            
 	            grid.getChildren().addAll(rec);
 	        }
@@ -124,17 +122,17 @@ public class BGE_GUI {
 	        for (int col = 0; col < board.getColsNum(); col++) {
 	        	
 	        	if (board.getPiece(row,col) == null)
-	        		continue;
+					continue;
 	        	
-	        	Circle cir = new Circle();
-		    	
-	    		cir.setRadius(board.getTileHeight()/3);
-	    		cir.setFill(board.getPiece(row,col).getColor());
-	    		
-	    		GridPane.setRowIndex(cir, row);
-	    		GridPane.setColumnIndex(cir, col);
-	    		
-	    		grid.getChildren().addAll(cir);
+	        	ImageView imgView = new ImageView(board.getPiece(row,col).getImage());
+	        	
+	        	imgView.setFitHeight(tileHeight);
+	        	imgView.setFitWidth(tileHeight);
+	        	
+	        	GridPane.setRowIndex(imgView, row);
+	            GridPane.setColumnIndex(imgView, col);
+	        	
+	        	grid.getChildren().addAll(imgView);
 	        }
 	    }   
 	}
@@ -151,6 +149,15 @@ public class BGE_GUI {
 	    		grid.add(imgView,row,col);
 	        }
 	    }   
+	}
+	
+	private BoardCoord coordToBoardCoord(Coord c) {
+		double x = (c.getX() / windWidth)  * board.getColsNum();
+		double y = (c.getY() / windHeight) * board.getRowsNum();
+		
+		System.out.println("row = " + (int)y + " | col = " + (int)x);
+		
+		return new BoardCoord((int)y, (int)x);
 	}
 	
 	
@@ -170,14 +177,14 @@ public class BGE_GUI {
     					+ "\nX: " + lastClicked.getX()
     					+ "\nY: " + lastClicked.getY()
     					+"\n-----");
-    			board.coordToBoardCoord(lastClicked);
+    			coordToBoardCoord(lastClicked);
     			mouseClicked();
     		}
 		};
 	}
 	
 	private void mouseClicked() {
-		board.forwardMouseClick(board.coordToBoardCoord(lastClicked));
+		board.forwardMouseClick(coordToBoardCoord(lastClicked));
 		updateDisplay();
 	}
 
