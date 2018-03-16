@@ -2,6 +2,7 @@ package NewBoard;
 
 import javafx.geometry.Pos;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -41,12 +42,16 @@ public class Board extends GridPane {
         redraw();
     }
 
+
     public void drawBoard(){
-        this.prefWidthProperty().bind(this.getScene().widthProperty());
-        this.prefWidthProperty().bind(this.getScene().widthProperty());
         this.getChildren().clear();
         layOutTiles();
 
+    }
+
+    public void bind(AnchorPane parent){
+        this.prefWidthProperty().bind(parent.widthProperty());
+        this.prefHeightProperty().bind(parent.heightProperty());
     }
 
     public void redraw(){

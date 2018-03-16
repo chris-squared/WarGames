@@ -53,8 +53,21 @@ public class FXMLInitialViewController implements Initializable{
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
 		Parent root = loader.load();
+		FXMLGameEnvironmentController controller = loader.getController();
+
+
+		Scene scene = new Scene(root,1000,800);
+		System.out.println("Width: " + controller.getAnchorWidth());
+		System.out.println("Width: " + controller.getAnchorHeight());
+		//NEW CODE
+		NewBoard.Board board = new NewBoard.Board(controller.getAnchorWidth(), controller.getAnchorHeight(), 3,3);
+		controller.setGridPaneParent(board);
+		board.drawBoard();
 		primaryStage.setTitle("War Games");
-		primaryStage.setScene(new Scene(root, 1000, 800));
+		primaryStage.setScene(scene);
+
+		board.bind(controller.getGridPaneParent());
+
 		primaryStage.show();
 //        newBoard = new TicTacToeBoard();
 //		bge = new BGE_GUI(newBoard, primaryStage);
