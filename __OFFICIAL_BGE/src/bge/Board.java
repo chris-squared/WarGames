@@ -69,6 +69,7 @@ public abstract class Board {
 	public abstract void setStartingPieces();
 	public abstract void setStartingImages();
 	public abstract void forwardMouseClick(BoardCoord clickCoords) throws GameOverException, InvalidMoveException;
+	public abstract void updateBoard();
 	
 	
 	// Tile Operations ----------

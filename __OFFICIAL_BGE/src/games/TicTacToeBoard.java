@@ -51,6 +51,7 @@ public class TicTacToeBoard extends Board {
 		
 	}
 	
+	@Override
 	public void forwardMouseClick(BoardCoord index) throws GameOverException, InvalidMoveException {
 		
 		// TEMP
@@ -70,6 +71,7 @@ public class TicTacToeBoard extends Board {
 		}
 	}
 	
+	@Override
 	public void updateBoard() {
 		
 		for (int i = 0; i < ROWS; ++i) {
@@ -84,7 +86,7 @@ public class TicTacToeBoard extends Board {
 		}
 	}
 	
-	
+	@Override
 	public void setStartingTiles() {
 		
 		for (int row = 0; row < rowsNum; ++row) {
@@ -94,8 +96,10 @@ public class TicTacToeBoard extends Board {
 		}
 	}
 	
+	@Override
 	public void setStartingPieces() {/* None */}
 	
+	@Override
 	public void setStartingImages() {/* None */}
 	
 

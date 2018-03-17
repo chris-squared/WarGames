@@ -1,6 +1,7 @@
 package gui;
 
 import bge.Board;
+import games.SimonSaysBoard;
 import games.TicTacToeBoard;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,7 +33,7 @@ public class FXMLGameEnvironmentController implements Initializable{
         System.out.println(boardgrid.toString());
 //        boardgrid.getChildren().clear();
 //        boardgrid.getChildren().addAll(new GridPane());
-        Board newBoard = new TicTacToeBoard();
+        Board newBoard = new SimonSaysBoard();
 //        newBoard.setWindHeight(gridPaneParent.getPrefHeight());
 //        newBoard.setWindWidth(gridPaneParent.getPrefWidth());
 		BGE_GUI bge = new BGE_GUI(newBoard, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
