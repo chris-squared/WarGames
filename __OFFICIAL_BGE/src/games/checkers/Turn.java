@@ -11,7 +11,7 @@ abstract class Turn {
 		this.logic = logic;
 	}
 	
-	public abstract void executeMove(Player player, Board gameBoard, int turn, Scanner in);
-	
-	public abstract boolean nextPlayersTurn(int currentTurn, Scanner in);
+	public abstract boolean nextPlayersTurn(int currentTurn, int startRow, int startCol, int endRow, int endCol);
+
+	public abstract void executeMove(Player player, Board gameBoard, int turn, int startRow, int startCol, int endRow, int endCol);
 }

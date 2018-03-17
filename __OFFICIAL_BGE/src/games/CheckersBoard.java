@@ -2,9 +2,11 @@ package games;
 
 import bge.Board;
 import bge.BoardCoord;
+import bge.GameOverException;
 import bge.Piece;
 import games.checkers.CheckersLogic;
 import games.checkers.CheckersState;
+import games.checkers.CheckersTurn;
 import games.checkers.Utility;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -16,7 +18,7 @@ public class CheckersBoard extends Board {
 	
 	CheckersState state;
 	CheckersLogic logic;
-	//CheckersEngine engine;
+	CheckersTurn checkersTurn;
 	
 	int turn;
 	
@@ -27,7 +29,7 @@ public class CheckersBoard extends Board {
 		
 		state = new CheckersState();
 		logic = new CheckersLogic(state);
-		//engine = new SimonSaysEngine(state, logic);
+		checkersTurn = new CheckersTurn(state, logic);
 		
 		Utility.printMenu();
 		
@@ -77,12 +79,34 @@ public class CheckersBoard extends Board {
 	}
 
 	@Override
-	public void forwardMouseClick(BoardCoord index) {
+	public void forwardMouseClick(BoardCoord index) throws GameOverException {
+		if(checkersTurn.getTurnStartRow() == -1 && checkersTurn.getTurnStartCol() == -1) {
+			checkersTurn.setTurnStartRow(index.getRow());
+			checkersTurn.setTurnStartCol(index.getCol());
+		}
+		else {
+			checkersTurn.nextPlayersTurn(turn, checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
+			
+			/// NEEDS TO BE FIXED
+			if(turn % 2 == 1) {
+				movePieceP1(checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
+			}
+			else {
+				movePieceP2(checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
+			}
+			
+			checkersTurn.setTurnStartRow(-1);
+			checkersTurn.setTurnStartCol(-1);
+			turn += 1;
+			//updateBoard();
+			if (endFlag) {
+				throwGameIsOver();
+			}
+		}
 	}
 
 	@Override
 	public void updateBoard() {
-		// TODO Auto-generated method stub
 	}
 
 }
