@@ -22,8 +22,9 @@ public abstract class Board {
 	ArrayList<ArrayList<Piece>> piecesP2;
 	ArrayList<ArrayList<Image>> images;
 	
+	protected boolean endFlag;
 	
-	protected Board(String T, int R, int C, double H, double W) {
+	protected Board(String T, int R, int C) {
 		
 		title = T;
 		

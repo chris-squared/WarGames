@@ -5,6 +5,7 @@ import bge.BoardCoord;
 import bge.Coord;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -130,6 +131,8 @@ public class BGE_GUI {
 		        	
 		        	GridPane.setRowIndex(imgView1, row);
 		            GridPane.setColumnIndex(imgView1, col);
+		            
+		            GridPane.setHalignment(imgView1, HPos.CENTER);
 		        	
 		        	grid.getChildren().addAll(imgView1);
 	        	}
@@ -143,6 +146,8 @@ public class BGE_GUI {
 		        	
 		        	GridPane.setRowIndex(imgView2, row);
 		            GridPane.setColumnIndex(imgView2, col);
+		            
+		            GridPane.setHalignment(imgView2, HPos.CENTER);
 		        	
 		        	grid.getChildren().addAll(imgView2);
 	        	}

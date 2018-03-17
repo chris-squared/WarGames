@@ -30,11 +30,10 @@ public class TicTacToeBoard extends Board {
 	TicTacToeEngine engine;
 	
 	int turn;
-	boolean endCheck;
 	
 	
 	public TicTacToeBoard() {
-		super("Test TicTacToe",ROWS,COLS,500,500);
+		super("Test TicTacToe",ROWS,COLS);
 		state = new TicTacToeState();
 		ticTacToeLogic = new TicTacToeLogic(state);
 		engine = new TicTacToeEngine(state,ticTacToeLogic);
@@ -47,9 +46,9 @@ public class TicTacToeBoard extends Board {
 	}
 	
 	public void forwardMouseClick(BoardCoord index) {
-		if (turn > 9 || endCheck)
+		if (turn > 9 || endFlag)
 			System.exit(turn);
-		endCheck = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
+		endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
 		turn += 1;
 		updateBoard();
 	}
@@ -61,10 +60,10 @@ public class TicTacToeBoard extends Board {
 		for (int i = 0; i < ROWS; ++i) {
 			for (int j = 0; j < COLS; ++j) {
 				if (state.gameBoard.board[i][j].equals("[X]")) {
-					addPieceP1(i,j, new Piece(i,j,(new Image("File:/x.png"))));
+					addPieceP1(i,j, new Piece(i,j,(new Image("/games/tictactoe/x.png"))));
 				} 
 				else if (state.gameBoard.board[i][j].equals("[O]")) {
-					addPieceP2(i,j, new Piece(i,j,(new Image("File:/o.png"))));
+					addPieceP2(i,j, new Piece(i,j,(new Image("/games/tictactoe/o.png"))));
 				}
 			}
 		}
