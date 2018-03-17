@@ -22,8 +22,6 @@ public abstract class Board {
 	ArrayList<ArrayList<Piece>> piecesP2;
 	ArrayList<ArrayList<Image>> images;
 	
-	protected boolean endFlag;
-	
 	protected Board(String T, int R, int C) {
 		
 		title = T;
@@ -70,7 +68,7 @@ public abstract class Board {
 	public abstract void setStartingTiles();
 	public abstract void setStartingPieces();
 	public abstract void setStartingImages();
-	public abstract void forwardMouseClick(BoardCoord clickCoords);
+	public abstract void forwardMouseClick(BoardCoord clickCoords) throws GameOverException, InvalidMoveException;
 	
 	
 	// Tile Operations ----------
@@ -188,6 +186,14 @@ public abstract class Board {
 //		
 //		return new BoardCoord((int)y, (int)x);
 //	}
+	
+	public void throwGameIsOver() throws GameOverException {
+		throw new GameOverException();
+	}
+	
+	public void throwMoveIsInvalid() throws InvalidMoveException {
+		throw new InvalidMoveException();
+	}
 
 	
 	///// GET/SET ----------

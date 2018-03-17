@@ -3,6 +3,8 @@ package gui;
 import bge.Board;
 import bge.BoardCoord;
 import bge.Coord;
+import bge.GameOverException;
+import bge.InvalidMoveException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -196,16 +198,39 @@ public class BGE_GUI {
     					+ "\nY: " + lastClicked.getY()
     					+"\n-----");
     			coordToBoardCoord(lastClicked);
-    			mouseClicked();
+    			try {
+    				mouseClicked();
+    			} catch (GameOverException goe) {
+    				gameOver();
+    			} catch (InvalidMoveException ime) {
+    				invalidMove();
+    			}
     		}
 		};
 	}
 	
-	private void mouseClicked() {
+	private void mouseClicked() throws GameOverException, InvalidMoveException {
 		board.forwardMouseClick(coordToBoardCoord(lastClicked));
 		updateDisplay();
 	}
 
+	private void gameOver() {
+		// Action to take when game is over
+		//   - End the game (play again window? reset window? return to initial view?)
+		System.out.println("GAME OVER");
+		
+	}
+	
+	private void invalidMove() {
+		// Action to take when move is invalid
+		//   - Window stating invalid move? Do nothing?
+		System.out.println("INVALID MOVE");
+		
+	}
+	
+	
+	// Getter
+	
 	public GridPane getGrid(){
 		return grid;
 	}

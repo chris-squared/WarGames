@@ -1,7 +1,6 @@
 package bge;
 
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 
 public class Piece {
 

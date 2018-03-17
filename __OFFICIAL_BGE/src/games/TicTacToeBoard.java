@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import bge.Board;
 import bge.BoardCoord;
+import bge.GameOverException;
+import bge.InvalidMoveException;
 import bge.Piece;
 import games.tictactoe.TicTacToeEngine;
 import games.tictactoe.TicTacToeLogic;
@@ -31,6 +33,10 @@ public class TicTacToeBoard extends Board {
 	
 	int turn;
 	
+	// TEMP - Find way to use throw methods
+	boolean endFlag;
+	//
+	
 	
 	public TicTacToeBoard() {
 		super("Test TicTacToe",ROWS,COLS);
@@ -45,17 +51,26 @@ public class TicTacToeBoard extends Board {
 		
 	}
 	
-	public void forwardMouseClick(BoardCoord index) {
+	public void forwardMouseClick(BoardCoord index) throws GameOverException, InvalidMoveException {
+		
+		// TEMP
 		if (turn > 9 || endFlag)
-			System.exit(turn);
+			System.exit(0);
+		
 		endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
+		
 		turn += 1;
+		//
+		
 		updateBoard();
+		
+		// IDEAL
+		if (endFlag) {
+			throwGameIsOver();
+		}
 	}
 	
 	public void updateBoard() {
-		
-		//System.out.println(new File("/hello/tictactoe/o.png").getPath());
 		
 		for (int i = 0; i < ROWS; ++i) {
 			for (int j = 0; j < COLS; ++j) {
