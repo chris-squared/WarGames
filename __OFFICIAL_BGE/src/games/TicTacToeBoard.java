@@ -1,6 +1,8 @@
 package games;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import bge.Board;
 import bge.BoardCoord;
@@ -54,15 +56,15 @@ public class TicTacToeBoard extends Board {
 	
 	public void updateBoard() {
 		
-		System.out.println(new File("/hello/tictactoe/o.png").getPath());
+		//System.out.println(new File("/hello/tictactoe/o.png").getPath());
 		
 		for (int i = 0; i < ROWS; ++i) {
 			for (int j = 0; j < COLS; ++j) {
 				if (state.gameBoard.board[i][j].equals("[X]")) {
-					addPiece(i,j, new Piece(i,j,(new Image("File:/games/tictactoe/o.jpg"))));
+					addPieceP1(i,j, new Piece(i,j,(new Image("File:/x.png"))));
 				} 
 				else if (state.gameBoard.board[i][j].equals("[O]")) {
-					addPiece(i,j, new Piece(i,j,(new Image("File:/games/tictactoe/o.jpg"))));
+					addPieceP2(i,j, new Piece(i,j,(new Image("File:/o.png"))));
 				}
 			}
 		}

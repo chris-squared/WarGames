@@ -18,7 +18,8 @@ public abstract class Board {
 //	double tileWidth; 	- To gui
 	
 	ArrayList<ArrayList<Tile>> 	tiles;
-	ArrayList<ArrayList<Piece>> pieces;
+	ArrayList<ArrayList<Piece>> piecesP1;
+	ArrayList<ArrayList<Piece>> piecesP2;
 	ArrayList<ArrayList<Image>> images;
 	
 	
@@ -39,21 +40,24 @@ public abstract class Board {
 //		tileHeight	= windHeight/colsNum; - To gui
 //		tileWidth	= windWidth/rowsNum;  - To gui
 		
-		tiles 	= new ArrayList<ArrayList<Tile>>();
-		pieces 	= new ArrayList<ArrayList<Piece>>();
-		images	= new ArrayList<ArrayList<Image>>();
+		tiles 		= new ArrayList<ArrayList<Tile>>();
+		piecesP1 	= new ArrayList<ArrayList<Piece>>();
+		piecesP2 	= new ArrayList<ArrayList<Piece>>();
+		images		= new ArrayList<ArrayList<Image>>();
 		
 		// Creates tiles and pieces matrix
 		for (int row = 0; row < rowsNum; ++row) {
 			// Create Rows
 			tiles.add(new ArrayList<Tile>());
-			pieces.add(new ArrayList<Piece>());
+			piecesP1.add(new ArrayList<Piece>());
+			piecesP2.add(new ArrayList<Piece>());
 			images.add(new ArrayList<Image>());
 			
 			for (int col = 0; col < colsNum; ++col) {
 				// Create columns
 				tiles.get(row).add(new Tile(row,col));
-				pieces.get(row).add(null);
+				piecesP1.get(row).add(null);
+				piecesP2.get(row).add(null);
 				images.get(row).add(null);
 			}
 		}
@@ -80,37 +84,70 @@ public abstract class Board {
 	
 	
 	// Piece Operations ----------
-	
-	public Piece getPiece(int row, int col) {
-		return pieces.get(row).get(col);
+	//P1
+	public Piece getPieceP1(int row, int col) {
+		return piecesP1.get(row).get(col);
 	}
 	
-	public void addPiece(int row, int col, Piece p) {
+	public void addPieceP1(int row, int col, Piece p) {
 		//pieces.get(row).add(col,p);
-		pieces.get(row).set(col,p);
+		piecesP1.get(row).set(col,p);
 	}
 	
-	public void removePiece(int row, int col) {
-		if (getPiece(row,col) == null) {
+	public void removePieceP1(int row, int col) {
+		if (getPieceP1(row,col) == null) {
 			System.out.println("No piece to remove :(s");
 			return;
 		}
-		addPiece(row,col,null);
+		addPieceP1(row,col,null);
 	}
 	
-	public void movePiece(int currRow, int currCol, int newRow, int newCol) {
-		getPiece(currRow,currCol).getBoardCoord().set(newRow, newCol);
-		addPiece(newRow, newCol, getPiece(currRow,currCol));
-		removePiece(currRow,currCol);
+	public void movePieceP1(int currRow, int currCol, int newRow, int newCol) {
+		getPieceP1(currRow,currCol).getBoardCoord().set(newRow, newCol);
+		addPieceP1(newRow, newCol, getPieceP1(currRow,currCol));
+		removePieceP1(currRow,currCol);
 	}
 	
 	public void changePieceImage(int row, int col, Image image) {
-		if (getPiece(row,col) == null) {
+		if (getPieceP1(row,col) == null) {
 			System.out.println("Piece no exist.");
 			return;
 		}
 		
-		getPiece(row,col).setImage(image);
+		getPieceP1(row,col).setImage(image);
+		
+	}
+	// P2
+	public Piece getPieceP2(int row, int col) {
+		return piecesP2.get(row).get(col);
+	}
+	
+	public void addPieceP2(int row, int col, Piece p) {
+		//pieces.get(row).add(col,p);
+		piecesP2.get(row).set(col,p);
+	}
+	
+	public void removePieceP2(int row, int col) {
+		if (getPieceP1(row,col) == null) {
+			System.out.println("No piece to remove :(s");
+			return;
+		}
+		addPieceP2(row,col,null);
+	}
+	
+	public void movePieceP2(int currRow, int currCol, int newRow, int newCol) {
+		getPieceP2(currRow,currCol).getBoardCoord().set(newRow, newCol);
+		addPieceP2(newRow, newCol, getPieceP2(currRow,currCol));
+		removePieceP2(currRow,currCol);
+	}
+	
+	public void changePieceImageP2(int row, int col, Image image) {
+		if (getPieceP2(row,col) == null) {
+			System.out.println("Piece no exist.");
+			return;
+		}
+		
+		getPieceP2(row,col).setImage(image);
 		
 	}
 	
@@ -232,12 +269,20 @@ public abstract class Board {
 //		this.tileWidth = tileWidth;
 //	}
 
-	public ArrayList<ArrayList<Piece>> getPieces() {
-		return pieces;
+	public ArrayList<ArrayList<Piece>> getPiecesP1() {
+		return piecesP1;
 	}
 
-	public void setPieces(ArrayList<ArrayList<Piece>> pieces) {
-		this.pieces = pieces;
+	public void setPiecesP1(ArrayList<ArrayList<Piece>> pieces) {
+		this.piecesP1 = pieces;
+	}
+	
+	public ArrayList<ArrayList<Piece>> getPiecesP2() {
+		return piecesP2;
+	}
+
+	public void setPiecesP2(ArrayList<ArrayList<Piece>> pieces) {
+		this.piecesP2 = pieces;
 	}
 
 

@@ -121,18 +121,31 @@ public class BGE_GUI {
 		for (int row = 0; row < board.getRowsNum(); row++) {
 	        for (int col = 0; col < board.getColsNum(); col++) {
 	        	
-	        	if (board.getPiece(row,col) == null)
-					continue;
+	        	// Player 1
+	        	if (board.getPieceP1(row,col) != null) {
+		        	ImageView imgView1 = new ImageView(board.getPieceP1(row,col).getImage());
+		        	
+		        	imgView1.setFitHeight(tileHeight);
+		        	imgView1.setFitWidth(tileHeight);
+		        	
+		        	GridPane.setRowIndex(imgView1, row);
+		            GridPane.setColumnIndex(imgView1, col);
+		        	
+		        	grid.getChildren().addAll(imgView1);
+	        	}
 	        	
-	        	ImageView imgView = new ImageView(board.getPiece(row,col).getImage());
-	        	
-	        	imgView.setFitHeight(tileHeight);
-	        	imgView.setFitWidth(tileHeight);
-	        	
-	        	GridPane.setRowIndex(imgView, row);
-	            GridPane.setColumnIndex(imgView, col);
-	        	
-	        	grid.getChildren().addAll(imgView);
+	        	// Player 2
+	        	if (board.getPieceP2(row,col) != null) {
+		        	ImageView imgView2 = new ImageView(board.getPieceP2(row,col).getImage());
+		        	
+		        	imgView2.setFitHeight(tileHeight);
+		        	imgView2.setFitWidth(tileHeight);
+		        	
+		        	GridPane.setRowIndex(imgView2, row);
+		            GridPane.setColumnIndex(imgView2, col);
+		        	
+		        	grid.getChildren().addAll(imgView2);
+	        	}
 	        }
 	    }   
 	}
