@@ -14,7 +14,8 @@ public class EelsAndEscalatorsBoard extends Board {
 	
 	
 	public EelsAndEscalatorsBoard() {
-		super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS,windHeight,windWidth);
+		//super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS,windHeight,windWidth);
+		super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS);
 	}
 	
 	
@@ -35,8 +36,8 @@ public class EelsAndEscalatorsBoard extends Board {
 	}
 	
 	public void setStartingPieces() {
-		addPiece(9, 0, new Piece(9,0, Color.CORAL));
-		addPiece(9, 0, new Piece(9, 0, Color.CADETBLUE));
+		//addPiece(9, 0, new Piece(9,0, Color.CORAL));
+		//addPiece(9, 0, new Piece(9, 0, Color.CADETBLUE));
 
 	}
 	
@@ -53,6 +54,13 @@ public class EelsAndEscalatorsBoard extends Board {
 
 	@Override
 	public void forwardMouseClick(BoardCoord clickCoords) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void updateBoard() {
 		// TODO Auto-generated method stub
 		
 	}

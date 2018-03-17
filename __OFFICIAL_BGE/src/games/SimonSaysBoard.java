@@ -86,7 +86,7 @@ public class SimonSaysBoard extends Board {
 			System.exit(0);
 		
 		// EDIT TO TAKE IN ROW AND COL *****
-		endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
+		//endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
 		
 		turn += 1;
 		//
@@ -95,7 +95,7 @@ public class SimonSaysBoard extends Board {
 		
 		// IDEAL
 		if (endFlag) {
-			throwGameIsOver();
+			//throwGameIsOver();
 		}
 		
 	}
