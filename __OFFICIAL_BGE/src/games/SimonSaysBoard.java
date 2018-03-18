@@ -34,7 +34,7 @@ public class SimonSaysBoard extends Board {
 		
 		state = new SimonSaysState();
 		logic = new SimonSaysLogic(state);
-		engine = new SimonSaysEngine(state, logic);
+		//engine = new SimonSaysEngine(state, logic);
 		
 		SimonSaysUtility.printMenu();
 		

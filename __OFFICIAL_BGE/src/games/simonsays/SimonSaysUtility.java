@@ -26,6 +26,38 @@ public class SimonSaysUtility {
 	}
 	
 	//HELPER FUNCTION
+	public static Color coordsToColor(int row, int col) {
+		Color result = null;
+		if (row == 0 && col == 0) {
+			result = Color.RED;
+		}
+		else if (row == 0 && col == 1) {
+			result = Color.BLUE;
+		}
+		else if (row == 0 && col == 2) {
+			result = Color.GREEN;
+		}
+		else if (row == 1 && col == 0) {
+			result = Color.PINK;
+		}
+		else if (row == 1 && col == 1) {
+			result = Color.YELLOW;
+		}
+		else if (row == 1 && col == 2) {
+			result = Color.BROWN;
+		}
+		else if (row == 2 && col == 0) {
+			result = Color.ORANGE;
+		}
+		else if (row == 2 && col == 1) {
+			result = Color.BROWN;
+		}
+		else if (row == 2 && col == 2) {
+			result = Color.SILVER;
+		} 
+		return result;
+	}
+	
 	public static Color stringToColor(String s) {
 		Color result;
 		switch (s.toUpperCase()) {

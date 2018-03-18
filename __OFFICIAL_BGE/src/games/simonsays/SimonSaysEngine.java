@@ -1,7 +1,6 @@
 package games.simonsays;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 import java.util.Scanner;
 
 public class SimonSaysEngine extends Engine {
@@ -11,12 +10,33 @@ public class SimonSaysEngine extends Engine {
 	SimonSaysPlayer player1 = new SimonSaysPlayer(1, "p1");
 	SimonSaysPlayer player2 = new SimonSaysPlayer(2, "p2");
 
+	Color clickedColor;
 	
 	public SimonSaysEngine(SimonSaysState state, SimonSaysLogic logic) {
 		super(state, logic);
 		this.continueGame = true;
 		this.state = state;
 		this.logic = logic;
+	}
+	
+	public void executeMove(SimonSaysPlayer player, SimonSaysPlayer otherPlayer, Board gameBoard, int turn, int row, int col) {
+		System.out.println("Player " + player.turn + " turn. Current turn: " + turn);
+		//MAYBE USE STATE??
+		if (turn == 1) {
+			clickedColor = SimonSaysUtility.coordsToColor(row, col);
+			otherPlayer.simonPattern.add(clickedColor);
+		} 
+		else if (turn == 2) {
+			SimonSaysBoard temp = state.gameBoard;
+			System.out.println(temp.board[0][0]);
+		}
+		
+		System.out.println();
+		System.out.println("=== TESTING PURPOSES ===");
+		System.out.println("Player " + player.turn + " Simon Pattern: " + player.simonPattern);
+		System.out.println("Player " + otherPlayer.turn + " Simon Pattern: " + otherPlayer.simonPattern);
+		System.out.println("=========================");
+		System.out.println();
 	}
 
 	public void executeMove(SimonSaysPlayer player, SimonSaysPlayer otherPlayer, Board gameBoard, int turn, Scanner in) {
@@ -68,7 +88,15 @@ public class SimonSaysEngine extends Engine {
 		System.out.println("=========================");
 		System.out.println();
 	}
-
+	
+	public boolean nextPlayersTurn(int currentTurn, int row, int col) {
+		if (currentTurn % player2.turn == 0) {
+			executeMove(player2, player1, state.gameBoard, currentTurn, row, col);
+		} else {
+			executeMove(player1, player2, state.gameBoard, currentTurn, row, col);
+		}
+		return continueGame;
+	}
 	public boolean nextPlayersTurn(int currentTurn, Scanner in) {
 		if (currentTurn % player2.turn == 0) {
 			executeMove(player2, player1, state.gameBoard, currentTurn, in);
