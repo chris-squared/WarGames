@@ -20,7 +20,7 @@ public class TicTacToeLogic extends Logic {
 	}
 	
 	public boolean isValidMove(int row, int column) {
-		if (state.gameBoard.board[row][column] == state.gameBoard.gridPiece) {
+		if (state.gameBoard.board[row][column] != "[X]" && state.gameBoard.board[row][column] != "[O]") {
 			return true;
 		} 
 		System.out.println("Invalid Move.");
