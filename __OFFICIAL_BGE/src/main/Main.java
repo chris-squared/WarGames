@@ -29,17 +29,17 @@ public class Main extends Application{
 //        primaryStage.show();
 
 
-        PlayerProfile pp = new PlayerProfile();
-        pp.addPlayer(new Player("Pablo"));
-        pp.printJSON();
+//        PlayerProfile pp = new PlayerProfile();
+//        pp.addPlayer(new Player("Pablo"));
+//        pp.printJSON();
 
 	    // Below is to run environment
-//		FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
-//        Parent root = loader.load();
-//        primaryStage.setTitle("War Games");
-//        primaryStage.setScene(new Scene(root, 450, 450));
-//        primaryStage.show();
+		FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
+        Parent root = loader.load();
+        primaryStage.setTitle("War Games");
+        primaryStage.setScene(new Scene(root, 450, 450));
+        primaryStage.show();
 
 	}
 	
