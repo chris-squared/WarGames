@@ -117,6 +117,12 @@ public class CheckersBoard extends Board {
 				else if(state.getGameBoard().board[row][col].equals("[B]")) {
 					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/whiteCircle.png"))));
 				}
+				else if(state.getGameBoard().board[row][col].equals("[K]")) {
+					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/RedKing.png"))));
+				}
+				else if(state.getGameBoard().board[row][col].equals("[Q]")) {
+					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/BlackKing.png"))));
+				}
 				else {
 					addPieceP1(row, col, null);
 					addPieceP2(row, col, null);
