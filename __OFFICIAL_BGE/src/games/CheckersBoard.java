@@ -21,6 +21,8 @@ public class CheckersBoard extends Board {
 	CheckersTurn checkersTurn;
 	
 	int turn;
+	int startRowToRedraw = 0;
+	int endRowToRedraw = 0;
 	
 	boolean endFlag;
 	
@@ -86,19 +88,13 @@ public class CheckersBoard extends Board {
 		}
 		else {
 			checkersTurn.nextPlayersTurn(turn, checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
-			
-			/// NEEDS TO BE FIXED
-			if(turn % 2 == 1) {
-				movePieceP1(checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
-			}
-			else {
-				movePieceP2(checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
-			}
+			startRowToRedraw = checkersTurn.getTurnStartRow();
+			endRowToRedraw = index.getRow();
 			
 			checkersTurn.setTurnStartRow(-1);
 			checkersTurn.setTurnStartCol(-1);
 			turn += 1;
-			//updateBoard();
+			updateBoard();
 			if (endFlag) {
 				throwGameIsOver();
 			}
@@ -107,6 +103,26 @@ public class CheckersBoard extends Board {
 
 	@Override
 	public void updateBoard() {
+		if(startRowToRedraw > endRowToRedraw) {
+			int temp = startRowToRedraw;
+			startRowToRedraw = endRowToRedraw;
+			endRowToRedraw = temp;
+		}
+		
+		for(int row = startRowToRedraw; row <= endRowToRedraw; row++) {
+			for(int col = 0; col < COLS; col++) {
+				if(state.getGameBoard().board[row][col].equals("[R]")) {
+					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/redCircle.png"))));
+				}
+				else if(state.getGameBoard().board[row][col].equals("[B]")) {
+					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/whiteCircle.png"))));
+				}
+				else {
+					addPieceP1(row, col, null);
+					addPieceP2(row, col, null);
+				}
+			}
+		}
 	}
 
 }
