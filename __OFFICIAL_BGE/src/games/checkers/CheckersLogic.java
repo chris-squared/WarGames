@@ -21,6 +21,7 @@ public class CheckersLogic extends Logic{
 //		System.out.println("Blank Space : " + isBlankSpace(state.gameBoard.board, endRow, endColumn));
 //		System.out.println("One Space Away: "+isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn)); 
 		if(isInsideBoard(startRow, startColumn, endRow, endColumn)
+				&& (gamePiece == state.gameBoard.board[startRow][startColumn])
 				&& isBlankSpace(state.gameBoard.board, endRow, endColumn)
 				&& (isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 
 						|| isValidJump(state.gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)
