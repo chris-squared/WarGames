@@ -16,16 +16,13 @@ public class CheckersTurn extends Turn{
 	}
 	@Override
 	public void executeMove(Player player, Board gameBoard, int turn, int startRow, int startCol, int endRow, int endCol) {
-		boolean validMove = true;
-		while(validMove) {
-			System.out.println("Player " + player.turn + " turn. Current turn: " + turn + " Color: " + player.gamePiece);
-			if (logic.isValidMove(player.gamePiece, startRow, startCol, endRow, endCol)) {
-				player.addGamePiece(gameBoard, startRow, startCol, endRow, endCol);
-				validMove = false;
-			}
-			else
-				System.out.println("Invalid Move.");
-			gameBoard.printBoard();
+		System.out.println("Player " + player.turn + " turn. Current turn: " + turn + " Color: " + player.gamePiece);
+		if (logic.isValidMove(player.gamePiece, startRow, startCol, endRow, endCol)) {
+			player.addGamePiece(gameBoard, startRow, startCol, endRow, endCol);
+		}
+		else
+			System.out.println("Invalid Move.");
+		gameBoard.printBoard();
 		}
 	}
 	
