@@ -1,6 +1,8 @@
 package gui;
 
 import bge.Board;
+import games.CheckersBoard;
+import games.SimonSaysBoard;
 import games.TicTacToeBoard;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,29 +32,11 @@ public class FXMLGameEnvironmentController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle){
         System.out.println("GameEnvironment Initialized");
         System.out.println(boardgrid.toString());
-//        boardgrid.getChildren().clear();
-//        boardgrid.getChildren().addAll(new GridPane());
-        Board newBoard = new TicTacToeBoard();
-//        newBoard.setWindHeight(gridPaneParent.getPrefHeight());
-//        newBoard.setWindWidth(gridPaneParent.getPrefWidth());
+        Board newBoard = new CheckersBoard();
 		BGE_GUI bge = new BGE_GUI(newBoard, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
         bge.updateDisplay();
-//        gridPaneParent.getChildren().addAll(new GridPane());
-//        gridPaneParent.getChildren().clear();
-//        BoardController boardController = new BoardController();
-//        gridPaneParent.getChildren().setAll(boardController.createContent(newBoard));
         gridPaneParent.getChildren().clear();
-       
-        //bge.getGrid().setPrefWidth(gridPaneParent.getPrefWidth());
-       
-        //bge.getGrid().setPrefHeight(gridPaneParent.getPrefHeight());
         gridPaneParent.getChildren().addAll(bge.getGrid());
-//        boardgrid.getChildren().clear();
-//        boardgrid.setPrefHeight(gridPaneParent.getPrefHeight());
-//        boardgrid.setPrefWidth(gridPaneParent.getPrefWidth());
-//
-//        boardgrid.getChildren().addAll(bge.getGrid());
-////
 		bge.mouseClickListener();
     }
 

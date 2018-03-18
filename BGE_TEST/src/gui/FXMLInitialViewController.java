@@ -16,10 +16,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import gui.BGE_GUI;
 import bge.Board;
 import games.TicTacToeBoard;
+import games.checkers.CheckersLogic;
+import games.checkers.CheckersState;
+import games.checkers.CheckersTurn;
+import games.checkers.Utility;
 
 public class FXMLInitialViewController implements Initializable{
 	
@@ -42,7 +47,9 @@ public class FXMLInitialViewController implements Initializable{
     	if(selectedGame.getText().equals("Tic-Tac-Toe")) {
     		handleChooseTicTacToe(event);
     	}
-    	
+    	else if(selectedGame.getText().equals("Checkers")) {
+    		handleChooseCheckers(event);
+    	}
     	else if (selectedGame.getText().equals("Simon Says")) {
     		handleChooseSimonSays(event);
     	}
@@ -56,17 +63,16 @@ public class FXMLInitialViewController implements Initializable{
 		primaryStage.setTitle("War Games");
 		primaryStage.setScene(new Scene(root, 1000, 800));
 		primaryStage.show();
-//        newBoard = new TicTacToeBoard();
-//		bge = new BGE_GUI(newBoard, primaryStage);
-//
-//		bge.updateDisplay(primaryStage);
-//		bge.display(primaryStage);
-//
-//		bge.mouseClickListener();
-
     }
     
-    @FXML protected void handleChooseCheckers(ActionEvent event){
+    @FXML protected void handleChooseCheckers(ActionEvent event) throws IOException{
+    	Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
+		Parent root = loader.load();
+		primaryStage.setTitle("War Games");
+		primaryStage.setScene(new Scene(root, 1000, 800));
+		primaryStage.show();
     }
     
     @FXML protected void handleChooseSimonSays(ActionEvent event) throws Exception{

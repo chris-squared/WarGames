@@ -3,8 +3,11 @@ package gui;
 import bge.Board;
 import bge.BoardCoord;
 import bge.Coord;
+import bge.GameOverException;
+import bge.InvalidMoveException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -121,18 +124,35 @@ public class BGE_GUI {
 		for (int row = 0; row < board.getRowsNum(); row++) {
 	        for (int col = 0; col < board.getColsNum(); col++) {
 	        	
-	        	if (board.getPiece(row,col) == null)
-					continue;
+	        	// Player 1
+	        	if (board.getPieceP1(row,col) != null) {
+		        	ImageView imgView1 = new ImageView(board.getPieceP1(row,col).getImage());
+		        	
+		        	imgView1.setFitHeight(tileHeight);
+		        	imgView1.setFitWidth(tileHeight);
+		        	
+		        	GridPane.setRowIndex(imgView1, row);
+		            GridPane.setColumnIndex(imgView1, col);
+		            
+		            GridPane.setHalignment(imgView1, HPos.CENTER);
+		        	
+		        	grid.getChildren().addAll(imgView1);
+	        	}
 	        	
-	        	ImageView imgView = new ImageView(board.getPiece(row,col).getImage());
-	        	
-	        	imgView.setFitHeight(tileHeight);
-	        	imgView.setFitWidth(tileHeight);
-	        	
-	        	GridPane.setRowIndex(imgView, row);
-	            GridPane.setColumnIndex(imgView, col);
-	        	
-	        	grid.getChildren().addAll(imgView);
+	        	// Player 2
+	        	if (board.getPieceP2(row,col) != null) {
+		        	ImageView imgView2 = new ImageView(board.getPieceP2(row,col).getImage());
+		        	
+		        	imgView2.setFitHeight(tileHeight);
+		        	imgView2.setFitWidth(tileHeight);
+		        	
+		        	GridPane.setRowIndex(imgView2, row);
+		            GridPane.setColumnIndex(imgView2, col);
+		            
+		            GridPane.setHalignment(imgView2, HPos.CENTER);
+		        	
+		        	grid.getChildren().addAll(imgView2);
+	        	}
 	        }
 	    }   
 	}
@@ -178,16 +198,39 @@ public class BGE_GUI {
     					+ "\nY: " + lastClicked.getY()
     					+"\n-----");
     			coordToBoardCoord(lastClicked);
-    			mouseClicked();
+    			try {
+    				mouseClicked();
+    			} catch (GameOverException goe) {
+    				gameOver();
+    			} catch (InvalidMoveException ime) {
+    				invalidMove();
+    			}
     		}
 		};
 	}
 	
-	private void mouseClicked() {
+	private void mouseClicked() throws GameOverException, InvalidMoveException {
 		board.forwardMouseClick(coordToBoardCoord(lastClicked));
 		updateDisplay();
 	}
 
+	private void gameOver() {
+		// Action to take when game is over
+		//   - End the game (play again window? reset window? return to initial view?)
+		System.out.println("GAME OVER");
+		
+	}
+	
+	private void invalidMove() {
+		// Action to take when move is invalid
+		//   - Window stating invalid move? Do nothing?
+		System.out.println("INVALID MOVE");
+		
+	}
+	
+	
+	// Getter
+	
 	public GridPane getGrid(){
 		return grid;
 	}
