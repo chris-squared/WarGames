@@ -1,5 +1,7 @@
 package gui;
 
+import bge.Player;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import bge.Board;
 import games.TicTacToeBoard;
 import games.CheckersBoard;
 import games.SimonSaysBoard;
+import main.Main;
 
 
 public class FXMLInitialViewController implements Initializable{
@@ -34,10 +37,20 @@ public class FXMLInitialViewController implements Initializable{
 	
 	@FXML
 	private ToggleGroup gameSelectGroup;
-	
+
+	@FXML
+	protected void handlePlayerProfiles(){
+		Player player1 = new Player(player1Name.getText());
+		Player player2 = new Player(player2Name.getText());
+		Main.playerProfile.addPlayer(player1);
+		Main.playerProfile.addPlayer(player2);
+	}
+
+
     @FXML
     protected void handlePlayButtonAction(ActionEvent event) throws Exception {
 //    	System.out.println(player1Name.getText() + " vs. " + player2Name.getText());
+		handlePlayerProfiles();
     	RadioButton selectedGame = (RadioButton)gameSelectGroup.getSelectedToggle();
     	if(selectedGame.getText().equals("Tic-Tac-Toe")) {
     		handleChooseTicTacToe(event);

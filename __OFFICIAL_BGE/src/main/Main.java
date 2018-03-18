@@ -5,6 +5,7 @@ import java.io.IOException;
 //import bge.Board;
 import bge.Player;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,9 +13,12 @@ import javafx.stage.Stage;
 import utility.PlayerProfile;
 
 public class Main extends Application{
-	
+
+    public static PlayerProfile playerProfile = new PlayerProfile();
+
 	public static void main(String[] args) {
         Application.launch(args);
+
     }
 	
 	
@@ -30,8 +34,12 @@ public class Main extends Application{
 
 
 //        PlayerProfile pp = new PlayerProfile();
-//        pp.addPlayer(new Player("Pablo"));
+//        Player pablo = new Player("Pablo");
+//        pp.addPlayer(pablo);
 //        pp.printJSON();
+//        pp.printJSON();
+//        pp.writeToFile();
+
 
 	    // Below is to run environment
 		FXMLLoader loader = new FXMLLoader();
@@ -39,6 +47,11 @@ public class Main extends Application{
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));
+        primaryStage.setOnHidden(e -> {
+            playerProfile.writeToFile();
+            System.out.println("Exiting Application... Goodbye.");
+            Platform.exit();
+        });
         primaryStage.show();
 
 	}

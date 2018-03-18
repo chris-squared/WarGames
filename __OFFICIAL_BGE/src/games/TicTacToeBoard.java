@@ -55,18 +55,19 @@ public class TicTacToeBoard extends Board {
 	public void forwardMouseClick(BoardCoord index) throws GameOverException, InvalidMoveException {
 		
 		// TEMP
-		if (turn > 9 || endFlag)
-			System.exit(0);
-		int row = index.getRow();
-		int column = index.getCol();
-		//endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
-		if (ticTacToeLogic.isValidMove(row,column))
-			turn += 1;
-		endFlag = !engine.nextPlayersTurn(turn, row, column);
-		//
-		
-		updateBoard();
-		
+		if (turn > 9 || endFlag) {
+			System.out.println("GAME IS OVER! STOP!");
+		}else {
+			int row = index.getRow();
+			int column = index.getCol();
+			//endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
+			if (ticTacToeLogic.isValidMove(row, column))
+				turn += 1;
+			endFlag = !engine.nextPlayersTurn(turn, row, column);
+			//
+
+			updateBoard();
+		}
 		// IDEAL
 		if (endFlag) {
 			throwGameIsOver();

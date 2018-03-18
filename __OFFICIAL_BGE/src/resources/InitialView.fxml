@@ -93,12 +93,12 @@
                                                             <items>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                     <children>
-                                                                        <TextField layoutY="36.0" promptText="Enter player1 name..." text="Player1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                        <TextField fx:id="player1Name" layoutY="36.0" promptText="Enter player1 name..." text="Player1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                     </children>
                                                                 </AnchorPane>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                     <children>
-                                                                        <TextField layoutY="36.0" promptText="Enter player2 name..." text="Player2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                        <TextField fx:id="player2Name" layoutY="36.0" promptText="Enter player2 name..." text="Player2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                     </children>
                                                                 </AnchorPane>
                                                             </items>

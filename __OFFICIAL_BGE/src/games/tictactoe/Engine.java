@@ -10,7 +10,8 @@ abstract class Engine {
 		this.state = state;
 		this.logic = logic;
 	}
-	
+
+
 	public abstract void executeMove(Player player, Board gameBoard, int turn, int row, int col);
 	
 	public abstract boolean nextPlayersTurn(int currentTurn, int row, int col);
