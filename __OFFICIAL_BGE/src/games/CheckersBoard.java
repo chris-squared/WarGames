@@ -87,17 +87,23 @@ public class CheckersBoard extends Board {
 			checkersTurn.setTurnStartCol(index.getCol());
 		}
 		else {
-			checkersTurn.nextPlayersTurn(turn, checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol());
+			if(checkersTurn.nextPlayersTurn(turn, checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol())){
 			startRowToRedraw = checkersTurn.getTurnStartRow();
+			turn += 1;
+			}
+			
 			endRowToRedraw = index.getRow();
 			
 			checkersTurn.setTurnStartRow(-1);
 			checkersTurn.setTurnStartCol(-1);
-			turn += 1;
+			
+			
+			//System.out.println("//////////////////////   Turn " + turn);
 			updateBoard();
 			if (endFlag) {
 				throwGameIsOver();
 			}
+			
 		}
 	}
 
