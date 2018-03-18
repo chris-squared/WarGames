@@ -81,7 +81,7 @@ public class FXMLInitialViewController implements Initializable{
 	public void initializeGameScreen(ActionEvent event, Board newBoard) throws Exception{
 		Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
+		loader.setLocation(getClass().getResource("/resources/GameEnvironment.fxml"));
 
 		// Create controller instance and pass it to the fxml file that was loaded
 		FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard);

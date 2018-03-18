@@ -30,7 +30,7 @@ public class Main extends Application{
 
 	    // Below is to run environment
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/gui/InitialView.fxml"));
+        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));

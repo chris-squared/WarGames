@@ -1,8 +1,6 @@
 package gui;
 
 import bge.Board;
-import games.CheckersBoard;
-import games.TicTacToeBoard;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
