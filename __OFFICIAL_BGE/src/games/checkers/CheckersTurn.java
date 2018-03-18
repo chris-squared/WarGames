@@ -37,19 +37,27 @@ public class CheckersTurn extends Turn{
 	@Override
 	public boolean nextPlayersTurn(int currentTurn, int startRow, int startCol, int endRow, int endCol) {
 		if (currentTurn % player2.turn == 0){
-			executeMove(player2, state.gameBoard, currentTurn, startRow, startCol, endRow, endCol);
+			//System.out.println("///////////////// Player 2 turn");
+			if(logic.isValidMove(player2.gamePiece, state.gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)){
+				executeMove(player2, state.gameBoard, currentTurn, startRow, startCol, endRow, endCol);
+				return true;
+			}
 			if (logic.checkWinCondition(player2.gamePiece)) {
 				System.out.println("player 2 wins!");
 				return false;
 			}
 		}else{
+			//System.out.println("//////////////////////// Player 1 turn");
+			if(logic.isValidMove(player1.gamePiece, state.gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)){
 			executeMove(player1, state.gameBoard, currentTurn, startRow, startCol, endRow, endCol);
+			return true;
+			}
 			if (logic.checkWinCondition(player1.gamePiece)) {
 				System.out.println("player 1 wins!");
 				return false;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public int getTurnStartRow() {
