@@ -14,13 +14,9 @@ public class TicTacToeEngine extends Engine{
 	}
 	
 	public void executeMove(Player player, Board gameBoard, int turn, int row, int col) {
-		boolean validMove = true;
-		while (validMove) {
-			System.out.println("Player " + player.turn + " turn. Current turn: " + turn);
-			if(logic.isValidMove(row, col)) {
-				player.addGamePiece(gameBoard, col, row);
-				validMove = false;
-			}
+		System.out.println("Player " + player.turn + " turn. Current turn: " + turn);
+		if(logic.isValidMove(row, col)) {
+			player.addGamePiece(gameBoard, col, row);
 		}
 		gameBoard.printBoard();
 	}

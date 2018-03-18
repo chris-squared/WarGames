@@ -24,7 +24,6 @@ public class CheckersTurn extends Turn{
 			System.out.println("Invalid Move.");
 		gameBoard.printBoard();
 		}
-	}
 	
 	@Override
 	public boolean nextPlayersTurn(int currentTurn, int startRow, int startCol, int endRow, int endCol) {
