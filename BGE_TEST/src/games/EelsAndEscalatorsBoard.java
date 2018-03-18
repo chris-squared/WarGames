@@ -35,8 +35,8 @@ public class EelsAndEscalatorsBoard extends Board {
 	}
 	
 	public void setStartingPieces() {
-		addPiece(9, 0, new Piece(9,0, Color.CORAL));
-		addPiece(9, 0, new Piece(9, 0, Color.CADETBLUE));
+//		addPiece(9, 0, new Piece(9,0, Color.CORAL));
+//		addPiece(9, 0, new Piece(9, 0, Color.CADETBLUE));
 
 	}
 	
