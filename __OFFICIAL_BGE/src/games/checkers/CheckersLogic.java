@@ -16,16 +16,50 @@ public class CheckersLogic extends Logic{
 	}
 	
 	@Override
-	public boolean isValidMove(String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
+	public boolean isValidMove(String gamePiece, String gamePiece2, int startRow, int startColumn, int endRow, int endColumn) {
 //		System.out.println("Inside Board: " + isInsideBoard(startRow, startColumn, endRow, endColumn));
 //		System.out.println("Blank Space : " + isBlankSpace(state.gameBoard.board, endRow, endColumn));
 //		System.out.println("One Space Away: "+isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn)); 
-		if(isInsideBoard(startRow, startColumn, endRow, endColumn)
+		if (gamePiece == "[R]" || gamePiece2 == "[K]") {
+			if (gamePiece2 == "[K]") {
+				if(isInsideBoard(startRow, startColumn, endRow, endColumn)
+						&& (state.gameBoard.board[startRow][startColumn] == gamePiece2)
+						&& isBlankSpace(state.gameBoard.board, endRow, endColumn)
+						&& (isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 
+								|| isValidJump(state.gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)
+								))
+					return true;
+			}
+			else if (gamePiece == "[R]") {
+				if(isInsideBoard(startRow, startColumn, endRow, endColumn)
+				&& (gamePiece == state.gameBoard.board[startRow][startColumn])
 				&& isBlankSpace(state.gameBoard.board, endRow, endColumn)
-				&& (isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 
+				&& (isOneSpaceAwayRed(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 
 						|| isValidJump(state.gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)
 						))
 			return true;
+			}
+		}
+		else if (gamePiece == "[B]" || gamePiece2 == "[K]") {
+			if (gamePiece2 == "[Q]") {
+				if(isInsideBoard(startRow, startColumn, endRow, endColumn)
+						&& (state.gameBoard.board[startRow][startColumn] == gamePiece2)
+						&& isBlankSpace(state.gameBoard.board, endRow, endColumn)
+						&& (isOneSpaceAway(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 
+								|| isValidJump(state.gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)
+								))
+					return true;
+			}
+			else if (gamePiece == "[B]") {
+				if(isInsideBoard(startRow, startColumn, endRow, endColumn)
+					&& (gamePiece == state.gameBoard.board[startRow][startColumn])
+					&& isBlankSpace(state.gameBoard.board, endRow, endColumn)
+					&& (isOneSpaceAwayBlack(state.gameBoard.board, startRow, startColumn, endRow, endColumn) 
+							|| isValidJump(state.gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)
+							))
+				return true;
+			}
+		}
 		return false;
 	}
 	
@@ -50,12 +84,34 @@ public class CheckersLogic extends Logic{
 		return false;
 	}
 	
+	//Checks for a simple move. If the input row and columns are one space away from each other.
+	public static boolean isOneSpaceAwayRed(String[][] board, int startRow, int startColumn, int endRow, int endColumn) {
+		if ((endRow - startRow) == 1)
+			if (Math.abs(endColumn - startColumn) == 1)
+				return true;
+		return false;
+	}
+	
+	//Checks for a simple move. If the input row and columns are one space away from each other.
+	public static boolean isOneSpaceAwayBlack(String[][] board, int startRow, int startColumn, int endRow, int endColumn) {
+		if ((endRow - startRow) == -1)
+			if (Math.abs(endColumn - startColumn) == 1)
+				return true;
+		return false;
+	}
+	
 	//Checks for a jump. If the input row and columns are two spaces away from each other.
 	public static boolean isValidJump(String[][] board, String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
 		if (Math.abs(endRow - startRow) == 2)
 			if (Math.abs(endColumn - startColumn) == 2)
 				if (board[(startRow + endRow)/2][(startColumn+endColumn)/2] != gamePiece)
 					return true;
+		return false;
+	}
+
+	@Override
+	public boolean isValidMove(String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 }

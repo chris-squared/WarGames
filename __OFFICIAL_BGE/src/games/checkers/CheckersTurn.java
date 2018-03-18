@@ -3,8 +3,8 @@ package games.checkers;
 public class CheckersTurn extends Turn{
 	public CheckersState state;
 	public CheckersLogic logic;
-	CheckersPlayer player1 = new CheckersPlayer(1, "[R]");
-	CheckersPlayer player2 = new CheckersPlayer(2, "[B]");
+	public CheckersPlayer player1 = new CheckersPlayer(1, "[R]", "[K]");
+	public CheckersPlayer player2 = new CheckersPlayer(2, "[B]", "[Q]");
 
 	int turnStartRow = -1;
 	int turnStartCol = -1;
@@ -16,18 +16,23 @@ public class CheckersTurn extends Turn{
 	}
 	@Override
 	public void executeMove(Player player, Board gameBoard, int turn, int startRow, int startCol, int endRow, int endCol) {
-		boolean validMove = true;
-		while(validMove) {
-			System.out.println("Player " + player.turn + " turn. Current turn: " + turn + " Color: " + player.gamePiece);
-			if (logic.isValidMove(player.gamePiece, startRow, startCol, endRow, endCol)) {
-				player.addGamePiece(gameBoard, startRow, startCol, endRow, endCol);
-				validMove = false;
-			}
+		System.out.println("Player " + player.turn + " turn. Current turn: " + turn + " Color: " + player.gamePiece);
+		if (logic.isValidMove(player.gamePiece, gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)) {
+			if (gameBoard.board[startRow][startCol] == "[K]")
+				player.kingMove(gameBoard, startRow, startCol, endRow, endCol);
+			else if (gameBoard.board[startRow][startCol] == "[Q]")
+				player.kingMove2(gameBoard, startRow, startCol, endRow, endCol);
+			else if (player.gamePiece == "[B]" && endRow == 0)
+				player.addGameKing2(gameBoard, startRow, startCol, endRow, endCol);
+			else if (player.gamePiece == "[R]" && endRow == (gameBoard.columns - 1))
+				player.addGameKing(gameBoard, startRow, startCol, endRow, endCol);
 			else
-				System.out.println("Invalid Move.");
-			gameBoard.printBoard();
+				player.addGamePiece(gameBoard, startRow, startCol, endRow, endCol);
 		}
-	}
+		else
+			System.out.println("Invalid Move.");
+		gameBoard.printBoard();
+		}
 	
 	@Override
 	public boolean nextPlayersTurn(int currentTurn, int startRow, int startCol, int endRow, int endCol) {

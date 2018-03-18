@@ -3,11 +3,13 @@ package main;
 import java.io.IOException;
 
 //import bge.Board;
+import bge.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import utility.PlayerProfile;
 
 public class Main extends Application{
 	
@@ -27,10 +29,13 @@ public class Main extends Application{
 //        primaryStage.show();
 
 
+//        PlayerProfile pp = new PlayerProfile();
+//        pp.addPlayer(new Player("Pablo"));
+//        pp.printJSON();
 
 	    // Below is to run environment
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/gui/InitialView.fxml"));
+        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));

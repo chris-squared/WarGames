@@ -15,5 +15,8 @@ abstract class Logic{
 	/**Checks if the move in the selected gridPiece is valid.
 	 * @return true if the move is valid, false otherwise.*/
 	public abstract boolean isValidMove(String gamePiece, int startRow, int startColumn, int endRow, int endColumn);
+
+	public abstract boolean isValidMove(String gamePiece, String gamePiece2, int startRow, int startColumn, int endRow,
+			int endColumn) ;
 	
 }

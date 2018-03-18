@@ -198,20 +198,22 @@ public class BGE_GUI {
     					+ "\nY: " + lastClicked.getY()
     					+"\n-----");
     			coordToBoardCoord(lastClicked);
-    			try {
-    				mouseClicked();
-    			} catch (GameOverException goe) {
-    				gameOver();
-    			} catch (InvalidMoveException ime) {
-    				invalidMove();
-    			}
+    			mouseClicked();
     		}
 		};
 	}
 	
-	private void mouseClicked() throws GameOverException, InvalidMoveException {
-		board.forwardMouseClick(coordToBoardCoord(lastClicked));
-		updateDisplay();
+	private void mouseClicked() {
+		try {
+			board.forwardMouseClick(coordToBoardCoord(lastClicked));
+			updateDisplay();
+		} catch (GameOverException e) {
+			updateDisplay();
+			gameOver();
+		} catch (InvalidMoveException e) {
+			updateDisplay();
+			invalidMove();
+		}
 	}
 
 	private void gameOver() {

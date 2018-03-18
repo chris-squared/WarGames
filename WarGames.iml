@@ -3,15 +3,26 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/BGE_TEST/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/__OFFICIAL_BGE/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/BGE_TEST" />
       <excludeFolder url="file://$MODULE_DIR$/BGE_TEST/src/eelsandescalators" />
       <excludeFolder url="file://$MODULE_DIR$/Checkers(Console)" />
       <excludeFolder url="file://$MODULE_DIR$/EelsAndEscalatorsV0.1" />
       <excludeFolder url="file://$MODULE_DIR$/GameEngine" />
       <excludeFolder url="file://$MODULE_DIR$/SimonSays(Console)" />
       <excludeFolder url="file://$MODULE_DIR$/TicTacToe(Console)" />
+      <excludeFolder url="file://$MODULE_DIR$/gui" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../json-simple-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

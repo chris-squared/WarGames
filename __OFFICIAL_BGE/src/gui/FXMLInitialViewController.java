@@ -10,21 +10,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
-import gui.BGE_GUI;
 import bge.Board;
 import games.TicTacToeBoard;
-import games.checkers.CheckersLogic;
-import games.checkers.CheckersState;
-import games.checkers.CheckersTurn;
-import games.checkers.Utility;
+import games.CheckersBoard;
+import games.SimonSaysBoard;
+
 
 public class FXMLInitialViewController implements Initializable{
 	
@@ -53,39 +48,28 @@ public class FXMLInitialViewController implements Initializable{
     	else if (selectedGame.getText().equals("Simon Says")) {
     		handleChooseSimonSays(event);
     	}
+    	else if (selectedGame.getText().equals("EelsAndEscalators")){
+    		handleChooseEelsAndEscalators(event);
+		}
+		else{
+    		System.out.println("GAME NOT SELECTED IDIOT!");
+		}
     }
     
     @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
-        Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
-		Parent root = loader.load();
-		primaryStage.setTitle("War Games");
-		primaryStage.setScene(new Scene(root, 1000, 800));
-		primaryStage.show();
+        initializeGameScreen(event, new TicTacToeBoard());
     }
     
-    @FXML protected void handleChooseCheckers(ActionEvent event) throws IOException{
-    	Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
-		Parent root = loader.load();
-		primaryStage.setTitle("War Games");
-		primaryStage.setScene(new Scene(root, 1000, 800));
-		primaryStage.show();
+    @FXML protected void handleChooseCheckers(ActionEvent event) throws Exception{
+    	initializeGameScreen(event, new CheckersBoard());
     }
     
     @FXML protected void handleChooseSimonSays(ActionEvent event) throws Exception{
-        Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/gui/GameEnvironment.fxml"));
-		Parent root = loader.load();
-		primaryStage.setTitle("War Games");
-		primaryStage.setScene(new Scene(root, 1000, 800));
-		primaryStage.show();
+        initializeGameScreen(event, new SimonSaysBoard());
     }
     
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
+    	System.out.println("EELS AND EXCALATORS");
     }
 
     @Override
@@ -93,4 +77,21 @@ public class FXMLInitialViewController implements Initializable{
     	System.out.println("INITIALIZED INITIAL VIEW");
 
 	}
+
+	public void initializeGameScreen(ActionEvent event, Board newBoard) throws Exception{
+		Stage primaryStage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/resources/GameEnvironment.fxml"));
+
+		// Create controller instance and pass it to the fxml file that was loaded
+		FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard);
+		loader.setController(controller);
+		Parent root = loader.load();
+
+		primaryStage.setTitle("War Games");
+		primaryStage.setScene(new Scene(root, 1000, 800));
+		primaryStage.show();
+	}
+
+
 }
