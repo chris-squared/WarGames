@@ -1,26 +1,41 @@
 package games.eelsandescalators;
 
 import bge.Board;
+import bge.Player;
 import games.EelsAndEscalatorsBoard;
+import utility.DiceRoller;
 
 public class EelsEngine {
 	EelsAndEscalatorsBoard board;
 	EelsState state;
 	EelsLogic logic;
+	DiceRoller dr;
+	Player P1;
 	
 	public EelsEngine(EelsAndEscalatorsBoard b, EelsState s, EelsLogic l){
+		dr = new DiceRoller();
+		P1 = new Player("Chris", 0, "X");
 		board = b;
 		state = s;
 		logic = l; 
 		setPlayer();
 		printConsoleBoard();
-		printBoardPath(); 
+		state.playerLocationRepo.put(P1, 1);
+		state.addEel(3, 1);
+		state.addEscalator(5, 10);
+		state.addEel(8, 2);
+		state.addEscalator(20, 24);
+		state.addEel(33, 27);
+
 	}
 
-	public void printBoardPath() {
-		for (int i : state.BoardPathRepository.keySet())
-			System.out.println("SPACE NUM: " + i + " COORD: " + state.BoardPathRepository.get(i).getBoardCoord().getRow() + "," + state.BoardPathRepository.get(i).getBoardCoord().getCol() );
-	}
+		public void makeTurn() {
+			System.out.println("WAT");
+			int roll = dr.rollDice(2, 6);
+			System.out.println(roll);
+			logic.move(P1, roll);
+			
+		}
 	
 	public void setPlayer() {
 		board.setStartingPieces();
