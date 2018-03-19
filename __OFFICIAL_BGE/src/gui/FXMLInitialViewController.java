@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
 import bge.Board;
 import games.TicTacToeBoard;
 import games.CheckersBoard;
+import games.EelsAndEscalatorsBoard;
 import games.SimonSaysBoard;
 import main.Main;
 
@@ -62,7 +63,7 @@ public class FXMLInitialViewController implements Initializable{
     	else if (selectedGame.getText().equals("Simon Says")) {
     		handleChooseSimonSays(event);
     	}
-    	else if (selectedGame.getText().equals("EelsAndEscalators")){
+    	else if (selectedGame.getText().equals("Electric Eels and Super Escalators 2: Super Ultra Force")){
     		handleChooseEelsAndEscalators(event);
 		}
 		else{
@@ -82,8 +83,8 @@ public class FXMLInitialViewController implements Initializable{
         initializeGameScreen(event, new SimonSaysBoard());
     }
     
-    @FXML protected void handleChooseEelsAndEscalators(ActionEvent event){
-    	System.out.println("EELS AND EXCALATORS");
+    @FXML protected void handleChooseEelsAndEscalators(ActionEvent event) throws Exception{
+    	initializeGameScreen(event, new EelsAndEscalatorsBoard());
     }
 
     @Override
