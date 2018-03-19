@@ -48,7 +48,7 @@ public class Main extends Application{
         loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
-        primaryStage.setScene(new Scene(root, 450, 450));
+        primaryStage.setScene(new Scene(root, 640, 400));
         primaryStage.setOnHidden(e -> {
             playerProfile.addPlayer(player1);
             playerProfile.addPlayer(player2);
