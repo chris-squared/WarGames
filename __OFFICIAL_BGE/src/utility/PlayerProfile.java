@@ -44,7 +44,7 @@ public class PlayerProfile {
     }
 
     public void printJSON(){
-        System.out.println(getPlayer("Pablo"));
+        System.out.println(playerJSONMap.toJSONString());
     }
 
 
