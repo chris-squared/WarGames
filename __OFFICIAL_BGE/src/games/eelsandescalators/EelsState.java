@@ -58,10 +58,6 @@ public class EelsState extends State {
 			return EelsRepository.containsKey(bp);
 		}
 		
-		public void print_Test() {
-			System.out.println("HAH WHAT");
-		}
-		
 		//Check if a piece is an Escalator
 		boolean isEscalatorPosition(int bp) {
 			return EscalatorsRepository.containsKey(bp);
