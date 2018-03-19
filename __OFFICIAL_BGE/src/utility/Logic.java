@@ -1,7 +1,9 @@
 package utility;
 
 import bge.Board;
-import bge.Player;
+import bge.Piece;
+
+import bge.Tile;
 
 public abstract class Logic {
 	State state;
@@ -12,9 +14,12 @@ public abstract class Logic {
 		board = b; 
 	}
 	
-	public abstract boolean win_condition();
-	public abstract boolean isValidMove();
-	public abstract void movePlayer(Player p);
+	//Functions every Logic needs to implement? 
+	public abstract boolean check_win_condition(Piece p);
+	public abstract boolean isValidMove(Piece p, Tile start, Tile end);
+	//This function is meant to be a facade so that you can call ExecuteMove from an engine and it'll run the appropriate ExecuteMove function, irregardless of game being played.
+	public abstract void executeMove();
+
 	
 
 }

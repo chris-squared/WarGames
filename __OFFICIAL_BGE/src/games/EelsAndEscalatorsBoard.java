@@ -4,6 +4,7 @@ import bge.Board;
 import bge.BoardCoord;
 import bge.Piece;
 import javafx.scene.paint.Color;
+import javafx.scene.image.Image;
 
 public class EelsAndEscalatorsBoard extends Board {
 	static final int ROWS = 10;
@@ -36,8 +37,9 @@ public class EelsAndEscalatorsBoard extends Board {
 	}
 	
 	public void setStartingPieces() {
-		//addPiece(9, 0, new Piece(9,0, Color.CORAL));
-		//addPiece(9, 0, new Piece(9, 0, Color.CADETBLUE));
+		addPieceP1(9, 0, new Piece(9, 0, new Image("/games/eelsandescalators/GamePiece.png")));
+		addPieceP2(9, 0, new Piece(9, 0, new Image("/games/eelsandescalators/GamePiece.png")));
+	
 
 	}
 	
