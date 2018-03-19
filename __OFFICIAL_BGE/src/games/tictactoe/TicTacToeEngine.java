@@ -1,6 +1,6 @@
 package games.tictactoe;
 import java.util.Scanner;
-public class TicTacToeEngine extends Engine{
+public class TicTacToeEngine{
 	
 	public TicTacToeState state;
 	public TicTacToeLogic logic;
@@ -8,15 +8,14 @@ public class TicTacToeEngine extends Engine{
 	TicTacToePlayer player2 = new TicTacToePlayer(2, "[O]");
 	
 	public TicTacToeEngine(TicTacToeState state, TicTacToeLogic logic) {
-		super(state, logic);
 		this.state = state;
 		this.logic = logic;
 	}
 	
-	public void executeMove(Player player, Board gameBoard, int turn, int row, int col) {
+	public void executeMove(TicTacToePlayer player, Board gameBoard, int turn, int row, int col) {
 		System.out.println("Player " + player.turn + " turn. Current turn: " + turn);
 		if(logic.isValidMove(row, col)) {
-			player.addGamePiece(gameBoard, col, row);
+			addGamePiece(gameBoard, player.gamePiece, col, row);
 		}
 		gameBoard.printBoard();
 	}
@@ -36,6 +35,10 @@ public class TicTacToeEngine extends Engine{
 			}
 		}
 		return true;
+	}
+	
+	public void addGamePiece(Board gameBoard, String gamePiece, int column, int row) {
+		gameBoard.board[row][column] = gamePiece;
 	}
 	
 }

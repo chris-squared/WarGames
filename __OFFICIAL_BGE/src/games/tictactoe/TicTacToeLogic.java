@@ -1,14 +1,12 @@
 package games.tictactoe;
 
-public class TicTacToeLogic extends Logic {
+public class TicTacToeLogic{
 	
 	TicTacToeState state;
 	public TicTacToeLogic(TicTacToeState state) {
-		super(state);
 		this.state = state;
 	}
 	
-	@Override
 	public boolean checkWinCondition(String gamePiece) {
 		if (rowChecker(state.gameBoard.board, gamePiece)
 				|| columnChecker(state.gameBoard.board, gamePiece) 
