@@ -3,10 +3,14 @@ package games;
 import bge.Board;
 import bge.BoardCoord;
 import bge.Piece;
+import games.eelsandescalators.EelsEngine;
+import games.eelsandescalators.EelsLogic;
+import games.eelsandescalators.EelsState;
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
-
+import utility.DiceRoller;
 public class EelsAndEscalatorsBoard extends Board {
+	EelsEngine e; 
 	static final int ROWS = 10;
 	static final int COLS = 10;
 	
@@ -17,7 +21,12 @@ public class EelsAndEscalatorsBoard extends Board {
 	public EelsAndEscalatorsBoard() {
 		//super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS,windHeight,windWidth);
 		super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS);
+		EelsState s = new EelsState(this);
+		EelsLogic l = new EelsLogic(s, this);
+		e = new EelsEngine(this, s, l);
+		
 	}
+	
 	
 	
 	public void setStartingTiles() {
@@ -37,8 +46,9 @@ public class EelsAndEscalatorsBoard extends Board {
 	}
 	
 	public void setStartingPieces() {
+		System.out.println("SETTING PLAYERS DOWN");
 		addPieceP1(9, 0, new Piece(9, 0, new Image("/games/eelsandescalators/GamePiece.png")));
-		addPieceP2(9, 0, new Piece(9, 0, new Image("/games/eelsandescalators/GamePiece.png")));
+		addPieceP2(9, 1, new Piece(9, 1, new Image("/games/eelsandescalators/GamePiece.png")));
 	
 
 	}
@@ -56,7 +66,7 @@ public class EelsAndEscalatorsBoard extends Board {
 
 	@Override
 	public void forwardMouseClick(BoardCoord clickCoords) {
-		// TODO Auto-generated method stub
+		e.makeTurn();
 		
 	}
 
