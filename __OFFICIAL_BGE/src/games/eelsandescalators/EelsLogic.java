@@ -63,15 +63,8 @@ public class EelsLogic extends Logic {
 	
 
 
-	//Verifies if the player is the winner of the game
-	boolean is_winner(Player p, int position) {
-		//If the player's location is at the last tile on the map (or somehow greater than that) they have won
-		if (state.getPlayerLocation(p) == 100)
-			return true;
-		else
-			//Otherwise, they haven't.
-			return false;
-	}
+	
+	
 
 	//Tells if you are on an Eel and where to move you.
 	int onEel(int current_tile) {
@@ -95,21 +88,21 @@ public class EelsLogic extends Logic {
 	}
 
 
+	//Verifies if a piece is on the winning tile
 	@Override
 	public boolean check_win_condition(Piece p) {
-		// TODO Auto-generated method stub
-		return false;
+		return (state.BoardPathRepository.get(100).getBoardCoord() == p.getBoardCoord());
 	}
 
 
 	@Override
 	public boolean isValidMove(Piece p, Tile start, Tile end) {
-		// TODO Auto-generated method stub
-		return false;
+		return (state.BoardPathRepository.get(100) != end);
 	}
 
 
 	@Override
+	//Adapter to actually make the move from within the logic class -- allows a standardized function to be called in engine
 	public void executeMove() {
 		// TODO Auto-generated method stub
 		
