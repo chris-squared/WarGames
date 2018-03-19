@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="BoardGameEnvironment/src"/>
+	<classpathentry kind="src" path="__OFFICIAL_BGE/src"/>
 	<classpathentry kind="src" path="BGE_TEST/src"/>
 	<classpathentry kind="src" path="Checkers(Console)/src"/>
 	<classpathentry excluding="EelsAndEscalatorsV0.1/" kind="src" path="EelsAndEscalatorsV0.1"/>
@@ -9,5 +10,6 @@
 	<classpathentry kind="src" path="GameEngine"/>
 	<classpathentry kind="src" path="Profile/src"/>
 	<classpathentry kind="src" path="TicTacToe(Console)/src"/>
+	<classpathentry kind="lib" path="C:/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="BoardGameEnvironment/bin"/>
 </classpath>
