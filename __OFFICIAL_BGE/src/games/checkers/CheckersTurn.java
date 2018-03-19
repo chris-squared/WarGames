@@ -1,6 +1,6 @@
 package games.checkers;
 
-public class CheckersTurn extends Turn{
+public class CheckersTurn{
 	public CheckersState state;
 	public CheckersLogic logic;
 	public CheckersPlayer player1 = new CheckersPlayer(1, "[R]", "[K]");
@@ -10,31 +10,28 @@ public class CheckersTurn extends Turn{
 	int turnStartCol = -1;
 	
 	public CheckersTurn(CheckersState state, CheckersLogic logic) {
-		super(state, logic);
 		this.state = state;
 		this.logic = logic;
 	}
-	@Override
-	public void executeMove(Player player, Board gameBoard, int turn, int startRow, int startCol, int endRow, int endCol) {
+	public void executeMove(CheckersPlayer player, Board gameBoard, int turn, int startRow, int startCol, int endRow, int endCol) {
 		System.out.println("Player " + player.turn + " turn. Current turn: " + turn + " Color: " + player.gamePiece);
 		if (logic.isValidMove(player.gamePiece, gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)) {
 			if (gameBoard.board[startRow][startCol] == "[K]")
-				player.kingMove(gameBoard, startRow, startCol, endRow, endCol);
+				kingMove(gameBoard, player.gamePiece2, startRow, startCol, endRow, endCol);
 			else if (gameBoard.board[startRow][startCol] == "[Q]")
-				player.kingMove2(gameBoard, startRow, startCol, endRow, endCol);
+				kingMove2(gameBoard, player.gamePiece, startRow, startCol, endRow, endCol);
 			else if (player.gamePiece == "[B]" && endRow == 0)
-				player.addGameKing2(gameBoard, startRow, startCol, endRow, endCol);
+				addGameKing2(gameBoard, startRow, startCol, endRow, endCol);
 			else if (player.gamePiece == "[R]" && endRow == (gameBoard.columns - 1))
-				player.addGameKing(gameBoard, startRow, startCol, endRow, endCol);
+				addGameKing(gameBoard, startRow, startCol, endRow, endCol);
 			else
-				player.addGamePiece(gameBoard, startRow, startCol, endRow, endCol);
+				addGamePiece(gameBoard, player.gamePiece, startRow, startCol, endRow, endCol);
 		}
 		else
 			System.out.println("Invalid Move.");
 		gameBoard.printBoard();
 		}
 	
-	@Override
 	public boolean nextPlayersTurn(int currentTurn, int startRow, int startCol, int endRow, int endCol) {
 		if (currentTurn % player2.turn == 0){
 			//System.out.println("///////////////// Player 2 turn");
@@ -58,6 +55,50 @@ public class CheckersTurn extends Turn{
 			}
 		}
 		return false;
+	}
+	
+	public void addGamePiece(Board gameBoard, String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
+	gameBoard.board[startRow][startColumn] = "[ ]";
+	gameBoard.board[endRow][endColumn] = gamePiece;
+	if (CheckersLogic.isValidJump(gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)) {
+		executeJump(gameBoard,startRow, startColumn, endRow, endColumn);	
+		}
+	}
+	
+	public void executeJump(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) {
+		if (gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2].equals("[R]"))
+			CheckersPlayer.red -= 1;
+		else {
+			CheckersPlayer.black -= 1;
+		}
+		System.out.println("Red Remaining: " + CheckersPlayer.red + "Black Remaining: " + CheckersPlayer.black);
+		gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2] = "[ ]";
+	}
+	
+	public void addGameKing(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) {
+		gameBoard.board[startRow][startColumn] = "[ ]";
+		gameBoard.board[endRow][endColumn] = "[K]";
+	}
+
+	public void addGameKing2(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) {
+		gameBoard.board[startRow][startColumn] = "[ ]";
+		gameBoard.board[endRow][endColumn] = "[Q]";
+	}
+	
+	public void kingMove(Board gameBoard, String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
+		gameBoard.board[startRow][startColumn] = "[ ]";
+		gameBoard.board[endRow][endColumn] = "[K]";
+		if (CheckersLogic.isValidJump(gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)) {
+			executeJump(gameBoard,startRow, startColumn, endRow, endColumn);
+		}
+	}
+	
+	public void kingMove2(Board gameBoard, String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
+		gameBoard.board[startRow][startColumn] = "[ ]";
+		gameBoard.board[endRow][endColumn] = "[Q]";
+		if (CheckersLogic.isValidJump(gameBoard.board, gamePiece, startRow, startColumn, endRow, endColumn)) {
+			executeJump(gameBoard,startRow, startColumn, endRow, endColumn);
+		}
 	}
 	
 	public int getTurnStartRow() {

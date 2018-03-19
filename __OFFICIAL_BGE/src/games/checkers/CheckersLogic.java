@@ -1,13 +1,11 @@
 package games.checkers;
-public class CheckersLogic extends Logic{
+public class CheckersLogic {
 
 	public CheckersState state;
 	public CheckersLogic(CheckersState state) {
-		super(state);
 		this.state = state;
 	}
 
-	@Override
 	public boolean checkWinCondition(String gamePiece){
 		if (CheckersPlayer.black == 0 || CheckersPlayer.red == 0)
 			return true;
@@ -15,7 +13,6 @@ public class CheckersLogic extends Logic{
 		return false;
 	}
 	
-	@Override
 	public boolean isValidMove(String gamePiece, String gamePiece2, int startRow, int startColumn, int endRow, int endColumn) {
 //		System.out.println("Inside Board: " + isInsideBoard(startRow, startColumn, endRow, endColumn));
 //		System.out.println("Blank Space : " + isBlankSpace(state.gameBoard.board, endRow, endColumn));
@@ -106,12 +103,6 @@ public class CheckersLogic extends Logic{
 			if (Math.abs(endColumn - startColumn) == 2)
 				if (board[(startRow + endRow)/2][(startColumn+endColumn)/2] != gamePiece)
 					return true;
-		return false;
-	}
-
-	@Override
-	public boolean isValidMove(String gamePiece, int startRow, int startColumn, int endRow, int endColumn) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }
