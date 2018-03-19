@@ -259,6 +259,7 @@ public class BGE_GUI {
 			}
 		} else if (result.get() == gameSelect) {
 		    System.out.println("Choosing another game");
+	        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
 	        try {
 				Parent root = loader.load();
 				primaryStage.setTitle("War Games");
