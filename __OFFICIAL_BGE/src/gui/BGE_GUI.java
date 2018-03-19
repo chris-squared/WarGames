@@ -263,7 +263,7 @@ public class BGE_GUI {
 	        try {
 				Parent root = loader.load();
 				primaryStage.setTitle("War Games");
-				primaryStage.setScene(new Scene(root, 450, 450));
+				primaryStage.setScene(new Scene(root, 640, 400));
 				primaryStage.show();
 			} catch (IOException e) {
 				e.printStackTrace();

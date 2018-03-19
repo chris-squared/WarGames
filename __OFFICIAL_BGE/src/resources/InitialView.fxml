@@ -69,9 +69,9 @@
                               <Image url="@BG.jpg" />
                            </image>
                         </ImageView>
-                                <Label layoutX="305.0" layoutY="80.0" prefHeight="103.0" prefWidth="638.0" text="Welcome to WarGames. Please select the game you would like to play. If you wish to enter your names please do so in the corresponding text box. Once you are all set up click play and enjoy" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                                <Label layoutY="51.0" prefHeight="165.0" prefWidth="575.0" text="     Welcome to War.    Select a Game.      Select Personas.     Battle." textAlignment="CENTER" textFill="#00ff3b" wrapText="true" AnchorPane.bottomAnchor="-33.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="51.0">
                                     <font>
-                                        <Font size="18.0" />
+                                        <Font name="System Bold" size="18.0" />
                                     </font>
                                 </Label>
                         <ImageView fitHeight="86.0" fitWidth="413.0" layoutX="97.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
@@ -129,7 +129,7 @@
                                             <children>
                                                 <Button alignment="CENTER" contentDisplay="CENTER" layoutX="249.0" layoutY="23.0" mnemonicParsing="false" onAction="#handlePlayButtonAction" prefHeight="87.0" prefWidth="636.0" style="-fx-background-color: red;" text="Battle" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                     <font>
-                                                        <Font size="40.0" />
+                                                        <Font name="System Bold" size="39.0" />
                                                     </font>
                                                 </Button>
                                             </children>
