@@ -3,6 +3,8 @@ package games.checkers;
 public class CheckersTurn{
 	public CheckersState state;
 	public CheckersLogic logic;
+	public static int red = 12;
+	public static int black = 12;
 	public CheckersPlayer player1 = new CheckersPlayer(1, "[R]", "[K]");
 	public CheckersPlayer player2 = new CheckersPlayer(2, "[B]", "[Q]");
 
@@ -67,9 +69,9 @@ public class CheckersTurn{
 	
 	public void executeJump(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) {
 		if (gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2].equals("[R]"))
-			CheckersPlayer.red -= 1;
+			CheckersTurn.red -= 1;
 		else {
-			CheckersPlayer.black -= 1;
+			CheckersTurn.black -= 1;
 		}
 		System.out.println("Red Remaining: " + CheckersPlayer.red + "Black Remaining: " + CheckersPlayer.black);
 		gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2] = "[ ]";
