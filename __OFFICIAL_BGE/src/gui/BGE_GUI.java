@@ -1,5 +1,8 @@
 package gui;
 
+import java.io.IOException;
+import java.util.Optional;
+
 import bge.Board;
 import bge.BoardCoord;
 import bge.Coord;
@@ -10,6 +13,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -39,10 +45,11 @@ public class BGE_GUI {
 
 //	FXMLLoader loader = new FXMLLoader();
 
-	public BGE_GUI(Board b, double height, double width) {
+	public BGE_GUI(Board b, Stage primaryStage, double height, double width) {
 		
 		board 	= b;
 		grid 	= new GridPane();
+		this.primaryStage = primaryStage;
 //		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
 
 		windHeight 	= height;
@@ -217,10 +224,52 @@ public class BGE_GUI {
 	}
 
 	private void gameOver() {
-		// Action to take when game is over
-		//   - End the game (play again window? reset window? return to initial view?)
 		System.out.println("GAME OVER");
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("War Games");
+		alert.setHeaderText("Game Over!");
+		alert.setContentText("What next?");
+
+		ButtonType resetGame = new ButtonType("Reset Game");
+		ButtonType gameSelect = new ButtonType("Game Select");
+		ButtonType exit = new ButtonType("Exit");
+
+		alert.getButtonTypes().setAll(resetGame, gameSelect, exit);
+
+		Optional<ButtonType> result = alert.showAndWait();
 		
+	    FXMLLoader loader = new FXMLLoader();
+		if (result.get() == resetGame){
+		    System.out.println("Resetting game");
+			loader.setLocation(getClass().getResource("/resources/GameEnvironment.fxml"));
+			try {
+				Board newBoard = board.getClass().newInstance();
+				FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard, primaryStage);
+				loader.setController(controller);
+				Parent root = loader.load();
+				primaryStage.setTitle("War Games");
+				primaryStage.setScene(new Scene(root, 1000, 800));
+				primaryStage.show();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		} else if (result.get() == gameSelect) {
+		    System.out.println("Choosing another game");
+	        try {
+				Parent root = loader.load();
+				primaryStage.setTitle("War Games");
+				primaryStage.setScene(new Scene(root, 450, 450));
+				primaryStage.show();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+		    System.exit(0);
+		}
 	}
 	
 	private void invalidMove() {

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ public class FXMLGameEnvironmentController implements Initializable{
 
     private BGE_GUI bge;
     private Board newBoard;
+    private Stage primaryStage;
 
     @FXML
     private GridPane boardgrid;
@@ -32,9 +34,10 @@ public class FXMLGameEnvironmentController implements Initializable{
     @FXML
     private Label player2Name;
 
-    public FXMLGameEnvironmentController(Board newBoard){
+    public FXMLGameEnvironmentController(Board newBoard, Stage primaryStage){
         System.out.println("GameEnvironmentController set the new board");
         this.newBoard = newBoard;
+        this.primaryStage = primaryStage;
     }
 
     @FXML
@@ -69,7 +72,7 @@ public class FXMLGameEnvironmentController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         System.out.println("GameEnvironment Initialized");
-		bge = new BGE_GUI(newBoard, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
+        bge = new BGE_GUI(newBoard, primaryStage, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
         bge.updateDisplay();
         gridPaneParent.getChildren().clear();
         gridPaneParent.getChildren().addAll(bge.getGrid());

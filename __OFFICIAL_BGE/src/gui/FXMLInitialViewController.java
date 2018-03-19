@@ -98,7 +98,7 @@ public class FXMLInitialViewController implements Initializable{
 		loader.setLocation(getClass().getResource("/resources/GameEnvironment.fxml"));
 
 		// Create controller instance and pass it to the fxml file that was loaded
-		FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard);
+		FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard, primaryStage);
 		loader.setController(controller);
 		Parent root = loader.load();
 		controller.setPlayer1Name(Main.player1.getUsername());
