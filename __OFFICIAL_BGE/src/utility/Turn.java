@@ -1,6 +1,7 @@
 package utility;
 import bge.Board;
 import bge.Piece;
+import bge.Player;
 import bge.Tile;
 
 
@@ -8,12 +9,12 @@ import bge.Tile;
 //In Progress
 public class Turn {
 	DiceRoller dice;
-	//Logic logic;
 	Board board; 
+	Player currentPlayer; 
 	
 	
-	Turn (/*Logic l,*/Board b){
-		//logic = l;
+	Turn (Board b, Player p){
+		currentPlayer = p;
 		board = b; 
 	}
 	
@@ -22,18 +23,6 @@ public class Turn {
 	}
 	
 	
-	void move(Piece p, int move_spaces) {
-		
-	}
 	
-	//Useful for E/E, since tiles are mapped to an integer
-	void set(Piece p, int location) {
-		
-	}
-	
-	//If you don't have an int representation of the location, you can set on a tile using a Tile
-	void set(Piece p, Tile t) {
-		
-	}
 
 }
