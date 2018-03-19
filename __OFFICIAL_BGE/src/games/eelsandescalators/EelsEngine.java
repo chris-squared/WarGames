@@ -12,16 +12,21 @@ public class EelsEngine {
 	EelsLogic logic;
 	DiceRoller dr;
 	Player P1;
+	Player P2; 
+	int player_num = 0;
+	Player currentPlayer;
 	
 	public EelsEngine(EelsAndEscalatorsBoard b, EelsState s, EelsLogic l){
 		dr = new DiceRoller();
 		P1 = new Player("Chris", 0, "X");
+		P2 = new Player("Nick", 1, "Y");
 		board = b;
 		state = s;
 		logic = l; 
 		setPlayer();
 		printConsoleBoard();
 		state.playerLocationRepo.put(P1, 1);
+		state.playerLocationRepo.put(P2, 1);
 		state.addEel(3, 1);
 		state.addEscalator(5, 10);
 		state.addEel(8, 2);
@@ -32,11 +37,21 @@ public class EelsEngine {
 	}
 
 		public void makeTurn() throws GameOverException {
+			if (player_num == 0) {
+				currentPlayer = P1;
+			}
+			else
+				currentPlayer = P2;
 			int roll = dr.rollDice(2, 7);
 			System.out.println(roll);
-			logic.move(P1, roll);
-			if (logic.is_winner(P1))
+			logic.move(currentPlayer, roll);
+			if (logic.is_winner(currentPlayer))
 				board.throwGameIsOver();
+			if (player_num == 0){
+				player_num = 1;
+			}
+			else
+				player_num = 0;
 			
 		}
 	

@@ -129,7 +129,7 @@ public abstract class Board {
 	}
 	
 	public void removePieceP2(int row, int col) {
-		if (getPieceP1(row,col) == null) {
+		if (getPieceP2(row,col) == null) {
 			System.out.println("No piece to remove :(s");
 			return;
 		}

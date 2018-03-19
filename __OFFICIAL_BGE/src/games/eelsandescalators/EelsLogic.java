@@ -28,6 +28,7 @@ public class EelsLogic extends Logic {
 	//Moves the player piece based on the roll
 	void move (Player p, int roll) {
 		System.out.println("MOVING");
+		System.out.println("PLAYER : " + p.getTurn());
 		//First, get the player's tile position
 		int player_tile = state.getPlayerLocation(p);
 		System.out.println("GOT LOCATION: " + player_tile);
@@ -57,7 +58,10 @@ public class EelsLogic extends Logic {
 				state.setPlayerLocation(p, (player_tile + roll));
 				newR = state.BoardPathRepository.get((player_tile+roll)).getBoardCoord().getRow();
 				newC = state.BoardPathRepository.get((player_tile+roll)).getBoardCoord().getCol();}
-			board.movePieceP1(curR, curC, newR, newC);}
+			if(p.getTurn() == 0)
+				board.movePieceP1(curR, curC, newR, newC);
+			else
+				board.movePieceP2(curR, curC, newR, newC);}
 
 	}
 	

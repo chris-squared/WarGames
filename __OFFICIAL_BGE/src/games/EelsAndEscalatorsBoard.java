@@ -64,7 +64,7 @@ public class EelsAndEscalatorsBoard extends Board {
 	public void setStartingPieces() {
 		System.out.println("SETTING PLAYERS DOWN");
 		addPieceP1(9, 0, new Piece(9, 0, new Image("/games/eelsandescalators/GamePiece.png")));
-		addPieceP2(9, 1, new Piece(9, 1, new Image("/games/eelsandescalators/GamePiece.png")));
+		addPieceP2(9, 0, new Piece(9, 0, new Image("/games/eelsandescalators/GamePiece.png")));
 	
 
 	}
