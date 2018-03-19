@@ -2,6 +2,7 @@ package games;
 
 import bge.Board;
 import bge.BoardCoord;
+import bge.GameOverException;
 import bge.Piece;
 import games.eelsandescalators.EelsEngine;
 import games.eelsandescalators.EelsLogic;
@@ -80,7 +81,7 @@ public class EelsAndEscalatorsBoard extends Board {
 
 
 	@Override
-	public void forwardMouseClick(BoardCoord clickCoords) {
+	public void forwardMouseClick(BoardCoord clickCoords) throws GameOverException {
 		e.makeTurn();
 		
 	}

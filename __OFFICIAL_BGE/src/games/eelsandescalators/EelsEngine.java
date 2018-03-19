@@ -1,6 +1,7 @@
 package games.eelsandescalators;
 
 import bge.Board;
+import bge.GameOverException;
 import bge.Player;
 import games.EelsAndEscalatorsBoard;
 import utility.DiceRoller;
@@ -26,14 +27,16 @@ public class EelsEngine {
 		state.addEel(8, 2);
 		state.addEscalator(20, 24);
 		state.addEel(33, 27);
+		state.addEel(99, 85);
 
 	}
 
-		public void makeTurn() {
-			System.out.println("WAT");
-			int roll = dr.rollDice(2, 6);
+		public void makeTurn() throws GameOverException {
+			int roll = dr.rollDice(2, 7);
 			System.out.println(roll);
 			logic.move(P1, roll);
+			if (logic.is_winner(P1))
+				board.throwGameIsOver();
 			
 		}
 	

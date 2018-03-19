@@ -64,7 +64,9 @@ public class EelsLogic extends Logic {
 
 
 	
-	
+	boolean is_winner(Player p) {
+		return (state.playerLocationRepo.get(p) == 100);
+	}
 
 	//Tells if you are on an Eel and where to move you.
 	int onEel(int current_tile) {
