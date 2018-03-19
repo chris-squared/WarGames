@@ -20,7 +20,6 @@ public class CheckersBoard extends Board {
 	CheckersLogic logic;
 	CheckersTurn checkersTurn;
 	
-	int turn;
 	int startRowToRedraw = 0;
 	int endRowToRedraw = 0;
 	

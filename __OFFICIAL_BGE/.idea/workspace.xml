@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f34e643b-67bd-46ea-a120-361d4f0dd6d1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE.iml" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PlayerProfiles/playerProfiles.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/resources/GameEnvironment.fxml" afterPath="$PROJECT_DIR$/bin/resources/GameEnvironment.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/utility/PlayerProfile.java" afterPath="$PROJECT_DIR$/src/utility/PlayerProfile.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/PlayerProfiles/playerProfiles.json" afterPath="$PROJECT_DIR$/PlayerProfiles/playerProfiles.json" />
+      <change beforePath="$PROJECT_DIR$/src/games/CheckersBoard.java" afterPath="$PROJECT_DIR$/src/games/CheckersBoard.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +26,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerProfile.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerProfile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utility/PlayerProfile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1065">
               <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TicTacToeBoard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/games/TicTacToeBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckersBoard.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/games/CheckersBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,6 +71,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/utility/PlayerProfile.java" />
         <option value="$PROJECT_DIR$/PlayerProfiles/playerProfiles.json" />
+        <option value="$PROJECT_DIR$/src/games/CheckersBoard.java" />
       </list>
     </option>
   </component>
@@ -113,13 +127,19 @@
               <item name="__OFFICIAL_BGE" type="b2602c69:ProjectViewProjectNode" />
               <item name="__OFFICIAL_BGE" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="games" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="__OFFICIAL_BGE" type="b2602c69:ProjectViewProjectNode" />
               <item name="__OFFICIAL_BGE" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utility" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="__OFFICIAL_BGE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="__OFFICIAL_BGE" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,12 +289,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521442320911</updated>
-      <workItem from="1521442331998" duration="708000" />
+      <workItem from="1521442331998" duration="1002000" />
     </task>
+    <task id="LOCAL-00001" summary="Modified paths again">
+      <created>1521443057415</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521443057415</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="708000" />
+    <option name="totallyTimeSpent" value="1002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
@@ -315,6 +343,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modified paths again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified paths again" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -348,6 +380,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1065">
           <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/games/TicTacToeBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/games/CheckersBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
