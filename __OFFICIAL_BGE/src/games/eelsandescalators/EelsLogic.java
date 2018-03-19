@@ -7,7 +7,7 @@ import utility.Logic;
 import utility.State;
 
 
-public class EelsLogic {
+public class EelsLogic extends Logic {
 	EelsState state;
 	EelsAndEscalatorsBoard board;
 
@@ -17,8 +17,9 @@ public class EelsLogic {
 
 	
 	public EelsLogic(EelsState s, EelsAndEscalatorsBoard g){
+		super(g);
 		state = s;
-		board = g;
+		board =  g;
 		
 
 	}

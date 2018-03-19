@@ -6,11 +6,9 @@ import bge.Piece;
 import bge.Tile;
 
 public abstract class Logic {
-	State state;
 	Board board;
 	
-	protected Logic(State s, Board b){
-		state = s;
+	protected Logic(Board b){
 		board = b; 
 	}
 	
