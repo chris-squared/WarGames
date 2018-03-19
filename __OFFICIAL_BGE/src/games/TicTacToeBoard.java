@@ -80,10 +80,10 @@ public class TicTacToeBoard extends Board {
 		for (int i = 0; i < ROWS; ++i) {
 			for (int j = 0; j < COLS; ++j) {
 				if (state.gameBoard.board[i][j].equals("[X]")) {
-					addPieceP1(i,j, new Piece(i,j,(new Image("/games/tictactoe/x.png"))));
+					addPieceP1(i,j, new Piece(i,j,(new Image("/games/tictactoe/VWx.png"))));
 				} 
 				else if (state.gameBoard.board[i][j].equals("[O]")) {
-					addPieceP2(i,j, new Piece(i,j,(new Image("/games/tictactoe/o.png"))));
+					addPieceP2(i,j, new Piece(i,j,(new Image("/games/tictactoe/VWo.png"))));
 				}
 			}
 		}
@@ -94,7 +94,8 @@ public class TicTacToeBoard extends Board {
 		
 		for (int row = 0; row < rowsNum; ++row) {
 			for (int col = 0; col < colsNum; ++col) {
-				getTile(row,col).setOutlineColor(Color.BLACK);
+				getTile(row,col).setOutlineColor(Color.WHITE);
+				getTile(row,col).setColor(Color.BLACK);
 			}
 		}
 	}
