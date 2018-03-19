@@ -36,23 +36,26 @@ public class EelsLogic {
 			int newR;
 			int newC;
 			//...Move them x number of spaces.
-			state.setPlayerLocation(p, (player_tile + roll));
+			
 			int curR = state.BoardPathRepository.get(player_tile).getBoardCoord().getRow();
 			int curC = state.BoardPathRepository.get(player_tile).getBoardCoord().getCol();
 			if (onEel(player_tile+roll) != 0) {
-				int  result = onEel(player_tile+roll);
+				 int  result = onEel(player_tile+roll);
+				 state.setPlayerLocation(p, result);
 				 newR = state.BoardPathRepository.get(result).getBoardCoord().getRow();
 				 newC = state.BoardPathRepository.get(result).getBoardCoord().getCol();
 			}
 			else if (onEscalator(player_tile+roll) != 0) {
 				int  result = onEscalator(player_tile+roll);
+				state.setPlayerLocation(p, result);
 				newR = state.BoardPathRepository.get(result).getBoardCoord().getRow();
 				newC = state.BoardPathRepository.get(result).getBoardCoord().getCol();
 			}
 			
 			else {
-			 newR = state.BoardPathRepository.get(player_tile+roll).getBoardCoord().getRow();
-			 newC = state.BoardPathRepository.get(player_tile+roll).getBoardCoord().getCol();}
+				state.setPlayerLocation(p, (player_tile + roll));
+				newR = state.BoardPathRepository.get((player_tile+roll)).getBoardCoord().getRow();
+				newC = state.BoardPathRepository.get((player_tile+roll)).getBoardCoord().getCol();}
 			board.movePieceP1(curR, curC, newR, newC);}
 
 	}

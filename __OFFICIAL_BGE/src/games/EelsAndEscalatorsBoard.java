@@ -38,11 +38,26 @@ public class EelsAndEscalatorsBoard extends Board {
 				if (colorFlag)
 					getTile(row, col).setColor(Color.ALICEBLUE);
 				else
-					getTile(row, col).setColor(Color.BLACK);
+					getTile(row, col).setColor(Color.AQUAMARINE);
 				colorFlag = !colorFlag;
 			}
 			colorFlag = !colorFlag;
 		}
+		
+		getTile(9, 2).setColor(Color.GREEN);
+		getTile(9, 0).setColor(Color.GREEN);
+		
+		getTile(9, 4).setColor(Color.BLACK);
+		getTile(9, 9).setColor(Color.BLACK);
+		
+		getTile(9, 7).setColor(Color.RED);
+		getTile(9, 1).setColor(Color.RED);
+		
+		getTile(8, 0).setColor(Color.BROWN);
+		getTile(7, 3).setColor(Color.BROWN);
+		
+		getTile(6, 7).setColor(Color.BISQUE);
+		getTile(7, 7).setColor(Color.BISQUE);
 	}
 	
 	public void setStartingPieces() {
