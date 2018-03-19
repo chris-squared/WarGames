@@ -24,13 +24,15 @@ public class EelsState extends State {
 		
 		
 		//Construct a new state with the board
-		EelsState(EelsAndEscalatorsBoard b) {
+		public EelsState(EelsAndEscalatorsBoard b) {
 			super(b);
+			board = b;
 			GenerateBoardPath();
 		}
 		
 		//Generates the path of the board and assigns each tile to a number -- this makes rolls easier to add to the system
 		void GenerateBoardPath() {
+			System.out.println("ENTERING LOOP");
 			int rows = board.getRowsNum();
 			int columns = board.getColsNum();
 			int space_number = 1; 
@@ -38,12 +40,17 @@ public class EelsState extends State {
 			
 			for (int i = rows - 1; i >= 0; i--) 
 				//If the row is an odd-number, move L-R
-				if (rows % 2 == 0) 
+				if (i % 2 != 0) {
+					System.out.println("ROW IS ODD");
 					for (int j = 0; j < columns; j++) 
-						BoardPathRepository.put(space_number++, board.getTile(i, j));
-				else 
+						BoardPathRepository.put(space_number++, board.getTile(i, j));}
+				else {
+					System.out.println("ROW IS EVEN: " + i);
 					for (int j = columns-1; j >=0; j--) 
-						BoardPathRepository.put(space_number++, board.getTile(i, j));	
+						BoardPathRepository.put(space_number++, board.getTile(i, j));	}
+				
+				
+			
 		}
 		
 		//Check if a piece is an Eel
