@@ -62,25 +62,25 @@ public class EelsLogic extends Logic {
 	}
 
 
-	@Override
-	public boolean win_condition() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean win_condition() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+//
+//
+//	@Override
+//	public boolean isValidMove() {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 
 
-	@Override
-	public boolean isValidMove() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public void movePlayer(Player p) {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void movePlayer(Player p) {
+//		// TODO Auto-generated method stub
+//
+//	}
 
 
 	@Override

@@ -12,8 +12,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import main.Main;
+import org.json.simple.JSONObject;
 
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class FXMLGameEnvironmentController implements Initializable{
@@ -87,6 +90,17 @@ public class FXMLGameEnvironmentController implements Initializable{
         textArea.setEditable(false);
         textArea.setWrapText(true);
 
+        String textString = "";
+        for (Iterator iterator = Main.playerProfile.playerJSONMap.keySet().iterator();iterator.hasNext();){
+            String key = (String)iterator.next();
+            String stats = Main.playerProfile.getPlayer(key).toJSONString();
+            textString += key;
+            textString += "\n";
+            textString += stats;
+            textString += "\n";
+        }
+        textArea.setText(textString);
+
         textArea.setMaxWidth(Double.MAX_VALUE);
         textArea.setMaxHeight(Double.MAX_VALUE);
         GridPane.setVgrow(textArea, Priority.ALWAYS);
@@ -97,7 +111,6 @@ public class FXMLGameEnvironmentController implements Initializable{
         expContent.add(label, 0, 0);
         expContent.add(textArea, 0, 1);
 
-// Set expandable Exception into the dialog pane.
         alert.getDialogPane().setExpandableContent(expContent);
 
         alert.showAndWait();
