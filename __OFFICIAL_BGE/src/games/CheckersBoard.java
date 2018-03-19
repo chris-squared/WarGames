@@ -47,11 +47,12 @@ public class CheckersBoard extends Board {
 		for (int row = 0; row < rowsNum; ++row) {
 			for (int col = 0; col < colsNum; ++col) {
 				if(colorFlag) {
-					getTile(row,col).setColor(Color.WHITE);
+					getTile(row,col).setColor(Color.PURPLE);
 				}
 				else {
 					getTile(row,col).setColor(Color.BLACK);
 				}
+				getTile(row,col).setOutlineColor(Color.BLUE);
 				colorFlag = !colorFlag;
 			}
 			colorFlag = !colorFlag;
@@ -64,10 +65,10 @@ public class CheckersBoard extends Board {
 		for (int row = 0; row < rowsNum; ++row) {
 			for (int col = 0; col < colsNum; ++col) {
 				if(row <= 2 && colorFlag) {
-					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/redCircle.png"))));
+					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/r.png"))));
 				}
 				else if(row >= 5 && colorFlag) {
-					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/whiteCircle.png"))));
+					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/w.png"))));
 				}
 				colorFlag = !colorFlag;
 			}

@@ -66,6 +66,7 @@ public class SimonSaysBoard extends Board {
 			for (int col = 0; col < colsNum; col++) {
 				System.out.println("THE FUCKING COLOR IS : " + colors[row][col]);
 				getTile(row,col).setColor(colors[row][col]);
+				getTile(row,col).setOutlineColor(Color.WHITE);
 			}
 		}
 	}
