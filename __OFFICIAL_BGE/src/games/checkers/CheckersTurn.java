@@ -15,6 +15,7 @@ public class CheckersTurn{
 		this.state = state;
 		this.logic = logic;
 	}
+
 	public void executeMove(CheckersPlayer player, Board gameBoard, int turn, int startRow, int startCol, int endRow, int endCol) {
 		System.out.println("Player " + player.turn + " turn. Current turn: " + turn + " Color: " + player.gamePiece);
 		if (logic.isValidMove(player.gamePiece, gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)) {
@@ -73,7 +74,7 @@ public class CheckersTurn{
 		else {
 			CheckersTurn.black -= 1;
 		}
-		System.out.println("Red Remaining: " + CheckersPlayer.red + "Black Remaining: " + CheckersPlayer.black);
+		System.out.println("Red Remaining: " + red + "Black Remaining: " + black);
 		gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2] = "[ ]";
 	}
 	

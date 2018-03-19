@@ -15,6 +15,8 @@ import utility.PlayerProfile;
 public class Main extends Application{
 
     public static PlayerProfile playerProfile = new PlayerProfile();
+    public static Player player1 = new Player();
+    public static Player player2 = new Player();
 
 	public static void main(String[] args) {
         Application.launch(args);
@@ -48,6 +50,8 @@ public class Main extends Application{
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 450, 450));
         primaryStage.setOnHidden(e -> {
+            playerProfile.addPlayer(player1);
+            playerProfile.addPlayer(player2);
             playerProfile.writeToFile();
             System.out.println("Exiting Application... Goodbye.");
             Platform.exit();

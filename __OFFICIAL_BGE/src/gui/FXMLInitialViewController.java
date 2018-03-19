@@ -28,7 +28,7 @@ public class FXMLInitialViewController implements Initializable{
 	
 	static Board newBoard; 
 	static BGE_GUI bge;
-	
+
 	@FXML
 	private TextField player1Name;
 	
@@ -40,10 +40,11 @@ public class FXMLInitialViewController implements Initializable{
 
 	@FXML
 	protected void handlePlayerProfiles(){
-		Player player1 = new Player(player1Name.getText());
-		Player player2 = new Player(player2Name.getText());
-		Main.playerProfile.addPlayer(player1);
-		Main.playerProfile.addPlayer(player2);
+		//TODO: Dynamically assing whos turn it is
+		Main.player1.setUsername(player1Name.getText());
+		Main.player2.setUsername(player2Name.getText());
+		Main.player1.setTurn(1);
+		Main.player2.setTurn(2);
 	}
 
 

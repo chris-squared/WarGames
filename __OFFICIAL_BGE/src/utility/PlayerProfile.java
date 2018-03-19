@@ -22,8 +22,8 @@ public class PlayerProfile {
     public void addPlayer(Player player){
         if (playerJSONMap.containsKey(player.getUsername())){
             JSONObject playerStats = (JSONObject)playerJSONMap.get(player.getUsername());
-            long newWins = (long)playerStats.get("Wins") + player.getPlayerWins();
-            long newLosses = (long)playerStats.get("Losses") + player.getPlayerLosses();
+            int newWins =  ((Number)playerStats.get("Wins")).intValue() + player.getPlayerWins();
+            int newLosses = ((Number)playerStats.get("Losses")).intValue() + player.getPlayerLosses();
             playerStats.replace("Wins", newWins);
             playerStats.replace("Losses", newLosses);
             playerJSONMap.put(player.getUsername(),playerStats);
