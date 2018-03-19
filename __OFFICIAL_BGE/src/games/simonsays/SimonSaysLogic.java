@@ -8,8 +8,9 @@ public class SimonSaysLogic extends Logic {
 		this.state = state;
 	}
 
+	
+	
 	public boolean checkWinCondition(String gamePiece) {
-		System.out.println("No Winner Yet! SimonSaysLogic #12");
 		return false;
 	}
 

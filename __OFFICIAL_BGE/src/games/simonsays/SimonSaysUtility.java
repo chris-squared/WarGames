@@ -41,10 +41,10 @@ public class SimonSaysUtility {
 			result = Color.PINK;
 		}
 		else if (row == 1 && col == 1) {
-			result = Color.YELLOW;
+			result = Color.PURPLE;
 		}
 		else if (row == 1 && col == 2) {
-			result = Color.BROWN;
+			result = Color.YELLOW;
 		}
 		else if (row == 2 && col == 0) {
 			result = Color.ORANGE;

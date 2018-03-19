@@ -6,6 +6,7 @@ import bge.BoardCoord;
 import games.simonsays.SimonSaysEngine;
 import games.simonsays.SimonSaysLogic;
 import games.simonsays.SimonSaysState;
+import games.simonsays.SimonSaysTurn;
 import games.simonsays.SimonSaysUtility;
 import games.tictactoe.TicTacToeEngine;
 import games.tictactoe.TicTacToeLogic;
@@ -23,9 +24,12 @@ public class SimonSaysBoard extends Board {
 	
 	SimonSaysState state;
 	SimonSaysLogic logic;
-	SimonSaysEngine engine;
+	SimonSaysTurn simonTurn;
+	//SimonSaysEngine engine;
 	
 	int turn;
+	int startRowToRedraw = 0;
+	int endRowToRedraw = 0;
 	
 	boolean endFlag;
 	
@@ -35,6 +39,7 @@ public class SimonSaysBoard extends Board {
 		state = new SimonSaysState();
 		logic = new SimonSaysLogic(state);
 		//engine = new SimonSaysEngine(state, logic);
+		simonTurn =  new SimonSaysTurn(state, logic);
 		
 		SimonSaysUtility.printMenu();
 		
@@ -57,8 +62,9 @@ public class SimonSaysBoard extends Board {
 		};
 		//
 		
-		for (int row = 0; row < rowsNum; ++row) {
-			for (int col = 0; col < colsNum; ++col) {
+		for (int row = 0; row < rowsNum; row++) {
+			for (int col = 0; col < colsNum; col++) {
+				System.out.println("THE FUCKING COLOR IS : " + colors[row][col]);
 				getTile(row,col).setColor(colors[row][col]);
 			}
 		}
@@ -78,23 +84,29 @@ public class SimonSaysBoard extends Board {
 
 	@Override
 	public void forwardMouseClick(BoardCoord index) {
-//		while (engine.nextPlayersTurn(turn)) {
-//			turn+= 1;
-//		}
-		// TEMP
-		if (turn > 9 || endFlag)
-			System.exit(0);
-		
+
 		// EDIT TO TAKE IN ROW AND COL *****
-		//endFlag = !engine.nextPlayersTurn(turn, index.getRow(), index.getCol());
 		
-		turn += 1;
-		//
+		//LOOPS CURRENT TURN IF PLAYER IS GUESSING
+		//-INCREMENTING/DECREMENTING TURN VALUE TO REMAIN AT SAME PLACE
+		if (simonTurn.isGuessing) {
+			turn -= 1;
+			endFlag = !simonTurn.nextPlayersTurn(turn, simonTurn.getTurnStartRow(), simonTurn.getTurnStartCol(), index.getRow(), index.getCol());
+			turn += 1;
+		} 
+		
+		//OTHERWISE, ALTERNATES TO NEXT PLAYER
+		else {
+			endFlag = !simonTurn.nextPlayersTurn(turn, simonTurn.getTurnStartRow(), simonTurn.getTurnStartCol(), index.getRow(), index.getCol());
+			turn += 1;
+		}
+
 		
 		updateBoard();
 		
 		// IDEAL
 		if (endFlag) {
+			System.exit(0);
 			//throwGameIsOver();
 		}
 		
