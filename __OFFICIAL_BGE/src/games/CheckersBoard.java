@@ -34,7 +34,7 @@ public class CheckersBoard extends Board {
 		
 		Utility.printMenu();
 		
-		turn = 1;
+		turn = 0;
 		
 		state.getGameBoard().printBoard();
 	
@@ -87,8 +87,8 @@ public class CheckersBoard extends Board {
 		}
 		else {
 			if(checkersTurn.nextPlayersTurn(turn, checkersTurn.getTurnStartRow(), checkersTurn.getTurnStartCol(), index.getRow(), index.getCol())){
-			startRowToRedraw = checkersTurn.getTurnStartRow();
-			turn += 1;
+				startRowToRedraw = checkersTurn.getTurnStartRow();
+				turn += 1;
 			}
 			
 			endRowToRedraw = index.getRow();
