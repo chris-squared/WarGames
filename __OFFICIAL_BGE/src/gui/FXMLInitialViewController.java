@@ -101,6 +101,9 @@ public class FXMLInitialViewController implements Initializable{
 		FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard);
 		loader.setController(controller);
 		Parent root = loader.load();
+		controller.setPlayer1Name(Main.player1.getUsername());
+		controller.setPlayer2Name(Main.player2.getUsername());
+		controller.setPlayerTurn(Main.player1.getUsername());
 
 		primaryStage.setTitle("War Games");
 		primaryStage.setScene(new Scene(root, 1000, 800));

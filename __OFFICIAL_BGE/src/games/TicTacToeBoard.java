@@ -31,7 +31,7 @@ public class TicTacToeBoard extends Board {
 	TicTacToeLogic ticTacToeLogic;
 	TicTacToeEngine engine;
 	
-	int turn;
+//	int turn;
 	
 	// TEMP - Find way to use throw methods
 	boolean endFlag;

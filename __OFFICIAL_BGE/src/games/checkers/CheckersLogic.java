@@ -7,7 +7,7 @@ public class CheckersLogic {
 	}
 
 	public boolean checkWinCondition(String gamePiece){
-		if (CheckersPlayer.black == 0 || CheckersPlayer.red == 0)
+		if (CheckersTurn.black == 0 || CheckersTurn.red == 0)
 			return true;
 		System.out.println("No Winner Yet.");
 		return false;

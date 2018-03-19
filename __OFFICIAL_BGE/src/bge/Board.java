@@ -10,7 +10,8 @@ public abstract class Board {
 	
 	protected int rowsNum;
 	protected int colsNum;
-	
+
+	public int turn;
 //	double windHeight; 	- To gui
 //	double windWidth; 	- To gui
 //	
