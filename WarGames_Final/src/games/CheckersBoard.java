@@ -102,7 +102,7 @@ public class CheckersBoard extends Board {
 			checkersTurn.setTurnStartRow(-1);
 			checkersTurn.setTurnStartCol(-1);
 			
-			if(checkersTurn.black == 0 || checkersTurn.red == 0){
+			if(CheckersTurn.black == 0 || CheckersTurn.red == 0){
 				endFlag = true;
 			}
 				
