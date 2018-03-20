@@ -3,17 +3,16 @@ package games.simonsays;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SimonSaysEngine extends Engine {
+public class SimonSaysEngine{
 	public boolean continueGame;
 	public SimonSaysState state;
 	public SimonSaysLogic logic;
-	SimonSaysPlayer player1 = new SimonSaysPlayer(1, "p1");
-	SimonSaysPlayer player2 = new SimonSaysPlayer(2, "p2");
+	SimonSaysPlayer player1 = new SimonSaysPlayer("Tron", 1, "p1");
+	SimonSaysPlayer player2 = new SimonSaysPlayer("CLU", 2, "p2");
 
 	Color clickedColor;
 	
 	public SimonSaysEngine(SimonSaysState state, SimonSaysLogic logic) {
-		super(state, logic);
 		this.continueGame = true;
 		this.state = state;
 		this.logic = logic;
@@ -107,12 +106,6 @@ public class SimonSaysEngine extends Engine {
 	}
 
 	
-	//OVERRIDEN WITH SIMONSAYSPLAYER INSTEAD OF PLAYER
-	//OVERRIDEN TO INCLUDE OTHER PLAYER FOR ADDING TO SIMON PATTERN
-	@Override
-	public void executeMove(Player player, Board gameBoard, int turn, Scanner in) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }
