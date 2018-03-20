@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 public class Piece {
 
 	BoardCoord boardCoord;
-	Image image;
+	public Image image;
 	
 	Piece() {
 	}

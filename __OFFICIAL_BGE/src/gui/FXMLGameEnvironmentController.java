@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -44,6 +45,12 @@ public class FXMLGameEnvironmentController implements Initializable{
 
     @FXML
     private Label player2Name;
+
+    @FXML
+    private ImageView player1PieceImg;
+
+    @FXML
+    private ImageView player2PieceImg;
 
     public FXMLGameEnvironmentController(Board newBoard, Stage primaryStage){
         System.out.println("GameEnvironmentController set the new board");
