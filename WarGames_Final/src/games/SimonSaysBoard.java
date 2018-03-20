@@ -3,6 +3,7 @@ package games;
 
 import bge.Board;
 import bge.BoardCoord;
+import bge.GameOverException;
 import games.simonsays.SimonSaysEngine;
 import games.simonsays.SimonSaysLogic;
 import games.simonsays.SimonSaysState;
@@ -83,7 +84,7 @@ public class SimonSaysBoard extends Board {
 	}
 
 	@Override
-	public void forwardMouseClick(BoardCoord index) {
+	public void forwardMouseClick(BoardCoord index) throws GameOverException {
 
 		// EDIT TO TAKE IN ROW AND COL *****
 		
@@ -106,8 +107,7 @@ public class SimonSaysBoard extends Board {
 		
 		// IDEAL
 		if (endFlag) {
-			System.exit(0);
-			//throwGameIsOver();
+			throwGameIsOver();
 		}
 		
 	}
