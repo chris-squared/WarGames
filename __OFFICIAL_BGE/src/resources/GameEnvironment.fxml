@@ -153,7 +153,7 @@
                                                                   </Label>
                                                                </children>
                                                             </AnchorPane>
-                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                          <AnchorPane fx:id="playerPieceBackground1" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" stylesheets="@StyleBackgrounds.css">
                                                                <children>
                                                                   <ImageView fx:id="player1PieceImg" fitHeight="286.0" fitWidth="246.0" layoutX="-6.0" layoutY="-1.0">
                                                                      <image>
@@ -183,7 +183,7 @@
                                                                   </Label>
                                                                </children>
                                                             </AnchorPane>
-                                                          <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="160.0">
+                                                          <AnchorPane fx:id="playerPieceBackground2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="160.0" stylesheets="@StyleBackgrounds.css">
                                                                <children>
                                                                   <ImageView fx:id="player2PieceImg" fitHeight="286.0" fitWidth="262.0" layoutX="-19.0" layoutY="-2.0">
                                                                      <image>
