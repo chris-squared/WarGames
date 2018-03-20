@@ -1,4 +1,5 @@
 package games.eelsandescalators;
+import bge.BoardCoord;
 import bge.GameOverException;
 import bge.Piece;
 import bge.Player;
@@ -112,7 +113,7 @@ public class EelsLogic extends Logic {
 
 	@Override
 	//Adapter to actually make the move from within the logic class -- allows a standardized function to be called in engine
-	public void executeMove(Player p) throws GameOverException {
+	public void executeMove(Player p, BoardCoord bc) throws GameOverException {
 	
 		int roll = dr.rollDice(2, 7);
 		System.out.println(roll);

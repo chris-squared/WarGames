@@ -1,6 +1,7 @@
 package gui;
 
 import bge.Player;
+import game.tictactoe2.TicTacToeLogic;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +25,7 @@ import games.eelsandescalators.EelsState;
 import games.CheckersBoard;
 import games.EelsAndEscalatorsBoard;
 import games.SimonSaysBoard;
+import games.TicTacToe2Board;
 import main.Main;
 import utility.Engine;
 import utility.Logic;
@@ -61,7 +63,15 @@ public class FXMLInitialViewController implements Initializable{
 		   board = new EelsAndEscalatorsBoard();
 		   EelsState state = new EelsState((EelsAndEscalatorsBoard)board, p1, p2);
 		   logic = new EelsLogic(state, (EelsAndEscalatorsBoard)board);
-		   engine = new Engine(state, logic, board, p1, p2);
+		   engine = new Engine(logic, board, p1, p2);
+		   engine.addState(state);
+		   initializeGameScreen(event, board);
+	   }
+	   
+	   else if (gamename.equals("Tic-Tac-Toe")){
+		   board = new TicTacToe2Board();
+		   logic = new TicTacToeLogic((TicTacToe2Board)board);
+		   engine = new Engine(logic, board, p1, p2);
 		   initializeGameScreen(event, board);
 	   }
 	   

@@ -4,6 +4,7 @@ import bge.Board;
 import bge.BoardCoord;
 import bge.GameOverException;
 import bge.InvalidMoveException;
+import javafx.scene.paint.Color;
 
 public class TicTacToe2Board extends Board {
 	
@@ -13,8 +14,13 @@ public class TicTacToe2Board extends Board {
 
 	@Override
 	public void setStartingTiles() {
-		// TODO Auto-generated method stub
 		
+		for (int row = 0; row < rowsNum; ++row) {
+			for (int col = 0; col < colsNum; ++col) {
+				getTile(row,col).setOutlineColor(Color.WHITE);
+				getTile(row,col).setColor(Color.BLACK);
+			}
+		}
 	}
 
 	@Override

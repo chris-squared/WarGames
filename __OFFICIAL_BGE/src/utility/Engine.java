@@ -15,8 +15,7 @@ public class Engine {
 	int current_player = 0; 
 
 	
-	public Engine(State s, Logic l, Board b, Player Player1, Player Player2){
-		state = s;
+	public Engine( Logic l, Board b, Player Player1, Player Player2){
 		logic = l;
 		p1 = Player1;
 		p2 = Player2; 
@@ -24,10 +23,14 @@ public class Engine {
 		
 	}
 	
+	public void addState(State s) {
+		state = s;
+	}
 	
-	void Move() throws GameOverException {
+	
+	void Move(BoardCoord bc) throws GameOverException {
 		Player cp = get_current_player(); 
-		logic.executeMove(cp);
+		logic.executeMove(cp, bc);
 		swap_players(current_player);
 	}
 	
@@ -64,15 +67,13 @@ public class Engine {
 		profiles.updatePlayer(p);
 	}
 	
-	void runGame() {
-		
-		
-	}
+	
 
 
 	public void forwardMouseClick(BoardCoord coordToBoardCoord) throws GameOverException {
 		System.out.println("ENGINE CLICKED");
-		Move();
+		
+		Move(coordToBoardCoord);
 		
 	}
 }
