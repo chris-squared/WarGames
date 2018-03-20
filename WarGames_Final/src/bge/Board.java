@@ -108,11 +108,8 @@ public abstract class Board {
 	}
 	
 	public void movePieceP1(int currRow, int currCol, int newRow, int newCol) {
-		System.out.println("cr: " + currRow + "cc: " + currCol + "nr: " + newRow + " nc: " + newCol);
-    //	getPieceP1(currRow,currCol).getBoardCoord().set(newRow, newCol);
-		System.out.println("cr: " + currRow + "cc: " + currCol + "nr: " + newRow + " nc: " + newCol);
+		getPieceP1(currRow,currCol).getBoardCoord().set(newRow, newCol);
 		addPieceP1(newRow, newCol, getPieceP1(currRow,currCol));
-		System.out.println("cr: " + currRow + "cc: " + currCol + "nr: " + newRow + " nc: " + newCol);
 		removePieceP1(currRow,currCol);
 	}
 	
@@ -144,11 +141,8 @@ public abstract class Board {
 	}
 	
 	public void movePieceP2(int currRow, int currCol, int newRow, int newCol) {
-		System.out.println("cr: " + currRow + "cc: " + currCol + "nr: " + newRow + " nc: " + newCol);
-	//	getPieceP2(currRow,currCol).getBoardCoord().set(newRow, newCol);
-		System.out.println("cr: " + currRow + "cc: " + currCol + "nr: " + newRow + " nc: " + newCol);
+		getPieceP2(currRow,currCol).getBoardCoord().set(newRow, newCol);
 		addPieceP2(newRow, newCol, getPieceP2(currRow,currCol));
-		System.out.println("cr: " + currRow + "cc: " + currCol + "nr: " + newRow + " nc: " + newCol);
 		removePieceP2(currRow,currCol);
 	}
 	
