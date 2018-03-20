@@ -1,5 +1,13 @@
 package games.checkers;
-public class CheckersLogic {
+
+import utility.Logic;
+import bge.BoardCoord;
+import bge.GameOverException;
+import bge.Piece;
+import bge.Player;
+import bge.Tile;
+
+public class CheckersLogic extends Logic{
 
 	public CheckersState state;
 	public CheckersLogic(CheckersState state) {
@@ -37,7 +45,7 @@ public class CheckersLogic {
 			return true;
 			}
 		}
-		else if (gamePiece == "[B]" || gamePiece2 == "[K]") {
+		else if (gamePiece == "[B]" || gamePiece2 == "[Q]") {
 			if (gamePiece2 == "[Q]") {
 				if(isInsideBoard(startRow, startColumn, endRow, endColumn)
 						&& (state.gameBoard.board[startRow][startColumn] == gamePiece2)
@@ -70,7 +78,14 @@ public class CheckersLogic {
 	
 	//Check if the input row and column you want to move to is blank.
 	public boolean isBlankSpace(String[][] board, int endRow, int endColumn) {
+		
 		return (board[endRow][endColumn] == state.gameBoard.gridPiece);
+	
+	}
+	
+	//rewritten for new structure
+	public boolean isBlankSpace(BoardCoord bc) {
+		return(state.gameBoard.board[bc.getRow()][bc.getCol()] == state.gameBoard.gridPiece);
 	}
 	
 	//Checks for a simple move. If the input row and columns are one space away from each other.
@@ -104,5 +119,27 @@ public class CheckersLogic {
 				if (board[(startRow + endRow)/2][(startColumn+endColumn)/2] != gamePiece)
 					return true;
 		return false;
+	}
+
+	@Override
+	public boolean check_win_condition(Piece p) {
+		if (CheckersTurn.black == 0 || CheckersTurn.red == 0)
+			return true;
+		System.out.println("No Winner Yet.");
+		return false;
+	}
+
+	@Override
+	public boolean isValidMove(Piece p, Tile start, Tile end) {
+		// Please work...
+		
+		return false;
+	}
+
+	@Override
+	public void executeMove(Player p, BoardCoord bc) throws GameOverException {
+		// TODO Auto-generated method stub
+		Board gameBoard = state.getGameBoard();
+		System.out.println("Player " + p.turn + " turn. Current turn: " + turn + " Color: " + p.gamePiece);
 	}
 }
