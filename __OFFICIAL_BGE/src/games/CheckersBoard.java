@@ -127,16 +127,16 @@ public class CheckersBoard extends Board {
 		for(int row = startRowToRedraw; row <= endRowToRedraw; row++) {
 			for(int col = 0; col < COLS; col++) {
 				if(state.returnGameBoard().board[row][col].equals("[R]")) {
-					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/redCircle.png"))));
+					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/r.png"))));
 				}
 				else if(state.returnGameBoard().board[row][col].equals("[B]")) {
-					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/whiteCircle.png"))));
+					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/w.png"))));
 				}
 				else if(state.returnGameBoard().board[row][col].equals("[K]")) {
 					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/RedKing.png"))));
 				}
 				else if(state.returnGameBoard().board[row][col].equals("[Q]")) {
-					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/BlackKing.png"))));
+					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/WhiteKing.png"))));
 				}
 				else {
 					addPieceP1(row, col, null);

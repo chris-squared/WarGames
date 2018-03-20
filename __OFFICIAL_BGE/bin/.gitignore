@@ -1,4 +1,8 @@
-/utility/
+/.DS_Store
+/NewBoard/
+/bge/
 /games/
 /gui/
-/bge/
+/main/
+/resources/
+/utility/
