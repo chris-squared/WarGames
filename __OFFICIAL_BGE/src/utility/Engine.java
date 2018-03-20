@@ -9,8 +9,8 @@ import bge.Player;
 public class Engine {
 	State state; 
 	Logic logic;
-	Player p1;
-	Player p2;
+	public Player p1;
+	public Player p2;
 	public Board board;
 	PlayerProfile profiles;
 	public int current_player = 0;

@@ -177,6 +177,10 @@ public class FXMLGameEnvironmentController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         System.out.println("GameEnvironment Initialized");
+        
+        player1PieceImg.setImage(engine.p1.getPlayerImg());
+        player2PieceImg.setImage(engine.p2.getPlayerImg());
+        
         bge = new BGE_GUI(engine, primaryStage, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
         bge.updateDisplay();
         gridPaneParent.getChildren().clear();
