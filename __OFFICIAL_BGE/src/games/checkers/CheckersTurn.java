@@ -5,8 +5,8 @@ public class CheckersTurn{
 	public CheckersLogic logic;
 	public static int red = 12;
 	public static int black = 12;
-	public CheckersPlayer player1 = new CheckersPlayer(1, "[R]", "[K]");
-	public CheckersPlayer player2 = new CheckersPlayer(2, "[B]", "[Q]");
+	public CheckersPlayer player1 = new CheckersPlayer("Tron", 1, "[R]", "[K]");
+	public CheckersPlayer player2 = new CheckersPlayer("CLU", 2, "[B]", "[Q]");
 
 	int turnStartRow = -1;
 	int turnStartCol = -1;
