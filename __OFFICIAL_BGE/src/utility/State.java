@@ -1,9 +1,12 @@
 package utility;
 
+
+
 import bge.Board;
 
+
 public abstract class State {
-		Board board;
+	Board board;
 		
 	protected State(Board b){
 		board = b;
