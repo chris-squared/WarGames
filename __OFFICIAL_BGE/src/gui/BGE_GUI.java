@@ -26,10 +26,11 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
+import utility.Engine;
 
 public class BGE_GUI {
 
-	
+	Engine engine;
 	Board board;
 	GridPane grid;
 	Scene scene;
@@ -45,9 +46,9 @@ public class BGE_GUI {
 
 //	FXMLLoader loader = new FXMLLoader();
 
-	public BGE_GUI(Board b, Stage primaryStage, double height, double width) {
-		
-		board 	= b;
+	public BGE_GUI(Engine e, Stage primaryStage, double height, double width) {
+		engine = e;
+		board 	= e.board;
 		grid 	= new GridPane();
 		this.primaryStage = primaryStage;
 //		scene 	= new Scene(grid, board.getWindWidth(), board.getWindHeight());
@@ -205,22 +206,19 @@ public class BGE_GUI {
     					+ "\nY: " + lastClicked.getY()
     					+"\n-----");
     			coordToBoardCoord(lastClicked);
-    			mouseClicked();
+    			try {
+					mouseClicked();
+				} catch (GameOverException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
     		}
 		};
 	}
 	
-	private void mouseClicked() {
-		try {
-			board.forwardMouseClick(coordToBoardCoord(lastClicked));
-			updateDisplay();
-		} catch (GameOverException e) {
-			updateDisplay();
-			gameOver();
-		} catch (InvalidMoveException e) {
-			updateDisplay();
-			invalidMove();
-		}
+	private void mouseClicked() throws GameOverException {
+		engine.forwardMouseClick(coordToBoardCoord(lastClicked));
+		updateDisplay();
 	}
 
 	private void gameOver() {

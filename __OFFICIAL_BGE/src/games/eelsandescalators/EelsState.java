@@ -24,10 +24,22 @@ public class EelsState extends State {
 		
 		
 		//Construct a new state with the board
-		public EelsState(EelsAndEscalatorsBoard b) {
+		public EelsState(EelsAndEscalatorsBoard b, Player P1, Player P2) {
 			super(b);
 			board = b;
 			GenerateBoardPath();
+			PopulateBoard(P1, P2);
+		}
+		
+		void PopulateBoard(Player P1, Player P2) {
+			playerLocationRepo.put(P1, 1);
+			playerLocationRepo.put(P2, 1);
+			addEel(3, 1);
+			addEscalator(5, 10);
+			addEel(8, 2);
+			addEscalator(20, 24);
+			addEel(33, 27);
+			addEel(99, 85);
 		}
 		
 		//Generates the path of the board and assigns each tile to a number -- this makes rolls easier to add to the system

@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
 import utility.DiceRoller;
 public class EelsAndEscalatorsBoard extends Board {
-	EelsEngine e; 
+	
 	static final int ROWS = 10;
 	static final int COLS = 10;
 	
@@ -22,9 +22,6 @@ public class EelsAndEscalatorsBoard extends Board {
 	public EelsAndEscalatorsBoard() {
 		//super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS,windHeight,windWidth);
 		super("Electric Eels and Super Escalators 2: Super Ultra Force",ROWS,COLS);
-		EelsState s = new EelsState(this);
-		EelsLogic l = new EelsLogic(s, this);
-		e = new EelsEngine(this, s, l);
 		
 	}
 	
@@ -82,7 +79,9 @@ public class EelsAndEscalatorsBoard extends Board {
 
 	@Override
 	public void forwardMouseClick(BoardCoord clickCoords) throws GameOverException {
-		e.makeTurn();
+		turn_flag = 1;
+		System.out.println("MAKING A TURN");
+	
 		
 	}
 

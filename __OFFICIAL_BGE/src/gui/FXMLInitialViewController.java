@@ -52,14 +52,16 @@ public class FXMLInitialViewController implements Initializable{
 		Main.player2.setTurn(2);
 	}
    protected void  BuildEngine(String gamename, ActionEvent event) throws Exception {
+	   Player p1 = new Player(player1Name.getText(), 0, "X");
+	   Player p2 = new Player(player2Name.getText(), 1, "T");
 	   Logic logic;
 	   Board board;
 	   if (gamename.equals("Electric Eels and Super Escalators 2: Super Ultra Force")) {
 		  
 		   board = new EelsAndEscalatorsBoard();
-		   EelsState state = new EelsState((EelsAndEscalatorsBoard)board);
+		   EelsState state = new EelsState((EelsAndEscalatorsBoard)board, p1, p2);
 		   logic = new EelsLogic(state, (EelsAndEscalatorsBoard)board);
-		   engine = new Engine(state, logic, board);
+		   engine = new Engine(state, logic, board, p1, p2);
 		   initializeGameScreen(event, board);
 	   }
 	   
@@ -124,6 +126,7 @@ public class FXMLInitialViewController implements Initializable{
 
 		// Create controller instance and pass it to the fxml file that was loaded
 		FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard, primaryStage);
+		controller.setEngine(engine);
 		loader.setController(controller);
 		Parent root = loader.load();
 		controller.setPlayer1Name(Main.player1.getUsername());

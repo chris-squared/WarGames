@@ -13,13 +13,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import main.Main;
+import utility.Engine;
 
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class FXMLGameEnvironmentController implements Initializable{
-
+	Engine engine;
     private BGE_GUI bge;
     private Board newBoard;
     private Stage primaryStage;
@@ -44,7 +45,11 @@ public class FXMLGameEnvironmentController implements Initializable{
         this.newBoard = newBoard;
         this.primaryStage = primaryStage;
     }
-
+    
+    
+    public void setEngine(Engine e) {
+    	engine = e;
+    }
     @FXML
     public String getPlayerTurn(){
         return playerTurn.getText();
@@ -121,7 +126,7 @@ public class FXMLGameEnvironmentController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         System.out.println("GameEnvironment Initialized");
-        bge = new BGE_GUI(newBoard, primaryStage, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
+        bge = new BGE_GUI(engine, primaryStage, gridPaneParent.getPrefHeight(), gridPaneParent.getPrefWidth());
         bge.updateDisplay();
         gridPaneParent.getChildren().clear();
         gridPaneParent.getChildren().addAll(bge.getGrid());

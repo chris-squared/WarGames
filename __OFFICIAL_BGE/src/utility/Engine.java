@@ -1,28 +1,53 @@
 package utility;
 
 import bge.Board;
+import bge.BoardCoord;
+import bge.GameOverException;
 import bge.Player;
 
 public class Engine {
 	State state; 
 	Logic logic;
-	Board board;
+	Player p1;
+	Player p2;
+	public Board board;
 	PlayerProfile profiles;
-	
+	int current_player = 0; 
 
 	
-	public Engine(State s, Logic l, Board b){
+	public Engine(State s, Logic l, Board b, Player Player1, Player Player2){
 		state = s;
 		logic = l;
+		p1 = Player1;
+		p2 = Player2; 
 		board = b; 
-		System.out.println("BUILDING ENGINE SUCKAHS");
+		
 	}
 	
 	
-	void ExecuteMove() {
-		logic.executeMove();
+	void Move() throws GameOverException {
+		Player cp = get_current_player(); 
+		logic.executeMove(cp);
+		swap_players(current_player);
 	}
 	
+	private void swap_players(int current) {
+		if (current == 0)
+			current_player = 1;
+		else
+			current_player = 0; 
+		
+	}
+
+
+	private Player get_current_player() {
+		if (current_player == 0)
+			return p1;
+		else
+			return p2; 
+	}
+
+
 	void UpdateBoard() {
 		board.updateBoard();
 	}
@@ -41,6 +66,13 @@ public class Engine {
 	
 	void runGame() {
 		
+		
+	}
+
+
+	public void forwardMouseClick(BoardCoord coordToBoardCoord) throws GameOverException {
+		System.out.println("ENGINE CLICKED");
+		Move();
 		
 	}
 }

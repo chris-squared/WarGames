@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public abstract class Board {
-
+	protected int turn_flag = 0; 
 	String title;
 	
 	protected int rowsNum;
@@ -74,6 +74,9 @@ public abstract class Board {
 	
 	
 	// Tile Operations ----------
+	public int GetTurnFlag() {
+		return turn_flag;
+	}
 	
 	public void changeTileColor(int row, int col, Color color) {
 		getTile(row, col).setColor(color);

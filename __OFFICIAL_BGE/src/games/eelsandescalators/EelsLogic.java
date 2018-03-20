@@ -1,13 +1,16 @@
 package games.eelsandescalators;
+import bge.GameOverException;
 import bge.Piece;
 import bge.Player;
 import bge.Tile;
 import games.EelsAndEscalatorsBoard;
+import utility.DiceRoller;
 import utility.Logic;
 import utility.State;
 
 
 public class EelsLogic extends Logic {
+	DiceRoller dr = new DiceRoller();
 	EelsState state;
 	EelsAndEscalatorsBoard board;
 
@@ -109,8 +112,13 @@ public class EelsLogic extends Logic {
 
 	@Override
 	//Adapter to actually make the move from within the logic class -- allows a standardized function to be called in engine
-	public void executeMove() {
-		// TODO Auto-generated method stub
+	public void executeMove(Player p) throws GameOverException {
+	
+		int roll = dr.rollDice(2, 7);
+		System.out.println(roll);
+		move(p, roll);
+		if (is_winner(p))
+			board.throwGameIsOver();
 		
 	}
 
