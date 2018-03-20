@@ -6,8 +6,6 @@ import java.util.HashMap;
 import bge.Player;
 import bge.Tile;
 
-import games.EelsAndEscalatorsBoard;
-
 public class EelsState extends State {
 	//Keep track of the order of pieces for the board -- very important for Eels and Escalators, because you don't move linearly through it
 		HashMap<Integer, Tile> BoardPathRepository = new HashMap<Integer, Tile>();
