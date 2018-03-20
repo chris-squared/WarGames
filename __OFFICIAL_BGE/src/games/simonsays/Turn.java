@@ -1,5 +1,6 @@
 package games.simonsays;
-
+import utility.State;
+import utility.Logic;
 public abstract class Turn {
 	public State state;
 	public Logic logic;

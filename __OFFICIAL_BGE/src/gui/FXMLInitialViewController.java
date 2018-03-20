@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 import bge.Board;
 import games.eelsandescalators.EelsLogic;
 import games.eelsandescalators.EelsState;
+import games.simonsays.SimonSaysLogic;
+import games.simonsays.SimonSaysState;
 import games.tictactoe.TicTacToeBoard;
 import games.tictactoe.TicTacToeLogic;
 import games.CheckersBoard;
@@ -129,6 +131,14 @@ public class FXMLInitialViewController implements Initializable{
 		   board = new CheckersBoard();
 		   CheckersState ch = new CheckersState();
 		   logic = new CheckersLogic(ch);
+		   engine = new Engine(logic, board, p1, p2);
+		   initializeGameScreen(event, board);
+	   }
+	   
+	   else if (gamename.equals("Simon Says")) {
+		   board = new SimonSaysBoard();
+		   SimonSaysState ss = new SimonSaysState();
+		   logic = new SimonSaysLogic(ss);
 		   engine = new Engine(logic, board, p1, p2);
 		   initializeGameScreen(event, board);
 	   }

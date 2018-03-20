@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class SimonSaysTurn extends Turn {
 	public SimonSaysState state;
 	public SimonSaysLogic logic;
-	public SimonSaysPlayer player1 = new SimonSaysPlayer(1, "[*]");
-	public SimonSaysPlayer player2 = new SimonSaysPlayer(2, "[*]");
+	public SimonSaysPlayer player1 = new SimonSaysPlayer("Tron", 1, "[*]");
+	public SimonSaysPlayer player2 = new SimonSaysPlayer("CLU", 2, "[*]");
 	
 	public boolean continueGame = true;
 	public boolean isGuessing = false;

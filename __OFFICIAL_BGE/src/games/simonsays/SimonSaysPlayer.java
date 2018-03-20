@@ -1,12 +1,12 @@
 package games.simonsays;
 import java.util.ArrayList;
-
+import bge.Player;
 public class SimonSaysPlayer extends Player {
 	ArrayList<Color> simonPattern;
 	ArrayList<Color> simonCopy;
 	
-	public SimonSaysPlayer(int turn, String gamePiece) {
-		super(turn, gamePiece);
+	public SimonSaysPlayer(String name, int turn, String gamePiece) {
+		super(name, turn, gamePiece);
 		simonPattern = new ArrayList<Color>();
 	}
 	
