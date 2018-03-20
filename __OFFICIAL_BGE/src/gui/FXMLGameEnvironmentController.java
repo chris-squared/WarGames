@@ -174,6 +174,9 @@ public class FXMLGameEnvironmentController implements Initializable{
             }
         });
 
+        player1PieceImg.setImage(Main.player1.getPlayerImg());
+        player2PieceImg.setImage(Main.player2.getPlayerImg());
+
     }
 
 }

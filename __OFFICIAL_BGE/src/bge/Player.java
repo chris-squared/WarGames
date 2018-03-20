@@ -1,5 +1,7 @@
 package bge;
 
+import javafx.scene.image.Image;
+
 public class Player {
 
 	private String username;
@@ -8,6 +10,8 @@ public class Player {
 	private int playerLosses = 0;
 	public int turn;
 	public String gamePiece;
+
+	private Image playerImg;
 
 	public Player(){
 
@@ -19,6 +23,13 @@ public class Player {
 		this.gamePiece = gamePiece;
 	}
 
+	public void setPlayerImg(Image img){
+		this.playerImg = img;
+	}
+
+	public Image getPlayerImg(){
+		return this.playerImg;
+	}
 
 	public void incWins(){
 		this.playerWins++;

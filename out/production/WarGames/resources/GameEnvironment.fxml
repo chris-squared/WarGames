@@ -155,7 +155,7 @@
                                                             </AnchorPane>
                                                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                <children>
-                                                                  <ImageView fitHeight="286.0" fitWidth="246.0" layoutX="-6.0" layoutY="-1.0">
+                                                                  <ImageView fx:id="player1PieceImg" fitHeight="286.0" fitWidth="246.0" layoutX="-6.0" layoutY="-1.0">
                                                                      <image>
                                                                         <Image url="@player_bg.jpg" />
                                                                      </image>
@@ -185,7 +185,7 @@
                                                             </AnchorPane>
                                                           <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="160.0">
                                                                <children>
-                                                                  <ImageView fitHeight="286.0" fitWidth="262.0" layoutX="-19.0" layoutY="-2.0">
+                                                                  <ImageView fx:id="player2PieceImg" fitHeight="286.0" fitWidth="262.0" layoutX="-19.0" layoutY="-2.0">
                                                                      <image>
                                                                         <Image url="@player_bg.jpg" />
                                                                      </image>
