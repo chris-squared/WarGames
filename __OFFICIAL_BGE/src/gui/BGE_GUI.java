@@ -249,19 +249,15 @@ public class BGE_GUI {
 		    System.out.println("Resetting game");
 			loader.setLocation(getClass().getResource("/resources/GameEnvironment.fxml"));
 			try {
-				Board newBoard = board.getClass().newInstance();
-				FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard, primaryStage);
+				FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(board, primaryStage);
 				controller.setEngine(engine);
+				engine.board.resetBoard();
 				loader.setController(controller);
 				Parent root = loader.load();
 				primaryStage.setTitle("War Games");
 				primaryStage.setScene(new Scene(root, 1000, 800));
 				primaryStage.show();
 			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (InstantiationException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			}
 		} else if (result.get() == gameSelect) {
@@ -276,7 +272,6 @@ public class BGE_GUI {
 				e.printStackTrace();
 			}
 		} else {
-//		    System.exit(0);
 			Platform.exit();
 		}
 	}

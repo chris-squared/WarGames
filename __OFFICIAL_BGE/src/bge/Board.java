@@ -307,7 +307,25 @@ public abstract class Board {
 		this.images = images;
 	}
 	
-	
-	
-	
+	public void resetBoard() {
+		tiles 		= new ArrayList<ArrayList<Tile>>();
+		piecesP1 	= new ArrayList<ArrayList<Piece>>();
+		piecesP2 	= new ArrayList<ArrayList<Piece>>();
+		images		= new ArrayList<ArrayList<Image>>();
+
+		for (int row = 0; row < rowsNum; ++row) {
+			tiles.add(new ArrayList<Tile>());
+			piecesP1.add(new ArrayList<Piece>());
+			piecesP2.add(new ArrayList<Piece>());
+			images.add(new ArrayList<Image>());
+			
+			for (int col = 0; col < colsNum; ++col) {
+				// Create columns
+				tiles.get(row).add(new Tile(row,col));
+				piecesP1.get(row).add(null);
+				piecesP2.get(row).add(null);
+				images.get(row).add(null);
+			}
+		}
+	}
 }

@@ -97,8 +97,21 @@ public class FXMLGameEnvironmentController implements Initializable{
     }
 
     @FXML
-    protected void resetGame(){
-        //TODO: reset current game
+    protected void resetGame() {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("/resources/GameEnvironment.fxml"));
+		try {
+			FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard, primaryStage);
+			controller.setEngine(engine);
+			engine.board.resetBoard();
+			loader.setController(controller);
+			Parent root = loader.load();
+			primaryStage.setTitle("War Games");
+			primaryStage.setScene(new Scene(root, 1000, 800));
+			primaryStage.show();
+		} catch (Exception e) {
+			
+		}
     }
 
     @FXML
