@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import main.Main;
 
 public abstract class Board {
 	protected int turn_flag = 0; 
@@ -17,7 +18,7 @@ public abstract class Board {
 //	
 //	double tileHeight; 	- To gui
 //	double tileWidth; 	- To gui
-	
+
 	ArrayList<ArrayList<Tile>> 	tiles;
 	ArrayList<ArrayList<Piece>> piecesP1;
 	ArrayList<ArrayList<Piece>> piecesP2;

@@ -84,10 +84,13 @@ public class FXMLGameEnvironmentController implements Initializable{
 
     @FXML
     protected void whosTurn(){
-        if (newBoard.turn % 2 == 0){
+        if (engine.current_player % 2 == 0){
             setPlayerTurn(player1Name.getText());
+//            player1PieceImg.setImage(Main.player1.getPlayerImg());
+//            player2PieceImg.setImage(Main.player2.getPlayerImg());
         }else{
             setPlayerTurn(player2Name.getText());
+
         }
     }
 
@@ -116,7 +119,6 @@ public class FXMLGameEnvironmentController implements Initializable{
 
     @FXML
     protected void redirectHome(){
-        //TODO: change to inital view fxml
         System.out.println("Choosing another game");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
@@ -187,8 +189,6 @@ public class FXMLGameEnvironmentController implements Initializable{
             }
         });
 
-        player1PieceImg.setImage(Main.player1.getPlayerImg());
-        player2PieceImg.setImage(Main.player2.getPlayerImg());
 
     }
 

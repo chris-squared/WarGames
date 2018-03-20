@@ -24,6 +24,8 @@ public class Player {
 	}
 
 	public void setPlayerImg(Image img){
+		if (this.playerImg != null)
+			return;
 		this.playerImg = img;
 	}
 

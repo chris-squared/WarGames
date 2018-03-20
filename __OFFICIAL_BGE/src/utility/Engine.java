@@ -13,7 +13,7 @@ public class Engine {
 	Player p2;
 	public Board board;
 	PlayerProfile profiles;
-	int current_player = 0; 
+	public int current_player = 0;
 
 	
 	public Engine( Logic l, Board b, Player Player1, Player Player2){

@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4f79b9bc-5835-4c81-b384-cc242654387c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java" />
       <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Player.java" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Player.java" />
       <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/resources/GameEnvironment.fxml" afterPath="$PROJECT_DIR$/out/production/WarGames/resources/GameEnvironment.fxml" />
+      <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/Engine.java" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/Engine.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/WarGames/gui/FXMLInitialViewController.class" afterPath="$PROJECT_DIR$/out/production/WarGames/gui/FXMLInitialViewController.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/BoardGameEnvironment/" />
@@ -28,8 +30,8 @@
       <file leaf-file-name="FXMLGameEnvironmentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1988">
-              <caret line="177" column="62" lean-forward="false" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
+            <state relative-caret-position="183">
+              <caret line="88" column="56" lean-forward="false" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,33 +42,21 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="315">
+              <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
-                <element signature="e#433#434#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#519#520#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Piece.java">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BGE_GUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/BGE_GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="261" column="22" lean-forward="true" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+            <state relative-caret-position="1770">
+              <caret line="132" column="5" lean-forward="true" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -75,12 +65,19 @@
       <file leaf-file-name="FXMLInitialViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding>
-                <element signature="e#1116#1117#0" expanded="true" />
-                <element signature="e#1138#1139#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-176">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Engine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/Engine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,7 +111,6 @@
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/Player.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/main/Main.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToeEngine.java" />
-        <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/TicTacToeBoard.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/PlayerProfile.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java" />
@@ -124,6 +120,8 @@
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersTurn.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Piece.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Player.java" />
+        <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java" />
+        <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/Engine.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java" />
       </list>
     </option>
@@ -208,6 +206,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="WarGames" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WarGames" type="462c0819:PsiDirectoryNode" />
+              <item name="__OFFICIAL_BGE" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utility" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -231,6 +236,127 @@
       <recent name="$PROJECT_DIR$/__OFFICIAL_BGE/Jars" />
       <recent name="$PROJECT_DIR$/__OFFICIAL_BGE/src/resources" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/bin/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/CheckersBoard.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/simonsays/SimonSaysPlayer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/simonsays/SimonSaysTurn.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/simonsays/Turn.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/WhiteKing.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/BlackKing.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/redCircle.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/whiteCircle.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -370,7 +496,7 @@
       <workItem from="1521485475932" duration="443000" />
       <workItem from="1521487385033" duration="279000" />
       <workItem from="1521505869035" duration="691000" />
-      <workItem from="1521528588871" duration="3728000" />
+      <workItem from="1521528588871" duration="5821000" />
     </task>
     <task id="LOCAL-00001" summary="Created an intitializeGameEnv method in the initial view controller to refactor a bit since there was a lot of duplicated code. This method will load the gameenv FXML file set the stage and it will take a board and pass that to the FXMLGameenv controller constructor. Then this method will set the controller to the FXML file since the file does not specify a controller.">
       <created>1521350522449</created>
@@ -449,11 +575,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521531908723</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="created variables, setter and getter in player class that sets the image. Player piece images are set in the gameenvcontroller.">
+      <created>1521532710917</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1521532710917</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39457000" />
+    <option name="totallyTimeSpent" value="41550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
@@ -506,30 +639,22 @@
     <MESSAGE value="forgot to uncomment something" />
     <MESSAGE value="commented all errors in checkers to test.&#10;Home and quit buttons work again in game env" />
     <MESSAGE value="created variable to set the player piece images in game env controller and in gameenv fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="created variable to set the player piece images in game env controller and in gameenv fxml" />
+    <MESSAGE value="created variables, setter and getter in player class that sets the image. Player piece images are set in the gameenvcontroller." />
+    <option name="LAST_COMMIT_MESSAGE" value="created variables, setter and getter in player class that sets the image. Player piece images are set in the gameenvcontroller." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="105" column="61" lean-forward="false" selection-start-line="105" selection-start-column="61" selection-end-line="105" selection-end-column="61" />
-          <folding>
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/TicTacToeBoard.java" />
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/BGE_GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2490">
           <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1521533617090" expanded="true" signature="5891:6076" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -566,7 +691,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/Turn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -685,13 +803,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToePlayer.java" />
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToeEngine.java" />
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToeLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/GameEnvironment.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -703,20 +814,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToeState.java" />
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/TicTacToeBoard.java" />
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -738,7 +835,7 @@
         <state relative-caret-position="15">
           <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -762,84 +859,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersTurn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="107" column="5" lean-forward="false" selection-start-line="107" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/BGE_GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
-          <caret line="261" column="22" lean-forward="true" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+          <caret line="264" column="22" lean-forward="false" selection-start-line="264" selection-start-column="22" selection-end-line="264" selection-end-column="22" />
+          <folding>
+            <marker date="1521533617090" expanded="true" signature="5891:6076" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java">
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-955">
-          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersTurn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" column="5" lean-forward="false" selection-start-line="107" selection-start-column="4" selection-end-line="127" selection-end-column="0" />
+          <folding>
+            <element signature="e#4675#4676#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToeBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="60">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/tictactoe/TicTacToeLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2528">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="19" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/bge/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="132" column="5" lean-forward="true" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-176">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1988">
-          <caret line="177" column="62" lean-forward="false" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
+        <state relative-caret-position="183">
+          <caret line="88" column="56" lean-forward="false" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
