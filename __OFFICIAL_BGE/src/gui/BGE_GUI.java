@@ -209,16 +209,20 @@ public class BGE_GUI {
     			try {
 					mouseClicked();
 				} catch (GameOverException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					gameOver();
 				}
     		}
 		};
 	}
 	
 	private void mouseClicked() throws GameOverException {
-		engine.forwardMouseClick(coordToBoardCoord(lastClicked));
-		updateDisplay();
+		try {
+			engine.forwardMouseClick(coordToBoardCoord(lastClicked));
+			updateDisplay();
+		} catch (GameOverException e) {
+			updateDisplay();
+			throw new GameOverException();
+		}
 	}
 
 	private void gameOver() {
@@ -243,6 +247,7 @@ public class BGE_GUI {
 			try {
 				Board newBoard = board.getClass().newInstance();
 				FXMLGameEnvironmentController controller = new FXMLGameEnvironmentController(newBoard, primaryStage);
+				controller.setEngine(engine);
 				loader.setController(controller);
 				Parent root = loader.load();
 				primaryStage.setTitle("War Games");
@@ -270,15 +275,7 @@ public class BGE_GUI {
 		    System.exit(0);
 		}
 	}
-	
-	private void invalidMove() {
-		// Action to take when move is invalid
-		//   - Window stating invalid move? Do nothing?
-		System.out.println("INVALID MOVE");
-		
-	}
-	
-	
+
 	// Getter
 	
 	public GridPane getGrid(){

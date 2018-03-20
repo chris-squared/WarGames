@@ -1,6 +1,9 @@
 package games.tictactoe;
 
+import bge.BoardCoord;
+import bge.GameOverException;
 import bge.Piece;
+import bge.Player;
 import bge.Tile;
 import utility.Logic;
 
@@ -124,13 +127,7 @@ public class TicTacToeLogic extends Logic {
 	}
 
 	@Override
-	public boolean isValidMove(Piece p, Tile start, Tile end) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void executeMove() {
+	public void executeMove(Player p, BoardCoord bc) throws GameOverException {
 		// TODO Auto-generated method stub
 		
 	}

@@ -27,7 +27,6 @@ public class Engine {
 		state = s;
 	}
 	
-	
 	void Move(BoardCoord bc) throws GameOverException {
 		Player cp = get_current_player(); 
 		logic.executeMove(cp, bc);
@@ -39,9 +38,7 @@ public class Engine {
 			current_player = 1;
 		else
 			current_player = 0; 
-		
 	}
-
 
 	private Player get_current_player() {
 		if (current_player == 0)
@@ -67,12 +64,8 @@ public class Engine {
 		profiles.updatePlayer(p);
 	}
 	
-	
-
-
 	public void forwardMouseClick(BoardCoord coordToBoardCoord) throws GameOverException {
-		System.out.println("ENGINE CLICKED");
-		
+		//System.out.println("ENGINE CLICKED");
 		Move(coordToBoardCoord);
 		
 	}
