@@ -66,7 +66,10 @@ public class Engine {
 		if(logic.has_move_function == 1)
 			Move(coordToBoardCoord);
 		else
+		{
 			board.forwardMouseClick(coordToBoardCoord);
+		swap_players(current_player);
+		}
 		
 	}
 }
