@@ -77,9 +77,9 @@
                                                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                                                             <content>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                                                                    <!--<fx:define>-->
-                                                                        <!--<ToggleGroup fx:id="gameSelectGroup" />-->
-                                                                    <!--</fx:define>-->
+                                                                    <fx:define>
+                                                                        <ToggleGroup fx:id="gameSelectGroup" />
+                                                                    </fx:define>
                                                                     <children>
                                                                         <RadioButton layoutX="14.0" layoutY="22.0" mnemonicParsing="false" text="Tic-Tac-Toe" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <toggleGroup>

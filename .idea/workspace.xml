@@ -3,24 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4f79b9bc-5835-4c81-b384-cc242654387c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java" />
-      <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java" />
       <change beforePath="$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml" afterPath="$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/bge/Board.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/bge/BoardCoord.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/bge/Coord.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/bge/Piece.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/bge/Player.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/bge/Tile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/games/eelsandescalators/EelsState.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/games/tictactoe/TicTacToeBoard.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/games/tictactoe/TicTacToeLogic.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/gui/BGE_GUI$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/gui/BGE_GUI.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/gui/FXMLGameEnvironmentController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/main/Main.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/utility/DiceRoller.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/WarGames/utility/Turn.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/BoardGameEnvironment/" />
@@ -65,8 +48,8 @@
       <file leaf-file-name="FXMLGameEnvironmentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="99" column="8" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="137" selection-end-column="28" />
+            <state relative-caret-position="-376">
+              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,24 +70,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InitialView.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InitialView.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="79" column="49" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+              <caret line="79" column="76" lean-forward="true" selection-start-line="79" selection-start-column="76" selection-end-line="81" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckersLogic.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CheckersLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="150">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -169,8 +152,8 @@
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/utility/PlayerProfile.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java" />
-        <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml" />
         <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLInitialViewController.java" />
+        <option value="$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml" />
       </list>
     </option>
   </component>
@@ -387,7 +370,7 @@
       <workItem from="1521485475932" duration="443000" />
       <workItem from="1521487385033" duration="279000" />
       <workItem from="1521505869035" duration="691000" />
-      <workItem from="1521528588871" duration="425000" />
+      <workItem from="1521528588871" duration="485000" />
     </task>
     <task id="LOCAL-00001" summary="Created an intitializeGameEnv method in the initial view controller to refactor a bit since there was a lot of duplicated code. This method will load the gameenv FXML file set the stage and it will take a board and pass that to the FXMLGameenv controller constructor. Then this method will set the controller to the FXML file since the file does not specify a controller.">
       <created>1521350522449</created>
@@ -438,11 +421,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521427547861</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed the damn initial view again.">
+      <created>1521529067489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1521529067489</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36154000" />
+    <option name="totallyTimeSpent" value="36214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="778" extended-state="0" />
@@ -491,7 +481,8 @@
     <MESSAGE value="created a jars folder and added json-simple jar and mapped the dependencies" />
     <MESSAGE value="adding PlayerProfile directory" />
     <MESSAGE value="modified tictactoe engine to increment wins and losses. Modified tictactoe to implement bge.Player instead of its own. All other engines or board or logic should implement or use the player class. I made it Static in main for testing but there will only exist two players." />
-    <option name="LAST_COMMIT_MESSAGE" value="modified tictactoe engine to increment wins and losses. Modified tictactoe to implement bge.Player instead of its own. All other engines or board or logic should implement or use the player class. I made it Static in main for testing but there will only exist two players." />
+    <MESSAGE value="fixed the damn initial view again." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the damn initial view again." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -782,24 +773,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="79" column="49" lean-forward="false" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java">
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="99" column="8" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="137" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -814,10 +792,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/games/checkers/CheckersLogic.java">
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/gui/FXMLGameEnvironmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        <state relative-caret-position="-376">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__OFFICIAL_BGE/src/resources/InitialView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="79" column="76" lean-forward="true" selection-start-line="79" selection-start-column="76" selection-end-line="81" selection-end-column="80" />
           <folding />
         </state>
       </provider>
