@@ -12,8 +12,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import main.Main;
 
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class FXMLGameEnvironmentController implements Initializable{
@@ -87,10 +89,23 @@ public class FXMLGameEnvironmentController implements Initializable{
         textArea.setEditable(false);
         textArea.setWrapText(true);
 
+        String text = "";
+        for (Iterator iterator = Main.playerProfile.playerJSONMap.keySet().iterator();iterator.hasNext();){
+            String key = (String)iterator.next();
+            text += key;
+            text += "\n";
+            text += Main.playerProfile.playerJSONMap.get(key);
+            text += "\n";
+        }
+        textArea.setText(text);
+
+
+
         textArea.setMaxWidth(Double.MAX_VALUE);
         textArea.setMaxHeight(Double.MAX_VALUE);
         GridPane.setVgrow(textArea, Priority.ALWAYS);
         GridPane.setHgrow(textArea, Priority.ALWAYS);
+
 
         GridPane expContent = new GridPane();
         expContent.setMaxWidth(Double.MAX_VALUE);
