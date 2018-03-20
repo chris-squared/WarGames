@@ -1,5 +1,9 @@
 package games.checkers;
 
+import bge.BoardCoord;
+import bge.Piece;
+import bge.Board;
+
 public class CheckersTurn{
 	public CheckersState state;
 	public CheckersLogic logic;
@@ -68,6 +72,18 @@ public class CheckersTurn{
 		}
 	}
 	
+	//Refactored/rewritten
+	public void addGamePiece(Board gameBoard, Piece p, BoardCoord bc){
+		if(gameBoard.getPiecesP1().contains(p)){
+			gameBoard.removePieceP1(p.getBoardCoord().getRow(), p.getBoardCoord().getCol());
+			gameBoard.addPieceP1(bc.getRow(), bc.getRow(), p);
+		}
+		else if(gameBoard.getPiecesP2().contains(p)){
+			gameBoard.removePieceP2(p.getBoardCoord().getRow(), p.getBoardCoord().getCol());
+			gameBoard.addPieceP1(bc.getRow(), bc.getRow(), p);
+		}
+	}
+	
 	public void executeJump(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) {
 		if (gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2].equals("[R]"))
 			CheckersTurn.red -= 1;
@@ -78,6 +94,18 @@ public class CheckersTurn{
 		gameBoard.board[(startRow + endRow)/2][(startColumn+endColumn)/2] = "[ ]";
 	}
 	
+	//Refactored
+	public void executeJump(Board gameBoard, Piece p, BoardCoord bc) {//piece is current piece. bc is its destination.
+		//No need to decrement a counter of pieces because we can just call length() on the arraylists in gameBoard.
+		if(gameBoard.getPiecesP1().contains(p)){
+			gameBoard.removePieceP1((p.getBoardCoord().getRow() + bc.getRow())/2, (p.getBoardCoord().getCol() + bc.getCol())/2);
+		}
+		else if(gameBoard.getPiecesP2().contains(p)){
+			gameBoard.removePieceP2((p.getBoardCoord().getRow() + bc.getRow())/2, (p.getBoardCoord().getCol() + bc.getCol())/2);
+		}
+	}
+	
+	//FOLLOWING METHODS REQUIRE KINGREPO IMPLEMENTATION
 	public void addGameKing(Board gameBoard, int startRow, int startColumn, int endRow, int endColumn) {
 		gameBoard.board[startRow][startColumn] = "[ ]";
 		gameBoard.board[endRow][endColumn] = "[K]";
