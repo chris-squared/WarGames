@@ -29,22 +29,6 @@ public class Main extends Application{
 	
 	@Override 
 	public void start (Stage primaryStage) throws IOException {
-		// Jerry Board in NewBoard package
-        // Launch like so:
-//        Board board = new Board(500,500,3,3);
-//        Scene scene = new Scene(board, board.getPrefWidth(), board.getPrefHeight());
-//        board.drawBoard();
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
-
-
-//        PlayerProfile pp = new PlayerProfile();
-//        Player pablo = new Player("Pablo");
-//        pp.addPlayer(pablo);
-//        pp.printJSON();
-//        pp.printJSON();
-//        pp.writeToFile();
-
 
 	    // Below is to run environment
 		FXMLLoader loader = new FXMLLoader();
@@ -52,13 +36,6 @@ public class Main extends Application{
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 640, 400));
-//        primaryStage.setOnHidden(e -> {
-//            playerProfile.addPlayer(player1);
-//            playerProfile.addPlayer(player2);
-//            playerProfile.writeToFile();
-//            System.out.println("Exiting Application... Goodbye.");
-//            Platform.exit();
-//        });
         primaryStage.show();
 
 	}

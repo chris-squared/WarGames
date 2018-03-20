@@ -4,6 +4,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/__OFFICIAL_BGE/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WarGames_Final/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/BGE_TEST" />
       <excludeFolder url="file://$MODULE_DIR$/BGE_TEST/src/eelsandescalators" />
       <excludeFolder url="file://$MODULE_DIR$/Checkers(Console)" />
@@ -18,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/__OFFICIAL_BGE/Jars/json-simple-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/WarGames_Final/Jars/json-simple-1.1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

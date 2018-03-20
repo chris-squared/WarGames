@@ -87,36 +87,5 @@ public class PlayerProfile {
         }
     }
 
-//    public void update(JSONObject playerStats, Player player){
-//        try{
-//            try(FileWriter fileWriter = new FileWriter("__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json")){
-//                playerStats.replace("Wins", (Long)playerStats.get("Wins") + player.getPlayerWins());
-//                playerStats.replace("Losses", (Long)playerStats.get("Losses") + player.getPlayerLosses());
-//                fileWriter.write(playerJSONMap.toJSONString());
-//            }
-//        }catch (Exception m){
-//            System.out.println("Failed to retrieve file: " + m.getMessage());
-//        }
-//    }
-//
-//    public void updatePlayerStats(Player player){
-//        try {
-//            File f = new File("__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json");
-//            if (f.exists()) {
-//                JSONParser jsonParser = new JSONParser();
-//                Object object = jsonParser.parse(new FileReader("__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json"));
-//                JSONObject playerObject = (JSONObject) object;
-//                JSONObject playerStats = (JSONObject) playerObject.get(player.getUsername());
-//                update(playerStats, player);
-//            }else{
-//
-//            }
-//
-//
-//        }catch (Exception m){
-//            System.out.println("Failed to update player stats: " + m.getMessage());
-//        }
-//
-//    }
 
 }
