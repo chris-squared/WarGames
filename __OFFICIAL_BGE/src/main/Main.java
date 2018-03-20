@@ -20,7 +20,10 @@ public class Main extends Application{
 
 	public static void main(String[] args) {
         Application.launch(args);
-
+        playerProfile.addPlayer(player1);
+        playerProfile.addPlayer(player2);
+        playerProfile.writeToFile();
+        System.out.println("Exiting Application in main... Goodbye.");
     }
 	
 	
@@ -49,13 +52,13 @@ public class Main extends Application{
         Parent root = loader.load();
         primaryStage.setTitle("War Games");
         primaryStage.setScene(new Scene(root, 640, 400));
-        primaryStage.setOnHidden(e -> {
-            playerProfile.addPlayer(player1);
-            playerProfile.addPlayer(player2);
-            playerProfile.writeToFile();
-            System.out.println("Exiting Application... Goodbye.");
-            Platform.exit();
-        });
+//        primaryStage.setOnHidden(e -> {
+//            playerProfile.addPlayer(player1);
+//            playerProfile.addPlayer(player2);
+//            playerProfile.writeToFile();
+//            System.out.println("Exiting Application... Goodbye.");
+//            Platform.exit();
+//        });
         primaryStage.show();
 
 	}

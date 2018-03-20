@@ -1,6 +1,7 @@
 package gui;
 
 import bge.Board;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -79,6 +80,20 @@ public class FXMLGameEnvironmentController implements Initializable{
         }
     }
 
+    @FXML
+    protected void quitGame(){
+        Platform.exit();
+    }
+
+    @FXML
+    protected void resetGame(){
+        //TODO: reset current game
+    }
+
+    @FXML
+    protected void redirectHome(){
+        //TODO: change to inital view fxml
+    }
 
     @FXML
     protected void playerStatsAlert(){

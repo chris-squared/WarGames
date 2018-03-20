@@ -8,6 +8,7 @@ import bge.BoardCoord;
 import bge.Coord;
 import bge.GameOverException;
 import bge.InvalidMoveException;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
@@ -272,7 +273,8 @@ public class BGE_GUI {
 				e.printStackTrace();
 			}
 		} else {
-		    System.exit(0);
+//		    System.exit(0);
+			Platform.exit();
 		}
 	}
 

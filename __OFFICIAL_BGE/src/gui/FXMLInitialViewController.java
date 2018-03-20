@@ -1,6 +1,7 @@
 package gui;
 
 import bge.Player;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -91,7 +92,7 @@ public class FXMLInitialViewController implements Initializable{
 
 	@FXML
 	protected void quitGame(){
-
+		Platform.exit();
 	}
 
 
