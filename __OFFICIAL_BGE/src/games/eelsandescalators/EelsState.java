@@ -24,7 +24,8 @@ public class EelsState extends State {
 		
 		//Construct a new state with the board
 		public EelsState(EelsAndEscalatorsBoard b, Player P1, Player P2) {
-			super(b);
+			super();
+			setBoard(b);
 			board = b;
 			GenerateBoardPath();
 			PopulateBoard(P1, P2);

@@ -26,6 +26,8 @@ import games.tictactoe.TicTacToeLogic;
 import games.CheckersBoard;
 import games.EelsAndEscalatorsBoard;
 import games.SimonSaysBoard;
+import games.checkers.CheckersLogic;
+import games.checkers.CheckersState;
 import main.Main;
 import utility.Engine;
 import utility.Logic;
@@ -119,6 +121,14 @@ public class FXMLInitialViewController implements Initializable{
 	   else if (gamename.equals("Tic-Tac-Toe")){
 		   board = new TicTacToeBoard();
 		   logic = new TicTacToeLogic((TicTacToeBoard)board);
+		   engine = new Engine(logic, board, p1, p2);
+		   initializeGameScreen(event, board);
+	   }
+	   
+	   else if (gamename.equals("Checkers")) {
+		   board = new CheckersBoard();
+		   CheckersState ch = new CheckersState();
+		   logic = new CheckersLogic(ch);
 		   engine = new Engine(logic, board, p1, p2);
 		   initializeGameScreen(event, board);
 	   }

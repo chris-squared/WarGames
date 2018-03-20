@@ -9,7 +9,10 @@ import bge.Board;
 public abstract class State {
 	Board board;
 		
-	protected State(Board b){
+	protected State(){
+		
+	}
+	protected void setBoard(Board b) {
 		board = b;
 	}
 	

@@ -3,6 +3,7 @@ package utility;
 import bge.Board;
 import bge.BoardCoord;
 import bge.GameOverException;
+import bge.InvalidMoveException;
 import bge.Player;
 
 public class Engine {
@@ -64,9 +65,11 @@ public class Engine {
 		profiles.updatePlayer(p);
 	}
 	
-	public void forwardMouseClick(BoardCoord coordToBoardCoord) throws GameOverException {
-		//System.out.println("ENGINE CLICKED");
-		Move(coordToBoardCoord);
+	public void forwardMouseClick(BoardCoord coordToBoardCoord) throws GameOverException, InvalidMoveException {
+		if(logic.has_move_function == 1)
+			Move(coordToBoardCoord);
+		else
+			board.forwardMouseClick(coordToBoardCoord);
 		
 	}
 }

@@ -9,7 +9,7 @@ import bge.Tile;
 
 public abstract class Logic {
 	Board board;
-	
+	protected int has_move_function = 1;
 	protected Logic(){ 
 	}
 	

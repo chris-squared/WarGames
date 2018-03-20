@@ -211,12 +211,15 @@ public class BGE_GUI {
 					mouseClicked();
 				} catch (GameOverException e) {
 					gameOver();
+				} catch (InvalidMoveException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
     		}
 		};
 	}
 	
-	private void mouseClicked() throws GameOverException {
+	private void mouseClicked() throws GameOverException, InvalidMoveException {
 		try {
 			engine.forwardMouseClick(coordToBoardCoord(lastClicked));
 			updateDisplay();
