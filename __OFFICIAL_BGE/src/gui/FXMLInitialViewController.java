@@ -32,6 +32,7 @@ import games.checkers.CheckersLogic;
 import games.checkers.CheckersState;
 import main.Main;
 import utility.Engine;
+import utility.EngineBuilder;
 import utility.Logic;
 
 
@@ -105,51 +106,16 @@ public class FXMLInitialViewController implements Initializable{
 		Main.player1.setTurn(1);
 		Main.player2.setTurn(2);
 	}
-   protected void  BuildEngine(String gamename, ActionEvent event) throws Exception {
-	   Player p1 = new Player(player1Name.getText(), 0, "X");
-	   Player p2 = new Player(player2Name.getText(), 1, "T");
-	   Logic logic;
-	   Board board;
-	   if (gamename.equals("Electric Eels and Super Escalators 2: Super Ultra Force")) {
-		  
-		   board = new EelsAndEscalatorsBoard();
-		   EelsState state = new EelsState((EelsAndEscalatorsBoard)board, p1, p2);
-		   logic = new EelsLogic(state, (EelsAndEscalatorsBoard)board);
-		   engine = new Engine(logic, board, p1, p2);
-		   engine.addState(state);
-		   initializeGameScreen(event, board);
-	   }
-	   
-	   else if (gamename.equals("Tic-Tac-Toe")){
-		   board = new TicTacToeBoard();
-		   logic = new TicTacToeLogic((TicTacToeBoard)board);
-		   engine = new Engine(logic, board, p1, p2);
-		   initializeGameScreen(event, board);
-	   }
-	   
-	   else if (gamename.equals("Checkers")) {
-		   board = new CheckersBoard();
-		   CheckersState ch = new CheckersState();
-		   logic = new CheckersLogic(ch);
-		   engine = new Engine(logic, board, p1, p2);
-		   initializeGameScreen(event, board);
-	   }
-	   
-	   else if (gamename.equals("Simon Says")) {
-		   board = new SimonSaysBoard();
-		   SimonSaysState ss = new SimonSaysState();
-		   logic = new SimonSaysLogic(ss);
-		   engine = new Engine(logic, board, p1, p2);
-		   initializeGameScreen(event, board);
-	   }
-   }
+   
  
     @FXML
     protected void handlePlayButtonAction(ActionEvent event) throws Exception {
 //    	System.out.println(player1Name.getText() + " vs. " + player2Name.getText());
 		handlePlayerProfiles();
 		RadioButton selectedGame = (RadioButton)gameSelectGroup.getSelectedToggle();
-		BuildEngine(selectedGame.getText(), event);
+		engine = EngineBuilder.BuildEngine(selectedGame.getText(), new Player(player1Name.getText(), 0, "X"), new Player(player2Name.getText(), 1, "Y"));
+		initializeGameScreen(event, engine.board);
+		
     }
     	
     @Override

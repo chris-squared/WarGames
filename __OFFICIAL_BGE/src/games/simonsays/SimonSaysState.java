@@ -1,4 +1,5 @@
 package games.simonsays;
+import utility.State;
 public class SimonSaysState extends State {
 	public SimonSaysBoard gameBoard;
 	
@@ -6,8 +7,14 @@ public class SimonSaysState extends State {
 		gameBoard = new SimonSaysBoard(3, 3, "[ ]");
 	}
 	
-	public Board getGameBoard() {
+	public Board returnGameBoard() {
 		return gameBoard;
+	}
+
+	@Override
+	public bge.Board getGameBoard() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
