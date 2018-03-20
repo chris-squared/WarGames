@@ -54,7 +54,7 @@ public class PlayerProfile {
 
     public void processPlayerProfile(){
         try{
-            File f = new File("__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json");
+            File f = new File("WarGames_Final/PlayerProfiles/playerProfiles.json");
             if(f.exists()){
                 readFromFile();
             }else{
@@ -67,7 +67,7 @@ public class PlayerProfile {
 
     public void writeToFile(){
         try{
-            try(FileWriter fileWriter = new FileWriter("__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json")){
+            try(FileWriter fileWriter = new FileWriter("WarGames_Final/PlayerProfiles/playerProfiles.json")){
                 fileWriter.write(playerJSONMap.toJSONString());
             }
         }catch (Exception m){
@@ -77,7 +77,7 @@ public class PlayerProfile {
 
     public void readFromFile(){
         try{
-            try(FileReader fileReader = new FileReader("__OFFICIAL_BGE/PlayerProfiles/playerProfiles.json")){
+            try(FileReader fileReader = new FileReader("WarGames_Final/PlayerProfiles/playerProfiles.json")){
                 JSONParser jsonParser = new JSONParser();
                 Object object = jsonParser.parse(fileReader);
                 playerJSONMap = (JSONObject)object;
