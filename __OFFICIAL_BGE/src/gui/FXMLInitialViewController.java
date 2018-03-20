@@ -8,12 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import bge.Board;
@@ -34,6 +35,8 @@ public class FXMLInitialViewController implements Initializable{
 	static Board newBoard; 
 	static BGE_GUI bge;
 
+
+
 	@FXML
 	private TextField player1Name;
 	
@@ -42,6 +45,56 @@ public class FXMLInitialViewController implements Initializable{
 	
 	@FXML
 	private ToggleGroup gameSelectGroup;
+
+	@FXML
+	protected void playerStatsAlert(){
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("War Games");
+		alert.setHeaderText("Player Stats");
+		alert.setContentText(null);
+
+
+		Label label = new Label("Player Info: ");
+
+		TextArea textArea = new TextArea();
+		textArea.setEditable(false);
+		textArea.setWrapText(true);
+
+		String text = "";
+		for (Iterator iterator = Main.playerProfile.playerJSONMap.keySet().iterator(); iterator.hasNext();){
+			String key = (String)iterator.next();
+			text += key;
+			text += "\n";
+			text += Main.playerProfile.playerJSONMap.get(key);
+			text += "\n";
+		}
+		textArea.setText(text);
+
+
+
+		textArea.setMaxWidth(Double.MAX_VALUE);
+		textArea.setMaxHeight(Double.MAX_VALUE);
+		GridPane.setVgrow(textArea, Priority.ALWAYS);
+		GridPane.setHgrow(textArea, Priority.ALWAYS);
+
+
+		GridPane expContent = new GridPane();
+		expContent.setMaxWidth(Double.MAX_VALUE);
+		expContent.add(label, 0, 0);
+		expContent.add(textArea, 0, 1);
+
+// Set expandable Exception into the dialog pane.
+		alert.getDialogPane().setExpandableContent(expContent);
+
+		alert.showAndWait();
+	}
+
+	@FXML
+	protected void quitGame(){
+
+	}
+
+
 
 	@FXML
 	protected void handlePlayerProfiles(){

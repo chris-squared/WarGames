@@ -105,10 +105,10 @@ public class EelsLogic extends Logic {
 	}
 
 
-	@Override
-	public boolean isValidMove(Piece p, Tile start, Tile end) {
-		return (state.BoardPathRepository.get(100) != end);
-	}
+//	@Override
+//	public boolean isValidMove(Piece p, Tile start, Tile end) {
+//		return (state.BoardPathRepository.get(100) != end);
+//	}
 
 
 	@Override

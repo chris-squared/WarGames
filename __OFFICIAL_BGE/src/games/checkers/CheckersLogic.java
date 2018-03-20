@@ -129,17 +129,17 @@ public class CheckersLogic extends Logic{
 		return false;
 	}
 
-	@Override
-	public boolean isValidMove(Piece p, Tile start, Tile end) {
-		// Please work...
-		
-		return false;
-	}
+//	@Override
+//	public boolean isValidMove(Piece p, Tile start, Tile end) {
+//		// Please work...
+//
+//		return false;
+//	}
 
 	@Override
 	public void executeMove(Player p, BoardCoord bc) throws GameOverException {
 		// TODO Auto-generated method stub
 		Board gameBoard = state.getGameBoard();
-		System.out.println("Player " + p.turn + " turn. Current turn: " + turn + " Color: " + p.gamePiece);
+		System.out.println("Player " + p.turn + " turn. Current turn: " + 1 + " Color: " + p.gamePiece);
 	}
 }
