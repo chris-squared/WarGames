@@ -1,8 +1,6 @@
 package gui;
 
 import bge.Player;
-import game.tictactoe2.TicTacToeLogic;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,13 +17,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import bge.Board;
-import games.TicTacToeBoard;
 import games.eelsandescalators.EelsLogic;
 import games.eelsandescalators.EelsState;
+import games.tictactoe.TicTacToeBoard;
+import games.tictactoe.TicTacToeLogic;
 import games.CheckersBoard;
 import games.EelsAndEscalatorsBoard;
 import games.SimonSaysBoard;
-import games.TicTacToe2Board;
 import main.Main;
 import utility.Engine;
 import utility.Logic;
@@ -47,7 +45,7 @@ public class FXMLInitialViewController implements Initializable{
 
 	@FXML
 	protected void handlePlayerProfiles(){
-		//TODO: Dynamically assing whos turn it is
+		//TODO: Dynamically assessing who's turn it is
 		Main.player1.setUsername(player1Name.getText());
 		Main.player2.setUsername(player2Name.getText());
 		Main.player1.setTurn(1);
@@ -69,64 +67,24 @@ public class FXMLInitialViewController implements Initializable{
 	   }
 	   
 	   else if (gamename.equals("Tic-Tac-Toe")){
-		   board = new TicTacToe2Board();
-		   logic = new TicTacToeLogic((TicTacToe2Board)board);
+		   board = new TicTacToeBoard();
+		   logic = new TicTacToeLogic((TicTacToeBoard)board);
 		   engine = new Engine(logic, board, p1, p2);
 		   initializeGameScreen(event, board);
 	   }
-	   
-	   
-		   
    }
  
-
     @FXML
     protected void handlePlayButtonAction(ActionEvent event) throws Exception {
 //    	System.out.println(player1Name.getText() + " vs. " + player2Name.getText());
 		handlePlayerProfiles();
 		RadioButton selectedGame = (RadioButton)gameSelectGroup.getSelectedToggle();
 		BuildEngine(selectedGame.getText(), event);
+    }
     	
-    	// BuildEngine OR Engine.Build(selectedGame.getText()
-    	//Here's the game we want to play, load up the right logic and board, and shove it up your engine
-    	
-    	/*if(selectedGame.getText().equals("Tic-Tac-Toe")) {
-    		handleChooseTicTacToe(event);
-    	}
-    	else if(selectedGame.getText().equals("Checkers")) {
-    		handleChooseCheckers(event);
-    	}
-    	else if (selectedGame.getText().equals("Simon Says")) {
-    		handleChooseSimonSays(event);
-    	}
-    	else if (selectedGame.getText().equals("Electric Eels and Super Escalators 2: Super Ultra Force")){
-    		handleChooseEelsAndEscalators(event);
-		}
-		else{
-    		System.out.println("GAME NOT SELECTED IDIOT!");
-		}*/
-    }
-    
-    @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
-        initializeGameScreen(event, new TicTacToeBoard());
-    }
-    
-    @FXML protected void handleChooseCheckers(ActionEvent event) throws Exception{
-    	initializeGameScreen(event, new CheckersBoard());
-    }
-    
-    @FXML protected void handleChooseSimonSays(ActionEvent event) throws Exception{
-        //initializeGameScreen(event, new engine(new SimonSaysBoard()));
-    }
-    
-    @FXML protected void handleChooseEelsAndEscalators(ActionEvent event) throws Exception{
-    	//initializeGameScreen(event, new EelsAndEscalatorsBoard());
-    }
-
     @Override
 	public void initialize(URL url, ResourceBundle resourceBundle){
     	System.out.println("INITIALIZED INITIAL VIEW");
-
 	}
 
 	public void initializeGameScreen(ActionEvent event, Board newBoard) throws Exception{
