@@ -4,6 +4,7 @@ import java.util.HashMap;
 import bge.Board;
 import bge.Piece;
 import bge.Player;
+import games.CheckersBoard;
 import utility.State;
 // Currently doesn't do anything, but it contains an arraylist that can save the board during each turn.
 //import java.util.ArrayList;
@@ -15,14 +16,16 @@ public class CheckersState extends State{
 	HashMap<Player, Piece> Player2Repo = new HashMap<Player, Piece>();
 	
 	
-	protected CheckersState(bge.Board b) {
+	protected CheckersState(CheckersBoard b) {
 		super(b);
 		board = b;
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	@Override
-	public Board getGameBoard() {
-		// TODO Auto-generated method stub
+	public CheckersBoard getGameBoard() {
+		return board;
 		
 	}
 	

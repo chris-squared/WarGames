@@ -5,6 +5,7 @@ package utility;
 import bge.Board;
 
 
+
 public abstract class State {
 	Board board;
 		

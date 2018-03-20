@@ -4,6 +4,7 @@ import bge.GameOverException;
 import bge.Piece;
 import bge.Player;
 import bge.Tile;
+import games.EelsAndEscalatorsBoard;
 import utility.DiceRoller;
 import utility.Logic;
 import utility.State;

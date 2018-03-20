@@ -1,4 +1,4 @@
-package games.eelsandescalators;
+package games;
 
 import bge.Board;
 import bge.BoardCoord;
