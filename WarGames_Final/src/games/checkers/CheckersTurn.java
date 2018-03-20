@@ -32,7 +32,9 @@ public class CheckersTurn{
 		}
 		else
 			System.out.println("Invalid Move.");
+		
 		gameBoard.printBoard();
+		logic.setTurn_over();
 		}
 	
 	public boolean nextPlayersTurn(int currentTurn, int startRow, int startCol, int endRow, int endCol) {
@@ -40,6 +42,7 @@ public class CheckersTurn{
 			//System.out.println("///////////////// Player 2 turn");
 			if(logic.isValidMove(player2.gamePiece, state.gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)){
 				executeMove(player2, state.gameBoard, currentTurn, startRow, startCol, endRow, endCol);
+				System.out.println("TURN IS OVER");
 				return true;
 			}
 			if (logic.checkWinCondition(black, red)) {//changed checkWinCondition to simply take in black/red
@@ -50,6 +53,7 @@ public class CheckersTurn{
 			//System.out.println("//////////////////////// Player 1 turn");
 			if(logic.isValidMove(player1.gamePiece, state.gameBoard.board[startRow][startCol], startRow, startCol, endRow, endCol)){
 			executeMove(player1, state.gameBoard, currentTurn, startRow, startCol, endRow, endCol);
+			System.out.println("TURN IS OVER");
 			return true;
 			}
 			if (logic.checkWinCondition(black, red)) {

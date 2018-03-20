@@ -2,6 +2,7 @@ package bge;
 
 public abstract class Logic {
 	Board board;
+	boolean turn_over = false;
 	protected int has_move_function = 1;
 	protected Logic(){ 
 	}
@@ -24,6 +25,13 @@ public abstract class Logic {
 		return false;
 	}
 
+	boolean getTurn_over() {
+		return turn_over;
+	}
+	
+	public boolean setTurn_over() {
+		return turn_over = !turn_over;
+	}
 	
 
 }

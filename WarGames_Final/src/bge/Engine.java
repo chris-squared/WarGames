@@ -67,8 +67,10 @@ public class Engine {
 			Move(coordToBoardCoord);
 		else
 		{
-			board.forwardMouseClick(coordToBoardCoord);
-		swap_players(current_player);
+		board.forwardMouseClick(coordToBoardCoord);
+		if (logic.getTurn_over())
+			swap_players(current_player);
+			logic.setTurn_over();
 		}
 		
 	}
