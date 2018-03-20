@@ -19,14 +19,18 @@ import java.util.ResourceBundle;
 
 import bge.Board;
 import games.TicTacToeBoard;
+import games.eelsandescalators.EelsLogic;
+import games.eelsandescalators.EelsState;
 import games.CheckersBoard;
 import games.EelsAndEscalatorsBoard;
 import games.SimonSaysBoard;
 import main.Main;
+import utility.Engine;
+import utility.Logic;
 
 
 public class FXMLInitialViewController implements Initializable{
-	
+	Engine engine;
 	static Board newBoard; 
 	static BGE_GUI bge;
 
@@ -47,14 +51,34 @@ public class FXMLInitialViewController implements Initializable{
 		Main.player1.setTurn(1);
 		Main.player2.setTurn(2);
 	}
-
+   protected void  BuildEngine(String gamename, ActionEvent event) throws Exception {
+	   Logic logic;
+	   Board board;
+	   if (gamename.equals("Electric Eels and Super Escalators 2: Super Ultra Force")) {
+		  
+		   board = new EelsAndEscalatorsBoard();
+		   EelsState state = new EelsState((EelsAndEscalatorsBoard)board);
+		   logic = new EelsLogic(state, (EelsAndEscalatorsBoard)board);
+		   engine = new Engine(state, logic, board);
+		   initializeGameScreen(event, board);
+	   }
+	   
+	   
+		   
+   }
+ 
 
     @FXML
     protected void handlePlayButtonAction(ActionEvent event) throws Exception {
 //    	System.out.println(player1Name.getText() + " vs. " + player2Name.getText());
 		handlePlayerProfiles();
-    	RadioButton selectedGame = (RadioButton)gameSelectGroup.getSelectedToggle();
-    	if(selectedGame.getText().equals("Tic-Tac-Toe")) {
+		RadioButton selectedGame = (RadioButton)gameSelectGroup.getSelectedToggle();
+		BuildEngine(selectedGame.getText(), event);
+    	
+    	// BuildEngine OR Engine.Build(selectedGame.getText()
+    	//Here's the game we want to play, load up the right logic and board, and shove it up your engine
+    	
+    	/*if(selectedGame.getText().equals("Tic-Tac-Toe")) {
     		handleChooseTicTacToe(event);
     	}
     	else if(selectedGame.getText().equals("Checkers")) {
@@ -68,7 +92,7 @@ public class FXMLInitialViewController implements Initializable{
 		}
 		else{
     		System.out.println("GAME NOT SELECTED IDIOT!");
-		}
+		}*/
     }
     
     @FXML protected void handleChooseTicTacToe(ActionEvent event) throws Exception{
@@ -80,11 +104,11 @@ public class FXMLInitialViewController implements Initializable{
     }
     
     @FXML protected void handleChooseSimonSays(ActionEvent event) throws Exception{
-        initializeGameScreen(event, new SimonSaysBoard());
+        //initializeGameScreen(event, new engine(new SimonSaysBoard()));
     }
     
     @FXML protected void handleChooseEelsAndEscalators(ActionEvent event) throws Exception{
-    	initializeGameScreen(event, new EelsAndEscalatorsBoard());
+    	//initializeGameScreen(event, new EelsAndEscalatorsBoard());
     }
 
     @Override

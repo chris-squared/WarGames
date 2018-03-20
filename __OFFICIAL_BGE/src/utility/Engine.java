@@ -11,11 +11,11 @@ public class Engine {
 	
 
 	
-	Engine(State s, Logic l, Board b, PlayerProfile pf){
+	public Engine(State s, Logic l, Board b){
 		state = s;
 		logic = l;
 		board = b; 
-		profiles = pf; 
+		System.out.println("BUILDING ENGINE SUCKAHS");
 	}
 	
 	

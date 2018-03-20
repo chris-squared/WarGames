@@ -8,10 +8,17 @@ import bge.Tile;
 public abstract class Logic {
 	Board board;
 	
-	protected Logic(Board b){
-		board = b; 
+	protected Logic(){ 
 	}
 	
+	public Board getBoard() {
+		return board;
+	}
+	
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+
 	//Functions every Logic needs to implement? 
 	public abstract boolean check_win_condition(Piece p);
 	public abstract boolean isValidMove(Piece p, Tile start, Tile end);

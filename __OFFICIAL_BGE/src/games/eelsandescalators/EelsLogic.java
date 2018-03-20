@@ -17,7 +17,7 @@ public class EelsLogic extends Logic {
 
 	
 	public EelsLogic(EelsState s, EelsAndEscalatorsBoard g){
-		super(g);
+		super();
 		state = s;
 		board =  g;
 		

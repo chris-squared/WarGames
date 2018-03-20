@@ -1,6 +1,10 @@
 package games.tictactoe;
 
-public class TicTacToeLogic{
+import bge.Piece;
+import bge.Tile;
+import utility.Logic;
+
+public class TicTacToeLogic extends Logic {
 	
 	TicTacToeState state;
 	public TicTacToeLogic(TicTacToeState state) {
@@ -111,5 +115,23 @@ public class TicTacToeLogic{
 			}
 		}
 		return winner;
+	}
+
+	@Override
+	public boolean check_win_condition(Piece p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isValidMove(Piece p, Tile start, Tile end) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void executeMove() {
+		// TODO Auto-generated method stub
+		
 	}
 }
