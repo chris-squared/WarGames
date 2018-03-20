@@ -29,7 +29,7 @@ public class CheckersBoard extends Board {
 	public CheckersBoard() {
 		super("Checkers",ROWS,COLS);
 		
-		state = new CheckersState();
+//		state = new CheckersState();
 		logic = new CheckersLogic(state);
 		checkersTurn = new CheckersTurn(state, logic);
 		
@@ -37,7 +37,7 @@ public class CheckersBoard extends Board {
 		
 		turn = 1;
 		
-		state.getGameBoard().printBoard();
+//		state.getGameBoard().printBoard();
 	
 	}
 
@@ -119,26 +119,26 @@ public class CheckersBoard extends Board {
 			endRowToRedraw = temp;
 		}
 		
-		for(int row = startRowToRedraw; row <= endRowToRedraw; row++) {
-			for(int col = 0; col < COLS; col++) {
-				if(state.getGameBoard().board[row][col].equals("[R]")) {
-					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/redCircle.png"))));
-				}
-				else if(state.getGameBoard().board[row][col].equals("[B]")) {
-					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/whiteCircle.png"))));
-				}
-				else if(state.getGameBoard().board[row][col].equals("[K]")) {
-					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/RedKing.png"))));
-				}
-				else if(state.getGameBoard().board[row][col].equals("[Q]")) {
-					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/BlackKing.png"))));
-				}
-				else {
-					addPieceP1(row, col, null);
-					addPieceP2(row, col, null);
-				}
-			}
-		}
+//		for(int row = startRowToRedraw; row <= endRowToRedraw; row++) {
+//			for(int col = 0; col < COLS; col++) {
+//				if(state.getGameBoard().board[row][col].equals("[R]")) {
+//					addPieceP1(row,col, new Piece(row,col,(new Image("/games/checkers/redCircle.png"))));
+//				}
+//				else if(state.getGameBoard().board[row][col].equals("[B]")) {
+//					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/whiteCircle.png"))));
+//				}
+//				else if(state.getGameBoard().board[row][col].equals("[K]")) {
+//					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/RedKing.png"))));
+//				}
+//				else if(state.getGameBoard().board[row][col].equals("[Q]")) {
+//					addPieceP2(row,col, new Piece(row,col,(new Image("/games/checkers/BlackKing.png"))));
+//				}
+//				else {
+//					addPieceP1(row, col, null);
+//					addPieceP2(row, col, null);
+//				}
+//			}
+//		}
 	}
 
 }

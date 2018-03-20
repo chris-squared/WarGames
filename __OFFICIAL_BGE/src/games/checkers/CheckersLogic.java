@@ -19,11 +19,11 @@ public class CheckersLogic extends Logic{
 		return state.Player1Repo.size() == 0 || state.Player2Repo.size() == 0; 
 	}
 
-	@Override
-	public boolean isValidMove(Piece p, Tile start, Tile end) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean isValidMove(Piece p, Tile start, Tile end) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 	@Override
 	public void executeMove(Player p, BoardCoord bc) throws GameOverException {
 		// TODO Auto-generated method stub

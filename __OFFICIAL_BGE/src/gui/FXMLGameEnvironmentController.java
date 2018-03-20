@@ -4,7 +4,10 @@ import bge.Board;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -16,6 +19,7 @@ import javafx.stage.Stage;
 import main.Main;
 import utility.Engine;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
@@ -93,6 +97,17 @@ public class FXMLGameEnvironmentController implements Initializable{
     @FXML
     protected void redirectHome(){
         //TODO: change to inital view fxml
+        System.out.println("Choosing another game");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/resources/InitialView.fxml"));
+        try {
+            Parent root = loader.load();
+            primaryStage.setTitle("War Games");
+            primaryStage.setScene(new Scene(root, 640, 400));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -101,7 +116,6 @@ public class FXMLGameEnvironmentController implements Initializable{
         alert.setTitle("War Games");
         alert.setHeaderText("Player Stats");
         alert.setContentText(null);
-
 
         Label label = new Label("Player Info: ");
 
